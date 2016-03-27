@@ -1,0 +1,72 @@
+<div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="hostpool_generaldata_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} General Data</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+        <div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Cloudify Version</div> <!-- todo: use i18n -->
+				<div class="dt-shortinput"><select ng-options="cfyversion.id as cfyversion.label for cfyversion in cfyversions" ng-model="data.cfyversion"></select></div>
+			</div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Application Name</div> <!-- todo: use i18n -->
+
+                <div class="dt-input"><input type="text" ng-model="data.applicationName"
+                                             typeahead-on-select="selectApplicationName($item, $model, $label)"
+                                             typeahead="app.model.label  for apps in getApplicationNameSuggestion() | filter:$viewValue"/></div>
+            </div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+                <div class="dt-label">Application Source</div> <!-- todo: use i18n -->
+                <div class="dt-input"><select ng-change="setApplicationSource(data.applicationSources)" ng-init="data.applicationSources = applicationSources[0].id" ng-options="item.id as item.label for item in applicationSources" ng-model="data.applicationSources"></select></div>
+            </div>
+            <div ng-hide="usingThisCatalog()" ng-switch on="data.applicationSources" class="dt-form-section login-details-section">
+                <div class="dt-label" ng-switch-when="2">Repository URL</div> <!-- todo: use i18n -->
+                <div class="dt-label" ng-switch-when="3">Zip file URL</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.githubZipUrl"/></div>
+            </div>
+            <div ng-show="usingGitHubRepo()" class="dt-form-section login-details-section">
+                <div class="dt-label">GitHub Tag</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.githubtag"/></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Blueprint file name</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.blueprintFileName"/></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Blueprint name</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.blueprintName"/></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Deployment Name</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.deploymentName"/></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">{{ currentProvider.label }} Locations</div> <!-- todo: use i18n -->
+				<div class="dt-input"><select ng-options="item.id as item.label for item in hostpoollocations" ng-model="data.hostpoollocation"></select></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="hostpool_generaldata_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="hostpool_generaldata_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+</div>

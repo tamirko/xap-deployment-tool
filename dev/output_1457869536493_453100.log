@@ -1,0 +1,326 @@
+ 
+=============================================================
+The time and date is 03/13/2016 13:45:36
+Execution ID: 1457869536493_453100F
+Execution folder is /home/tamirk/dt_executions/1457869536493_453100
+Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457869536493_453100.log
+=============================================================
+set_virtualenv: execution id : 1457869536493_453100
+Activating virtualenv 'cfy_3_3_1ga_env'
+=============================================================
+install_cfy: execution id : 1457869536493_453100
+/home/tamirk/cfy_versions_root /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+----------------------------------------------------------
+Running installCfy.sh ... 
+  Required CFY VERSION      : 3.3.1GA
+  CFY_MINOR_VERSION is      : 3.3.1
+  PLUGINS_MINOR_VERSION is  : 1.3.1
+  CFY_GIT_TAG_BRANCH is     : ga
+  PLUGINS_GIT_TAG_BRANCH is : ga
+Cloudify 3.3.1 ga version already exists (/home/tamirk/cfy_versions_root/3.3.1/ga). -Moving on.
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+install_cfy_cloud_provider_plugin: execution id : 1457869536493_453100
+Cloud Provider                           : datacentred
+Cloud user name                          : undefined
+Application name                         : nodecellar
+Upload Blueprints ?                      : true
+Blueprint suffix                         : nodecellar_v4
+Blueprint file name                      : openstack-blueprint.yaml
+Deploy_Application ?                     : true
+Deployment name                          : nodecellar_v13_03_d4
+CFY_DATA_CENTRED_REGION                  : sal01 ...
+CFY_DATA_CENTRED_OS                      : 74ff4015-aee1-4e02-aaa8-1c77b2650394 ...
+CFY_DATA_CENTRED_MANAGER_SSH_USER        : undefined ...
+CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : undefined ...
+CFY_DATA_CENTRED_AGENT_SSH_USER          : undefined ...
+CFY_DATA_CENTRED_SERVER_NAME             : server-0-103 ...
+CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : mngmnt-net-0-103 ...
+CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : mngmnt-subnet-0-103 ...
+CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : mngmnt-router-0-103 ...
+CFY_DATA_CENTRED_MANAGER_PORT_NAME       : mngr-port-0-103 ...
+CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : mngr-sec-grp-0-103 ...
+CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : agent-sec-grp-0-103 ...
+CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : ~/.ssh/cloudify-manager-kp-0-103.pem ...
+CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : ~/.ssh/cloudify-agent-kp-0-103.pem ...
+CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : cloudify-manager-public-kp-0-103 ...
+CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : cloudify-agent-public-kp-0-103 ...
+Existing Manager IP address              : 185.43.218.157
+Use existing Manager                     : true
+Freeze the manager on failure            : false
+manager_blueprint_file                   : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint.yaml
+manager_blueprint_inputs_file            : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint-inputs.yaml
+=============================================================
+pre_bootstrap: execution id : 1457869536493_453100
+=============================================================
+run_bootstrap: execution id : 1457869536493_453100
+/home/tamirk/dt_executions/1457869536493_453100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Cloudify CLI 3.3.1
+Cloudify Manager 3.3.1 [ip=185.43.218.157]
+Initialization completed successfully
+Using an existing Cloudify manager
+No Need to bootstrap, running cfy use -t 185.43.218.157
+Using management server 185.43.218.157 with port 80
+=============================================================
+pre_blueprint_upload: execution id : 1457869536493_453100
+=============================================================
+blueprints_upload: execution id : 1457869536493_453100
+Cloning into 'cloudify-deployment-tool-apps'...
+Using the repository's master branch
+/home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457869536493_453100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+/home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps/nodecellar /home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457869536493_453100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Uploading nodecellar ...
+Validating openstack-blueprint.yaml
+Blueprint validated successfully
+Uploading blueprint openstack-blueprint.yaml to management server 185.43.218.157
+Uploaded blueprint, blueprint's id is: nodecellarnodecellar_v4
+Done uploading nodecellar
+/home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457869536493_453100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+/home/tamirk/dt_executions/1457869536493_453100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+=============================================================
+pre_deployment_creation: execution id : 1457869536493_453100
+=============================================================
+populate_node_templates: execution id : 1457869536493_453100
+/home/tamirk/dt_executions/1457869536493_453100
+/home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps/nodecellar /home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Populating node templates of the nodecellar application
+The blueprint name will be nodecellarnodecellar_v4
+Deployment name is nodecellar_v13_03_d4
+total 104
+-rw-rw-r-- 1 tamirk tamirk 11323 Mar 13 13:46 LICENSE
+-rw-rw-r-- 1 tamirk tamirk  5885 Mar 13 13:46 README.md
+-rw-rw-r-- 1 tamirk tamirk  5084 Mar 13 13:46 aws-ec2-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  7472 Mar 13 13:46 cloudstack-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  2238 Mar 13 13:46 host-pool-blueprint.yaml
+drwxrwxr-x 2 tamirk tamirk  4096 Mar 13 13:46 inputs
+-rw-rw-r-- 1 tamirk tamirk  1553 Mar 13 13:46 local-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  4904 Mar 13 13:46 openstack-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  7015 Mar 13 13:46 openstack-haproxy-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  5006 Mar 13 13:46 openstack-nova-net-blueprint.yaml
+drwxrwxr-x 3 tamirk tamirk  4096 Mar 13 13:46 resources
+drwxrwxr-x 6 tamirk tamirk  4096 Mar 13 13:46 scripts
+-rw-rw-r-- 1 tamirk tamirk  2712 Mar 13 13:46 simple-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  3015 Mar 13 13:46 softlayer-blueprint.yaml
+drwxrwxr-x 3 tamirk tamirk  4096 Mar 13 13:46 types
+-rw-rw-r-- 1 tamirk tamirk  6297 Mar 13 13:46 vcloud-blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk  2225 Mar 13 13:46 vsphere-blueprint.yaml
+NODE_TEMPLATE_1_NAME is mongod_host
+-------------------------------------------------------------
+create_current_node_template_file: execution id : mongod_host
+Found the mongod_host in line #68
+currStatus is 0
+NODE_TEMPLATE_1_DATACENTRED_FLAVOR is 8f4b7ae1-b8c2-431f-bb0c-362a5ece0381
+NODE_TEMPLATE_1_DATACENTRED_OS is 74ff4015-aee1-4e02-aaa8-1c77b2650394
+NODE_TEMPLATE_1_DATACENTRED_AGENT_USER is centos
+Warning: NODE_TEMPLATE_1_DATACENTRED_MORE_PROPS is unset. - Ignoring it ...
+NODE_TEMPLATE_2_NAME is nodejs_host
+-------------------------------------------------------------
+create_current_node_template_file: execution id : nodejs_host
+Found the nodejs_host in line #79
+currStatus is 0
+NODE_TEMPLATE_2_DATACENTRED_FLAVOR is 196235bc-7ca5-4085-ac81-7e0242bda3f9
+NODE_TEMPLATE_2_DATACENTRED_OS is 6c3047c6-17b1-4aaf-a657-9229bb481e50
+NODE_TEMPLATE_2_DATACENTRED_AGENT_USER is ubuntu
+Warning: NODE_TEMPLATE_2_DATACENTRED_MORE_PROPS is unset. - Ignoring it ...
+/home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+/home/tamirk/dt_executions/1457869536493_453100/cloudify-deployment-tool-apps
+create_deployment: execution id : 1457869536493_453100
+Creating new deployment from blueprint nodecellarnodecellar_v4 at management server 185.43.218.157
+Deployment created, deployment's id is: nodecellar_v13_03_d4
+=============================================================
+pre_installation: execution id : 1457869536493_453100
+=============================================================
+installation: execution id : 1457869536493_453100
+Executing workflow 'install' on deployment 'nodecellar_v13_03_d4' at management server 185.43.218.157 [timeout=900 seconds]
+Deployment environment creation is in progress!
+Waiting for create_deployment_environment workflow execution to finish...
+2016-03-13T11:46:28 CFY <nodecellar_v13_03_d4> Starting 'create_deployment_environment' workflow execution
+2016-03-13T11:46:28 CFY <nodecellar_v13_03_d4> Creating deployment operations worker
+2016-03-13T11:46:28 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.create'
+2016-03-13T11:46:28 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.create'
+2016-03-13T11:46:32 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.create'
+2016-03-13T11:46:32 CFY <nodecellar_v13_03_d4> Configuring deployment operations worker
+2016-03-13T11:46:32 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:46:32 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:46:35 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:46:35 CFY <nodecellar_v13_03_d4> Starting deployment operations worker
+2016-03-13T11:46:35 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.start'
+2016-03-13T11:46:35 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.start'
+2016-03-13T11:46:40 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.start'
+2016-03-13T11:46:40 CFY <nodecellar_v13_03_d4> Installing deployment operations plugins
+2016-03-13T11:46:40 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:46:40 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:46:47 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:46:56 CFY <nodecellar_v13_03_d4> Stopping deployment operations worker
+2016-03-13T11:46:56 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.stop'
+2016-03-13T11:46:56 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.stop'
+2016-03-13T11:47:01 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.stop'
+2016-03-13T11:47:02 CFY <nodecellar_v13_03_d4> Creating deployment workflows worker
+2016-03-13T11:47:02 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.create'
+2016-03-13T11:47:02 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.create'
+2016-03-13T11:47:06 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.create'
+2016-03-13T11:47:07 CFY <nodecellar_v13_03_d4> Configuring deployment workflows worker
+2016-03-13T11:47:07 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:47:07 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:47:10 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:47:10 CFY <nodecellar_v13_03_d4> Starting deployment workflows worker
+2016-03-13T11:47:10 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.start'
+2016-03-13T11:47:10 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.start'
+2016-03-13T11:47:15 CFY <nodecellar_v13_03_d4> Task succeeded 'cloudify_agent.installer.operations.start'
+2016-03-13T11:47:16 CFY <nodecellar_v13_03_d4> Stopping deployment workflows worker
+2016-03-13T11:47:16 CFY <nodecellar_v13_03_d4> Sending task 'cloudify_agent.installer.operations.stop'
+2016-03-13T11:47:16 CFY <nodecellar_v13_03_d4> Task started 'cloudify_agent.installer.operations.stop'
+2016-03-13T11:47:33 CFY <nodecellar_v13_03_d4> Starting 'install' workflow execution
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [nodecellar_security_group_dd985] Creating node
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [nodecellar_security_group_dd985.create] Sending task 'neutron_plugin.security_group.create'
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [nodecellar_ip_89f67] Creating node
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [nodecellar_security_group_dd985.create] Task started 'neutron_plugin.security_group.create'
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [mongod_security_group_ef55f] Creating node
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [nodecellar_ip_89f67.create] Sending task 'neutron_plugin.floatingip.create'
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [mongod_security_group_ef55f.create] Sending task 'neutron_plugin.security_group.create'
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [nodecellar_ip_89f67.create] Task started 'neutron_plugin.floatingip.create'
+2016-03-13T11:47:34 CFY <nodecellar_v13_03_d4> [mongod_security_group_ef55f.create] Task started 'neutron_plugin.security_group.create'
+2016-03-13T11:47:35 CFY <nodecellar_v13_03_d4> [nodecellar_ip_89f67.create] Task succeeded 'neutron_plugin.floatingip.create'
+2016-03-13T11:47:35 CFY <nodecellar_v13_03_d4> [nodecellar_ip_89f67] Configuring node
+2016-03-13T11:47:35 CFY <nodecellar_v13_03_d4> [mongod_security_group_ef55f.create] Task succeeded 'neutron_plugin.security_group.create'
+2016-03-13T11:47:35 CFY <nodecellar_v13_03_d4> [nodecellar_ip_89f67] Starting node
+2016-03-13T11:47:35 CFY <nodecellar_v13_03_d4> [mongod_security_group_ef55f] Configuring node
+2016-03-13T11:47:36 CFY <nodecellar_v13_03_d4> [mongod_security_group_ef55f] Starting node
+2016-03-13T11:47:36 CFY <nodecellar_v13_03_d4> [nodecellar_security_group_dd985.create] Task succeeded 'neutron_plugin.security_group.create'
+2016-03-13T11:47:37 CFY <nodecellar_v13_03_d4> [nodecellar_security_group_dd985] Configuring node
+2016-03-13T11:47:37 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Creating node
+2016-03-13T11:47:37 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.create] Sending task 'nova_plugin.server.create'
+2016-03-13T11:47:37 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.create] Task started 'nova_plugin.server.create'
+2016-03-13T11:47:37 CFY <nodecellar_v13_03_d4> [nodecellar_security_group_dd985] Starting node
+2016-03-13T11:47:38 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Creating node
+2016-03-13T11:47:38 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.create] Sending task 'nova_plugin.server.create'
+2016-03-13T11:47:38 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.create] Task started 'nova_plugin.server.create'
+2016-03-13T11:47:38 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.create] Task succeeded 'nova_plugin.server.create'
+2016-03-13T11:47:39 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Configuring node
+2016-03-13T11:47:39 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Starting node
+2016-03-13T11:47:39 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Sending task 'nova_plugin.server.start'
+2016-03-13T11:47:39 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task started 'nova_plugin.server.start'
+2016-03-13T11:47:39 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.create] Task succeeded 'nova_plugin.server.create'
+2016-03-13T11:47:40 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Configuring node
+2016-03-13T11:47:40 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task rescheduled 'nova_plugin.server.start' -> OperationRetry('Waiting for server to be in ACTIVE state but is in BUILD:spawning state. Retrying... [retry_after=30]',) [attempt 1]
+2016-03-13T11:47:40 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Starting node
+2016-03-13T11:47:40 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Sending task 'nova_plugin.server.start'
+2016-03-13T11:47:40 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task started 'nova_plugin.server.start'
+2016-03-13T11:47:41 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task rescheduled 'nova_plugin.server.start' -> OperationRetry('Waiting for server to be in ACTIVE state but is in BUILD:spawning state. Retrying... [retry_after=30]',) [attempt 1]
+2016-03-13T11:48:10 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Sending task 'nova_plugin.server.start' [attempt 2]
+2016-03-13T11:48:10 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task started 'nova_plugin.server.start' [attempt 2]
+2016-03-13T11:48:11 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task succeeded 'nova_plugin.server.start' [attempt 2]
+2016-03-13T11:48:11 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Creating Agent
+2016-03-13T11:48:11 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.create] Sending task 'cloudify_agent.installer.operations.create'
+2016-03-13T11:48:11 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.create] Task started 'cloudify_agent.installer.operations.create'
+2016-03-13T11:48:11 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Sending task 'nova_plugin.server.start' [attempt 2]
+2016-03-13T11:48:12 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task started 'nova_plugin.server.start' [attempt 2]
+2016-03-13T11:48:12 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task succeeded 'nova_plugin.server.start' [attempt 2]
+2016-03-13T11:48:12 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Creating Agent
+2016-03-13T11:48:13 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.create] Sending task 'cloudify_agent.installer.operations.create'
+2016-03-13T11:48:13 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.create] Task started 'cloudify_agent.installer.operations.create'
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.create] Task succeeded 'cloudify_agent.installer.operations.create'
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Configuring Agent
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.configure] Sending task 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.configure] Task started 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.create] Task succeeded 'cloudify_agent.installer.operations.create'
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Configuring Agent
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.configure] Sending task 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:48:22 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.configure] Task started 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:48:26 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.configure] Task succeeded 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Starting Agent
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Sending task 'cloudify_agent.installer.operations.start'
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task started 'cloudify_agent.installer.operations.start'
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.configure] Task succeeded 'cloudify_agent.installer.operations.configure'
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Starting Agent
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Sending task 'cloudify_agent.installer.operations.start'
+2016-03-13T11:48:27 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task started 'cloudify_agent.installer.operations.start'
+2016-03-13T11:48:32 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task succeeded 'cloudify_agent.installer.operations.start'
+2016-03-13T11:48:32 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Installing plugins
+2016-03-13T11:48:32 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.install_plugins] Sending task 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:48:32 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.install_plugins] Task started 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:48:32 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task succeeded 'cloudify_agent.installer.operations.start'
+2016-03-13T11:48:32 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Installing plugins
+2016-03-13T11:48:33 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.install_plugins] Sending task 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:48:33 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.install_plugins] Task started 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:48:34 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.install_plugins] Task succeeded 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:48:34 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b] Restarting Agent
+2016-03-13T11:48:34 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.install_plugins] Task succeeded 'cloudify_agent.operations.install_plugins'
+2016-03-13T11:48:34 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5] Restarting Agent
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.install] Sending task 'diamond_agent.tasks.install'
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.install] Task started 'diamond_agent.tasks.install'
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.install] Sending task 'diamond_agent.tasks.install'
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.install] Task started 'diamond_agent.tasks.install'
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.install] Task succeeded 'diamond_agent.tasks.install'
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Sending task 'diamond_agent.tasks.start'
+2016-03-13T11:48:44 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task started 'diamond_agent.tasks.start'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task succeeded 'diamond_agent.tasks.start'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.install] Task succeeded 'diamond_agent.tasks.install'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Sending task 'diamond_agent.tasks.start'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task started 'diamond_agent.tasks.start'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Sending task 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b->nodecellar_ip_89f67|establish] Sending task 'nova_plugin.server.connect_floatingip'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b->nodecellar_security_group_dd985|establish] Sending task 'nova_plugin.server.connect_security_group'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task started 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b->nodecellar_ip_89f67|establish] Task started 'nova_plugin.server.connect_floatingip'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b->nodecellar_security_group_dd985|establish] Task started 'nova_plugin.server.connect_security_group'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task succeeded 'diamond_agent.tasks.start'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5->mongod_security_group_ef55f|establish] Sending task 'nova_plugin.server.connect_security_group'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Sending task 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task started 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:48:45 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5->mongod_security_group_ef55f|establish] Task started 'nova_plugin.server.connect_security_group'
+2016-03-13T11:48:46 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b->nodecellar_ip_89f67|establish] Task succeeded 'nova_plugin.server.connect_floatingip'
+2016-03-13T11:48:46 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b->nodecellar_security_group_dd985|establish] Task succeeded 'nova_plugin.server.connect_security_group'
+2016-03-13T11:48:47 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5->mongod_security_group_ef55f|establish] Task succeeded 'nova_plugin.server.connect_security_group'
+2016-03-13T11:48:47 CFY <nodecellar_v13_03_d4> [nodejs_host_b7b4b.start] Task succeeded 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:48:47 CFY <nodecellar_v13_03_d4> [nodejs_07c1b] Creating node
+2016-03-13T11:48:47 CFY <nodecellar_v13_03_d4> [nodejs_07c1b.create] Sending task 'script_runner.tasks.run'
+2016-03-13T11:48:47 CFY <nodecellar_v13_03_d4> [nodejs_07c1b.create] Task started 'script_runner.tasks.run'
+2016-03-13T11:48:47 CFY <nodecellar_v13_03_d4> [mongod_host_0adb5.start] Task succeeded 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:48:48 CFY <nodecellar_v13_03_d4> [mongod_5e673] Creating node
+2016-03-13T11:48:48 CFY <nodecellar_v13_03_d4> [mongod_5e673.create] Sending task 'script_runner.tasks.run'
+2016-03-13T11:48:48 CFY <nodecellar_v13_03_d4> [mongod_5e673.create] Task started 'script_runner.tasks.run'
+2016-03-13T11:48:50 CFY <nodecellar_v13_03_d4> [nodejs_07c1b.create] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:48:50 CFY <nodecellar_v13_03_d4> [nodejs_07c1b] Configuring node
+2016-03-13T11:48:51 CFY <nodecellar_v13_03_d4> [nodejs_07c1b] Starting node
+2016-03-13T11:49:02 CFY <nodecellar_v13_03_d4> [mongod_5e673.create] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:02 CFY <nodecellar_v13_03_d4> [mongod_5e673] Configuring node
+2016-03-13T11:49:02 CFY <nodecellar_v13_03_d4> [mongod_5e673.configure] Sending task 'script_runner.tasks.run'
+2016-03-13T11:49:02 CFY <nodecellar_v13_03_d4> [mongod_5e673.configure] Task started 'script_runner.tasks.run'
+2016-03-13T11:49:07 CFY <nodecellar_v13_03_d4> [mongod_5e673.configure] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:07 CFY <nodecellar_v13_03_d4> [mongod_5e673] Starting node
+2016-03-13T11:49:07 CFY <nodecellar_v13_03_d4> [mongod_5e673.start] Sending task 'script_runner.tasks.run'
+2016-03-13T11:49:07 CFY <nodecellar_v13_03_d4> [mongod_5e673.start] Task started 'script_runner.tasks.run'
+2016-03-13T11:49:18 CFY <nodecellar_v13_03_d4> [mongod_5e673.start] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:18 CFY <nodecellar_v13_03_d4> [mongod_5e673.start] Sending task 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:49:18 CFY <nodecellar_v13_03_d4> [mongod_5e673.start] Task started 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:49:20 CFY <nodecellar_v13_03_d4> [mongod_5e673.start] Task succeeded 'diamond_agent.tasks.add_collectors'
+2016-03-13T11:49:20 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10] Creating node
+2016-03-13T11:49:20 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10->nodejs_07c1b|preconfigure] Sending task 'script_runner.tasks.run'
+2016-03-13T11:49:20 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10->nodejs_07c1b|preconfigure] Task started 'script_runner.tasks.run'
+2016-03-13T11:49:21 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10->nodejs_07c1b|preconfigure] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:21 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10] Configuring node
+2016-03-13T11:49:21 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10.configure] Sending task 'script_runner.tasks.run'
+2016-03-13T11:49:21 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10.configure] Task started 'script_runner.tasks.run'
+2016-03-13T11:49:47 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10.configure] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:47 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10->mongod_5e673|postconfigure] Sending task 'script_runner.tasks.run'
+2016-03-13T11:49:47 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10->mongod_5e673|postconfigure] Task started 'script_runner.tasks.run'
+2016-03-13T11:49:48 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10->mongod_5e673|postconfigure] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:48 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10] Starting node
+2016-03-13T11:49:48 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10.start] Sending task 'script_runner.tasks.run'
+2016-03-13T11:49:48 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10.start] Task started 'script_runner.tasks.run'
+2016-03-13T11:49:52 CFY <nodecellar_v13_03_d4> [nodecellar_4ef10.start] Task succeeded 'script_runner.tasks.run'
+2016-03-13T11:49:52 CFY <nodecellar_v13_03_d4> 'install' workflow execution succeeded
+Finished executing workflow 'install' on deployment 'nodecellar_v13_03_d4'
+* Run 'cfy events list --include-logs --execution-id ad8c396a-1935-4744-a5e9-23e8a4b63170' to retrieve the execution's events/logs
+=============================================================
+post_installation: execution id : 1457869536493_453100
+=============================================================
+Deactivating virtualenv 'cfy_3_3_1ga_env'

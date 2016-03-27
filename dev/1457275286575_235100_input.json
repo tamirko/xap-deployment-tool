@@ -1,0 +1,14 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "1",
+    "applicationName": "*serwerwe",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "actualNodeTemplates": [
+        {
+            "name": "d3"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true
+}

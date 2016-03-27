@@ -1,0 +1,75 @@
+<div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="datacentred_generaldata_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+    <span ng-model="data.deployApplication"></span>
+    <div class="dt-form">
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label dt-panelname">{{ currentProvider.label }} General Data</div> <!-- todo: use i18n -->
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Cloudify Version</div> <!-- todo: use i18n -->
+                <div class="dt-shortinput"><select ng-options="cfyversion.id as cfyversion.label for cfyversion in cfyversions" ng-model="data.cfyversion"></select></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Application Name</div> <!-- todo: use i18n -->
+
+                <div class="dt-input"><input type="text" ng-init="data.applicationName=data.applicationName || '*'" ng-model="data.applicationName"
+                                             typeahead-on-select="selectApplicationName($item, $model, $label)"
+                                             typeahead="app.model.label  for apps in getApplicationNameSuggestion() | filter:$viewValue"/></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">{{ currentProvider.label }} Region</div> <!-- todo: use i18n -->
+                <div class="dt-input"><select ng-options="item.id as item.label for item in availabilityZones" ng-model="data.region"></select></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Application Source</div> <!-- todo: use i18n -->
+                <!-- <div class="dt-input"><select ng-change="setApplicationSource(data.applicationSources)" ng-init="data.applicationSources = applicationSources[0].id" ng-options="item.id as item.label for item in applicationSources" ng-model="data.applicationSources"></select></div> -->
+                <div class="dt-input"><select ng-change="setApplicationSource(data.applicationSources)" ng-options="item.id as item.label for item in applicationSources" ng-model="data.applicationSources"></select></div>
+            </div>
+            <div ng-hide="usingThisCatalog()" ng-switch on="data.applicationSources" class="dt-form-section login-details-section">
+                <div class="dt-label" ng-switch-when="2">GitHub Repository URL</div> <!-- todo: use i18n -->
+                <div class="dt-label" ng-switch-when="3">Zip file URL</div> <!-- todo: use i18n -->
+                <div class="dt-longinput" ng-switch-when="2"><input ng-init="data.githuburl='https://github.com/tamirko/cloudify-deployment-tool-apps.git'" ng-model="data.githuburl"/></div>
+                <div class="dt-longinput" ng-switch-when="3"><input ng-init="data.zipurl='http://mysite.com/myfile.zip'" ng-model="data.zipurl"/></div>
+            </div>
+            <div ng-hide="usingThisCatalog()" ng-switch on="data.applicationSources" class="dt-form-section login-details-section">
+                <div class="dt-label" ng-switch-when="2">GitHub Tag / Branch / Master ?</div> <!-- todo: use i18n -->
+                <div class="dt-input" ng-switch-when="2"><select ng-init="data.tagBranchTypes = tagBranchTypes[2].id" ng-options="item.id as item.label for item in tagBranchTypes" ng-model="data.tagBranchTypes"></select></div>
+            </div>
+            <div ng-show="usingGitHubRepo()" ng-switch on="data.tagBranchTypes" class="dt-form-section login-details-section">
+                <div class="dt-label" ng-switch-when="1">GitHub Tag Name</div> <!-- todo: use i18n -->
+                <div class="dt-input" ng-switch-when="1"><input ng-model="data.githubtag"/></div>
+                <div class="dt-label" ng-switch-when="2">GitHub Branch Name</div> <!-- todo: use i18n -->
+                <div class="dt-input" ng-switch-when="2"><input ng-model="data.githubbranch"/></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Blueprint file name</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-init="data.blueprintFileName='blueprint.yaml'" ng-model="data.blueprintFileName"/></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Blueprint Suffix</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.blueprintName"/></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="datacentred_generaldata_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="datacentred_generaldata_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+</div>

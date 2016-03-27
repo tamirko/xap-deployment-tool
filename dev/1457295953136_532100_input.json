@@ -1,0 +1,52 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "2",
+    "applicationName": "Jenkins",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "cfyversion": "3.3.1GA",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0-103",
+    "managementsubnetname": "mngmnt-subnet-0-103",
+    "servername": "server-0-103",
+    "managementrouter": "mngmnt-router-0-103",
+    "managerportname": "mngr-port-0-103",
+    "managersecuritygroup": "mngr-sec-grp-0-103",
+    "agentsecuritygroup": "agent-sec-grp-0-103",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0-103.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0-103.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0-103",
+    "agentpublickeyname": "cloudify-agent-public-kp-0-103",
+    "existingMngrIPaddress": "185.43.218.157",
+    "actualNodeTemplates": [
+        {
+            "name": "node1",
+            "datacentredos": "7ee4e47a-5080-4328-8e75-1c1a2cd85bac",
+            "datacentredflavor": "c871d2fc-c6df-41ab-8a89-6ddc5d8137d0",
+            "agentshuser": "ub15"
+        },
+        {
+            "datacentredos": "621f75b6-8d28-47cf-9607-ae73943503b1",
+            "name": "centos6",
+            "datacentredflavor": "bf6dbcab-f0a5-49d7-b427-0ee09cc5f583",
+            "agentshuser": "root"
+        },
+        {
+            "name": "node3",
+            "datacentredos": "742e0414-c985-4994-b307-4aafade942b3",
+            "agentshuser": "fed",
+            "datacentredflavor": "b8e8ab6a-5480-478c-b1de-b09050683d7d"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true,
+    "githuburl": "https://github.com/tamirko/cloudify-deployment-tool-apps.git",
+    "tagBranchTypes": "3",
+    "blueprintName": "_March_06_v3"
+}

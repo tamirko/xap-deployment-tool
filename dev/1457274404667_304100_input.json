@@ -1,0 +1,11 @@
+{
+    "provider": "datacentred",
+    "actualNodeTemplates": [
+        {
+            "name": "aaa1"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true,
+    "deployApplication": true
+}

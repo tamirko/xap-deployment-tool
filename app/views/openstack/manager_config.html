@@ -1,0 +1,144 @@
+<div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="openstack_mngr_config_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} Manager Configuration</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Bootstrap a new Cloudify manager &nbsp;
+                    <button ng-show="!need2UseExistingManager()" class="dt-checkbox-btn enabled-icon" ng-click="toggleExistingManager()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="need2UseExistingManager()" class="dt-checkbox-btn disabled-icon" ng-click="toggleExistingManager()">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Freeze Cloudify manager on failure &nbsp;
+                    <button ng-disabled="need2UseExistingManager()" ng-show="need2FreezeManager()" class="dt-checkbox-btn enabled-icon" ng-click="toggleFreezeManager()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-disabled="need2UseExistingManager()" ng-show="!need2FreezeManager()" class="dt-checkbox-btn disabled-icon" ng-click="toggleFreezeManager()">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="dt-form">
+		    <div class="dt-form-row">
+			    <div ng-show="need2UseExistingManager()" class="dt-form-section login-details-section">
+				    <div class="dt-label">Insert existing manager's IP address</div> <!-- todo: use i18n -->
+				    <div class="dt-input"><input ng-model="data.existingMngrIPaddress"/></div>
+			    </div>
+		    </div>
+
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">Oprerating System</div> <!-- todo: use i18n -->
+                    <div class="dt-extralonginput"><select class="dt-extralonginput" ng-options="openstackos.id as openstackos.label for openstackos in openstackoss" ng-model="data.openstackos"></select></div>
+                </div>
+
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">SSH User Name</div> <!-- todo: use i18n -->
+                    <div class="dt-input"><input ng-model="data.managersshuser"/></div>
+                </div>
+            </div>
+
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">Flavor</div> <!-- todo: use i18n -->
+                    <div class="dt-extralonginput"><select class="dt-extralonginput" ng-options="openstackflavor.id as openstackflavor.label for openstackflavor in openstackflavors" ng-model="data.openstackflavor"></select></div>
+                </div>
+            </div>
+
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">Management Network Name</div> <!-- todo: use i18n -->
+                    <div class="dt-label dt-input"><input ng-model="data.managementnetworkname">&nbsp;Create a new management network?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button ng-show="!existingNetworkIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleExistingNetwork()">
+                            <i class="fa fa-toggle-on"/>Yes
+                        </button>
+                        <button ng-show="existingNetworkIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleExistingNetwork()">
+                            <i class="fa fa-toggle-off"/>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">Management Subnet Name</div> <!-- todo: use i18n -->
+                    <div class="dt-label dt-input"><input ng-model="data.managementnetworkname">&nbsp;Create a new subnet?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button ng-show="!existingSubnetIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleExistingSubnet()">
+                            <i class="fa fa-toggle-on"/>Yes
+                        </button>
+                        <button ng-show="existingSubnetIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleExistingSubnet()">
+                            <i class="fa fa-toggle-off"/>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">External Network Name</div> <!-- todo: use i18n -->
+                    <div class="dt-label dt-input"><input ng-model="data.externalnetworkname">&nbsp;Create a new external network?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button ng-show="!existingExternalNetworkIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleExternalExistingNetwork()">
+                            <i class="fa fa-toggle-on"/>Yes
+                        </button>
+                        <button ng-show="existingExternalNetworkIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleExternalExistingNetwork()">
+                            <i class="fa fa-toggle-off"/>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div class="dt-label">Security Group Name</div> <!-- todo: use i18n -->
+                    <div class="dt-label dt-input"><input ng-model="data.managersecuritygroup">&nbsp;Create a new Security Group?&nbsp;
+                        <button ng-show="!existingSecurityGroupIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleExistingSecurityGroup()">
+                            <i class="fa fa-toggle-on"/>Yes
+                        </button>
+                        <button ng-show="existingSecurityGroupIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleExistingSecurityGroup()">
+                            <i class="fa fa-toggle-off"/>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dt-form-row">
+                <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                    <div title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" class="dt-label">Additional CFY properties (commma separated)</div> <!-- todo: use i18n -->
+                    <div title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" class="dt-longinput"><input ng-model="data.moreprops"/></div>
+                </div>
+            </div>
+            <div ng-show="!need2UseExistingManager()" class="dt-form-row">
+                <div class="dt-form-section login-details-section">
+                    <div title="e.g.: https://www.mySite.com/pre_bootstrap.sh&#010-Use this with caution !!!" class="dt-label">Pre bootstrap script</div> <!-- todo: use i18n -->
+                    <div title="e.g.: https://www.mySite.com/pre_bootstrap.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.prebootstrapscript"/></div>
+                </div>
+            </div>
+	    </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="openstack_mngr_config_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="openstack_mngr_config_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+</div>

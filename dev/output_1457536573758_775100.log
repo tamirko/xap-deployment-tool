@@ -1,0 +1,111 @@
+ 
+=============================================================
+The time and date is 03/09/2016 17:16:13
+Execution ID: 1457536573758_775100F
+Execution folder is /home/tamirk/dt_executions/1457536573758_775100
+Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457536573758_775100.log
+=============================================================
+set_virtualenv: execution id : 1457536573758_775100
+Activating virtualenv 'cfy_3_3_1ga_env'
+=============================================================
+install_cfy: execution id : 1457536573758_775100
+/home/tamirk/cfy_versions_root /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+----------------------------------------------------------
+Running installCfy.sh ... 
+  Required CFY VERSION      : 3.3.1GA
+  CFY_MINOR_VERSION is      : 3.3.1
+  PLUGINS_MINOR_VERSION is  : 1.3.1
+  CFY_GIT_TAG_BRANCH is     : ga
+  PLUGINS_GIT_TAG_BRANCH is : ga
+Cloudify 3.3.1 ga version already exists (/home/tamirk/cfy_versions_root/3.3.1/ga). -Moving on.
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+install_cfy_cloud_provider_plugin: execution id : 1457536573758_775100
+Cloud Provider                           : datacentred
+Cloud user name                          : undefined
+Application name                         : JBoss
+Upload Blueprints ?                      : true
+Blueprint suffix                         : 0903_v2
+Blueprint file name                      : blueprint.yaml
+Deploy_Application ?                     : true
+Deployment name                          : deploy0903
+CFY_DATA_CENTRED_REGION                  : sal01 ...
+CFY_DATA_CENTRED_OS                      : 74ff4015-aee1-4e02-aaa8-1c77b2650394 ...
+CFY_DATA_CENTRED_MANAGER_SSH_USER        : undefined ...
+CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : undefined ...
+CFY_DATA_CENTRED_AGENT_SSH_USER          : undefined ...
+CFY_DATA_CENTRED_SERVER_NAME             : server-0203 ...
+CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : mngmnt-net-0203 ...
+CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : mngmnt-subnet-0203 ...
+CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : mngmnt-router-0203 ...
+CFY_DATA_CENTRED_MANAGER_PORT_NAME       : mngr-port-0203 ...
+CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : mngr-sec-grp-0203 ...
+CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : agent-sec-grp-0203 ...
+CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : ~/.ssh/cloudify-manager-kp-0203.pem ...
+CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : ~/.ssh/cloudify-agent-kp-0203.pem ...
+CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : cloudify-manager-public-kp-0203 ...
+CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : cloudify-agent-public-kp-0203 ...
+Existing Manager IP address              : 185.43.218.157
+Use existing Manager                     : true
+Freeze the manager on failure            : false
+manager_blueprint_file                   : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint.yaml
+manager_blueprint_inputs_file            : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint-inputs.yaml
+=============================================================
+pre_bootstrap: execution id : 1457536573758_775100
+=============================================================
+run_bootstrap: execution id : 1457536573758_775100
+/home/tamirk/dt_executions/1457536573758_775100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Cloudify CLI 3.3.1
+Cloudify Manager 3.3.1 [ip=185.43.218.157]
+Initialization completed successfully
+Using an existing Cloudify manager
+No Need to bootstrap, running cfy use -t 185.43.218.157
+Using management server 185.43.218.157 with port 80
+=============================================================
+pre_blueprint_upload: execution id : 1457536573758_775100
+=============================================================
+blueprints_upload: execution id : 1457536573758_775100
+Not using a Git Repository
+=============================================================
+pre_deployment_creation: execution id : 1457536573758_775100
+=============================================================
+populate_node_templates: execution id : 1457536573758_775100
+/home/tamirk/dt_executions/1457536573758_775100
+Populating node templates of the JBoss application
+The blueprint name will be 
+Deployment name is deploy0903
+./scripts/run_deploy.sh: line 465: cd: HOME not set
+./scripts/run_deploy.sh: line 467: pushd: JBoss: No such file or directory
+total 0
+NODE_TEMPLATE_1_NAME is JBoss-VM
+-------------------------------------------------------------
+create_current_node_template_file: execution id : JBoss-VM
+grep: blueprint.yaml: No such file or directory
+Didn't find section JBoss-VM
+sed: -e expression #1, char 1: unknown command: `,'
+wc: blueprint.yaml: No such file or directory
+tail: cannot open 'blueprint.yaml' for reading: No such file or directory
+JBoss-VM is the last section
+currStatus is 0
+NODE_TEMPLATE_1_DATACENTRED_FLAVOR is c4b193d2-f331-4250-9b15-bbfde97c462a
+grep: JBoss-VM: No such file or directory
+NODE_TEMPLATE_1_DATACENTRED_OS is 92419b6a-772e-4f6f-ae07-4ba8e7553486
+grep: JBoss-VM: No such file or directory
+NODE_TEMPLATE_1_DATACENTRED_AGENT_USER is ub15user
+grep: JBoss-VM: No such file or directory
+NODE_TEMPLATE_1_DATACENTRED_MORE_PROPS is unset
+Ignoring it ... 
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+create_deployment: execution id : 1457536573758_775100
+usage: cfy deployments create [-h] [-d DEPLOYMENT_ID] [-i INPUTS] -b
+                              BLUEPRINT_ID [-v] [--debug]
+cfy deployments create: error: argument -b/--blueprint-id: expected one argument
+=============================================================
+pre_installation: execution id : 1457536573758_775100
+=============================================================
+post_installation: execution id : 1457536573758_775100
+=============================================================
+Deactivating virtualenv 'cfy_3_3_1ga_env'

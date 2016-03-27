@@ -1,0 +1,13 @@
+# Azure
+export CFY_LOGIN_USER=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+export CFY_AZURE_CLIENTID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+export CFY_AZURE_TENANTID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+export CFY_AZURE_ACTIVEDIRECTORY_PASSW=xxxxxxxx
+
+
+# DataCentred
+export DATA_CENTRED_KEYSTONE_USERNAME=xxxx@xxxx.xxxx
+export DATA_CENTRED_KEYSTONE_PASSWORD=xxxxxxxx
+export DATA_CENTRED_KEYSTONE_TENANT_NAME=xxxx_xxxx
+export DATA_CENTRED_KEYSTONE_URL=https://xxxx.xxxx.xxxx:5000/
+

@@ -1,0 +1,148 @@
+<div class="node-templates-step">
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="openstack_node_template_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} Node Template</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Upload the blueprint &nbsp;
+                    <button ng-show="need2UploadBlueprint()" class="dt-checkbox-btn enabled-icon" ng-click="toggleUploadBlueprint()" ng-model="data.uploadtheblueprint">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="!need2UploadBlueprint()" class="dt-checkbox-btn disabled-icon" ng-click="toggleUploadBlueprint()" ng-model="data.uploadtheblueprint">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Deploy the application &nbsp;
+                    <button ng-show="need2DeployApplication()" class="dt-checkbox-btn enabled-icon" ng-click="toggleDeployApplication()" ng-model="data.deploytheapplication">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="!need2DeployApplication()" class="dt-checkbox-btn disabled-icon" ng-click="toggleDeployApplication()" ng-model="data.deploytheapplication">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div ng-show="need2UploadBlueprint()" class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div ng-show="need2UploadBlueprint()" title="e.g.: https://www.mySite.com/pre_blueprint_upload_script.sh&#010-Use this with caution !!!" class="dt-label">Pre blueprint upload</div> <!-- todo: use i18n -->
+                <div ng-show="need2UploadBlueprint()" title="e.g.: https://www.mySite.com/pre_blueprint_upload_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.preblueprintuploadscript"/></div>
+            </div>
+        </div>
+
+
+        <div ng-show="need2DeployApplication()" class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/pre_deployment_creation_script.sh&#010-Use this with caution !!!" class="dt-label">Pre deployment creation</div> <!-- todo: use i18n -->
+                <div title="e.g.: https://www.mySite.com/pre_deployment_creation_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.predeploymentcreationscript"/></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/pre_install_script.sh&#010-Use this with caution !!!" class="dt-label">Pre installation</div> <!-- todo: use i18n -->
+                <div title="e.g.: https://www.mySite.com/pre_install_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.preinstallscript"/></div>
+            </div>
+        </div>
+
+        <div  ng-show="need2DeployApplication()" class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-label">Post installation</div> <!-- todo: use i18n -->
+                <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.postinstallscript"/></div>
+            </div>
+        </div>
+
+
+
+	</div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="openstack_node_template_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable Node templates UI debugging <input type="checkbox" ng-model="openstack_node_templates_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div id="nodeTemplates"></div>
+
+    <div id="nodeTemplateElem1" class="dt-form" ng-repeat="nodeTemplate in nodeTemplates">
+
+        <div class="dt-uidebugbg" ng-show="openstack_node_templates_ui_debug_enabled">{{nodeTemplates}}</div>
+
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Node Template Name #{{$index+1}}</div> <!-- todo: use i18n -->
+				<div class="dt-input"><input  ng-model="nodeTemplate.name"/></div>
+			</div>
+
+            <div class="dt-form-section login-details-section">
+                <div ng-show="canApplyToAll()" class="dt-emphasized-label">Apply these settings to all node templates &nbsp;
+                    <button ng-show="apply2AllIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleApply2All()" ng-model="data.apply2AllNodeTemplates">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="!apply2AllIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleApply2All()" ng-model="data.apply2AllNodeTemplates">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+    		    </div>
+            </div>
+        </div>
+
+        <div class="dt-form-row">
+            <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                <div class="dt-label">Oprerating System</div> <!-- todo: use i18n -->
+                <div class="dt-extralonginput"><select ng-options="openstackos.id as openstackos.label for openstackos in openstackoss" ng-model="data.openstackos"></select></div>
+            </div>
+
+            <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                <div class="dt-label">Agent SSH User Name</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-model="data.managersshuser"/></div>
+            </div>
+        </div>
+
+        <div class="dt-form-row">
+            <div ng-show="!need2UseExistingManager()" class="dt-form-section login-details-section">
+                <div class="dt-label">Flavor</div> <!-- todo: use i18n -->
+                <div class="dt-extralonginput"><select ng-options="openstackflavor.id as openstackflavor.label for openstackflavor in openstackflavors" ng-model="data.openstackflavor"></select></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <button ng-show="!apply2AllIsEnabled()" class="dt-instruction-btn" ng-click="addNodeTemplate()">+ Add node template</button>
+            </div>
+            <div class="dt-form-section">
+                <button ng-show="canRemoveNodeTemplate()" class="dt-instruction-btn" ng-click="removeNodeTemplate($index)">- Remove this node template</button>
+            </div>
+        </div>
+	</div>
+
+    <div class="dt-form">
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable Node templates UI debugging <input type="checkbox" ng-model="openstack_node_templates_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="openstack_node_template_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="openstack_node_template_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+</div>

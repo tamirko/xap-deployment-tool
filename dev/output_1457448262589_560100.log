@@ -1,0 +1,151 @@
+ 
+=============================================================
+The time and date is 03/08/2016 16:44:22
+Execution ID: 1457448262589_560100F
+Execution folder is /home/tamirk/dt_executions/1457448262589_560100
+Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457448262589_560100.log
+=============================================================
+set_virtualenv: execution id : 1457448262589_560100
+Activating virtualenv 'cfy_3_3_1ga_env'
+=============================================================
+install_cfy: execution id : 1457448262589_560100
+/home/tamirk/cfy_versions_root /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+----------------------------------------------------------
+Running installCfy.sh ... 
+  Required CFY VERSION      : 3.3.1GA
+  CFY_MINOR_VERSION is      : 3.3.1
+  PLUGINS_MINOR_VERSION is  : 1.3.1
+  CFY_GIT_TAG_BRANCH is     : ga
+  PLUGINS_GIT_TAG_BRANCH is : ga
+Cloudify 3.3.1 ga version already exists (/home/tamirk/cfy_versions_root/3.3.1/ga). -Moving on.
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+install_cfy_cloud_provider_plugin: execution id : 1457448262589_560100
+Cloud Provider                           : datacentred
+Cloud user name                          : undefined
+Application name                         : bs
+Upload Blueprints ?                      : true
+Blueprint suffix                         : tamirko_march8th_v2
+Blueprint file name                      : bosskin_blueprint.yaml
+Deploy_Application ?                     : true
+CFY_DATA_CENTRED_REGION                  : sal01 ...
+CFY_DATA_CENTRED_OS                      : 74ff4015-aee1-4e02-aaa8-1c77b2650394 ...
+CFY_DATA_CENTRED_MANAGER_SSH_USER        : undefined ...
+CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : undefined ...
+CFY_DATA_CENTRED_AGENT_SSH_USER          : undefined ...
+CFY_DATA_CENTRED_SERVER_NAME             : server-0103 ...
+CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : mngmnt-net-0103 ...
+CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : mngmnt-subnet-0103 ...
+CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : mngmnt-router-0103 ...
+CFY_DATA_CENTRED_MANAGER_PORT_NAME       : mngr-port-0103 ...
+CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : mngr-sec-grp-0103 ...
+CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : agent-sec-grp-0103 ...
+CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : ~/.ssh/cloudify-manager-kp-0103.pem ...
+CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : ~/.ssh/cloudify-agent-kp-0103.pem ...
+CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : cloudify-manager-public-kp-0103 ...
+CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : cloudify-agent-public-kp-0103 ...
+Existing Manager IP address              : 185.43.218.157
+Use existing Manager                     : true
+Freeze the manager on failure            : false
+manager_blueprint_file                   : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint.yaml
+manager_blueprint_inputs_file            : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint-inputs.yaml
+=============================================================
+pre_bootstrap: execution id : 1457448262589_560100
+=============================================================
+run_bootstrap: execution id : 1457448262589_560100
+/home/tamirk/dt_executions/1457448262589_560100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Cloudify CLI 3.3.1
+Cloudify Manager 3.3.1 [ip=185.43.218.157]
+Initialization completed successfully
+Using an existing Cloudify manager
+No Need to bootstrap, running cfy use -t 185.43.218.157
+Using management server 185.43.218.157 with port 80
+=============================================================
+pre_blueprint_upload: execution id : 1457448262589_560100
+=============================================================
+blueprints_upload: execution id : 1457448262589_560100
+Cloning into 'cloudify-deployment-tool-apps'...
+Using the repository's master branch
+/home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457448262589_560100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+/home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps/bs /home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457448262589_560100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Uploading bs ...
+Validating bosskin_blueprint.yaml
+Blueprint validated successfully
+Uploading blueprint bosskin_blueprint.yaml to management server 185.43.218.157
+Uploaded blueprint, blueprint's id is: bstamirko_march8th_v2
+Done uploading bs
+/home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457448262589_560100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+/home/tamirk/dt_executions/1457448262589_560100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+=============================================================
+pre_deployment_creation: execution id : 1457448262589_560100
+=============================================================
+populate_node_templates: execution id : 1457448262589_560100
+/home/tamirk/dt_executions/1457448262589_560100
+/home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps/bs /home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Populating node templates of the bs application
+The blueprint name will be bstamirko_march8th_v2
+Deployment name is xxx
+total 60
+-rw-rw-r-- 1 tamirk tamirk 20182 Mar  8 16:45 bosskin_blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk   540 Mar  8 16:45 bosskin_blueprint_inputs.yaml
+drwxrwxr-x 2 tamirk tamirk  4096 Mar  8 16:45 config
+-rw-rw-r-- 1 tamirk tamirk  4600 Mar  8 16:45 jboss_blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk   180 Mar  8 16:45 jboss_blueprint_inputs.yaml
+-rw-rw-r-- 1 tamirk tamirk  5241 Mar  8 16:45 jenkins_blueprint.yaml
+-rw-rw-r-- 1 tamirk tamirk   370 Mar  8 16:45 jenkins_blueprint_inputs.yaml
+drwxrwxr-x 3 tamirk tamirk  4096 Mar  8 16:45 plugins
+drwxrwxr-x 2 tamirk tamirk  4096 Mar  8 16:45 scripts
+NODE_TEMPLATE_1_NAME is AMQ_HOST_ip
+-------------------------------------------------------------
+create_current_node_template_file: execution id : AMQ_HOST_ip
+Found the AMQ_HOST_ip in line #613
+currStatus is 0
+pre node template file is pre_AMQ_HOST_ip
+node template file is AMQ_HOST_ip
+post node template file post_
+NODE_TEMPLATE_1_DATACENTRED_FLAVOR is c4b193d2-f331-4250-9b15-bbfde97c462a
+NODE_TEMPLATE_1_DATACENTRED_OS is 1fe2dc6e-3c64-43c0-989b-95cd4e073795
+NODE_TEMPLATE_1_DATACENTRED_AGENT_USER is ccuiser
+NODE_TEMPLATE_1_DATACENTRED_MORE_PROPS is unset
+Ignoring it ... 
+NODE_TEMPLATE_2_NAME is MED_HOST_security_group
+-------------------------------------------------------------
+create_current_node_template_file: execution id : MED_HOST_security_group
+Found the MED_HOST_security_group in line #513
+currStatus is 0
+pre node template file is pre_MED_HOST_security_group
+node template file is MED_HOST_security_group
+post node template file post_
+NODE_TEMPLATE_2_DATACENTRED_FLAVOR is c871d2fc-c6df-41ab-8a89-6ddc5d8137d0
+NODE_TEMPLATE_2_DATACENTRED_OS is 5374b489-1c8a-4056-bb1e-0d6a9eaf9870
+NODE_TEMPLATE_2_DATACENTRED_AGENT_USER is sshuser
+NODE_TEMPLATE_2_DATACENTRED_MORE_PROPS is unset
+Ignoring it ... 
+NODE_TEMPLATE_3_NAME is AFP_ActiveMQ
+-------------------------------------------------------------
+create_current_node_template_file: execution id : AFP_ActiveMQ
+Found the AFP_ActiveMQ in line #617
+currStatus is 0
+pre node template file is pre_AFP_ActiveMQ
+node template file is AFP_ActiveMQ
+post node template file post_
+NODE_TEMPLATE_3_DATACENTRED_FLAVOR is af2a80fe-ccad-43df-8cae-6418da948467
+NODE_TEMPLATE_3_DATACENTRED_OS is 74ff4015-aee1-4e02-aaa8-1c77b2650394
+NODE_TEMPLATE_3_DATACENTRED_AGENT_USER is sddfdsafs
+NODE_TEMPLATE_3_DATACENTRED_MORE_PROPS is unset
+Ignoring it ... 
+/home/tamirk/dt_executions/1457448262589_560100/cloudify-deployment-tool-apps /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+create_deployment: execution id : 1457448262589_560100
+=============================================================
+pre_installation: execution id : 1457448262589_560100
+=============================================================
+post_installation: execution id : 1457448262589_560100
+=============================================================
+Deactivating virtualenv 'cfy_3_3_1ga_env'

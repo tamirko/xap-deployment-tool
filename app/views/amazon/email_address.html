@@ -1,0 +1,41 @@
+<div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="amazon_email_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} Email Panel</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="nodeTemplateElem1" class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Email Address</div> <!-- todo: use i18n -->
+				<div class="dt-input"><input ng-model="data.emailaddresses"/></div>
+				<div class="dt-label">&nbsp;</div> <!-- todo: use i18n -->
+				<div class="dt-label">You can insert a comma separated list of email addresses</div> <!-- todo: use i18n -->
+				<div class="dt-label">We will use it to notify the addressees about the status of the deployment </div> <!-- todo: use i18n -->
+
+			</div>
+		</div>
+	</div>
+
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="amazon_email_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="amazon_email_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+</div>

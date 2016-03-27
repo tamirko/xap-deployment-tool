@@ -1,0 +1,56 @@
+<div class="cloud-login-details-container">
+    <div class="cloud-login-details-content">
+        <!-- todo: make per provider content -->
+        <!--<div class="dt-form-row">
+            <div class="dt-uidebugbg">Login Data : {{logindata}}</div>
+        </div> -->
+        <div class="dt-form-horizontal" ng-switch on="provider">
+			<div class="{{ provider }}">
+				<div class="dt-form-section login-details-section">
+						<div class="dt-label" ng-switch-when="softlayer">SoftLayer User</div> <!-- todo: use i18n -->
+						<div class="dt-label" ng-switch-when="amazon">AWS API Key</div> <!-- todo: use i18n -->
+						<div class="dt-label" ng-switch-when="openstack">OpenStack KeyStone User</div> <!-- todo: use i18n -->
+						<div class="dt-label" ng-switch-when="datacentred">DataCentred User</div> <!-- todo: use i18n -->
+						<div class="dt-label" ng-switch-when="azure">Subscription ID</div> <!-- todo: use i18n -->
+						<div class="dt-label" ng-switch-when="hostpool">Service End Point URL</div> <!-- todo: use i18n -->
+
+                        <div class="dt-input" ng-switch-when="softlayer"><input ng-model="data.user"/></div>
+                        <div class="dt-input" ng-switch-when="amazon"><input ng-model="data.user"/></div>
+                        <div class="dt-input" ng-switch-when="openstack"><input ng-model="data.user"/></div>
+                        <div class="dt-input" ng-switch-when="datacentred"><input ng-model="data.user"/></div>
+                        <div class="dt-input" ng-switch-when="azure"><input ng-model="data.user"/></div>
+                        <div class="dt-input" ng-switch-when="hostpool"><input ng-model="data.user"/></div>
+
+                    <div class="dt-label" ng-switch-when="azure">CLIENT ID</div> <!-- todo: use i18n -->
+						<div class="dt-input" ng-switch-when="azure"><input ng-model="data.azureclientid" type="password"/></div>
+				</div>
+				<div class="dt-form-section login-details-section">
+                    <div class="dt-label" ng-switch-when="softlayer">SoftLayer API Key</div> <!-- todo: use i18n -->
+                    <div class="dt-label" ng-switch-when="amazon">AWS API Secret Key</div> <!-- todo: use i18n -->
+                    <div class="dt-label" ng-switch-when="openstack">OpenStack Password</div> <!-- todo: use i18n -->
+                    <div class="dt-label" ng-switch-when="datacentred">DataCentred Password</div> <!-- todo: use i18n -->
+					<div class="dt-label" ng-switch-when="azure">TENANT ID</div> <!-- todo: use i18n -->
+					<div class="dt-label" ng-switch-when="hostpool">Service Port</div> <!-- todo: use i18n -->
+
+                    <div class="dt-input" ng-switch-when="softlayer"><input ng-model="data.apiKey" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="amazon"><input ng-model="data.apiKey" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="openstack"><input ng-model="data.keystonepassword" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="datacentred"><input ng-model="data.keystonepassword" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="azure"><input ng-model="data.tenantid" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="hostpool"><input ng-model="data.apiKey"/></div>
+					<div class="dt-label" ng-switch-when="azure">AAD Password</div> <!-- todo: use i18n -->
+					<div class="dt-input" ng-switch-when="azure"><input ng-model="data.aadpassword" type="password"/></div>
+                    <div class="dt-label" ng-switch-when="openstack">OpenStack Tenant</div> <!-- todo: use i18n -->
+                    <div class="dt-label" ng-switch-when="datacentred">DataCentred Tenant</div> <!-- todo: use i18n -->
+                    <div class="dt-input" ng-switch-when="openstack"><input ng-model="data.keystonetenant" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="datacentred"><input ng-model="data.keystonetenant" type="password"/></div>
+                    <div class="dt-label" ng-switch-when="openstack">OpenStack KeyStone URL</div> <!-- todo: use i18n -->
+                    <div class="dt-label" ng-switch-when="datacentred">DataCentred KeyStone URL</div> <!-- todo: use i18n -->
+                    <div class="dt-input" ng-switch-when="openstack"><input ng-model="data.keystoneurl" type="password"/></div>
+                    <div class="dt-input" ng-switch-when="datacentred"><input ng-model="data.keystoneurl" type="password"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

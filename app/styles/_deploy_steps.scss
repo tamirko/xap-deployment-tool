@@ -1,0 +1,54 @@
+[deploy-steps]{
+    ul, li{
+        padding:0;margin:0;list-style: none;
+        position:relative;
+    }
+
+    li{
+
+        padding-left:20px;
+        padding-top:32px;
+        padding-bottom:24px;
+
+
+        span{
+            padding-right:17px;
+        }
+
+        &, span{
+            font-weight: bold;
+            font-size:13px;
+        }
+
+        :after{
+            background:white;
+            font-weight: normal;
+            position:absolute;
+            left:50%;
+            transform:translateX(-50%) translateY(-50%);
+            content:"\f13a";
+            top:100%;
+            display:block;
+            border-radius:20px;
+            font:normal normal normal 14px/1 FontAwesome
+        }
+
+        &.picked{
+            &, *{
+                color: $DEPLOY_STEPS_PICKED_TEXT_COLOR;
+
+            }
+            border-bottom:1px solid $DEPLOY_STEPS_PICKED_TEXT_COLOR;
+            border-right:1px solid $DEPLOY_STEPS_PICKED_TEXT_COLOR;
+            border-left:1px solid $DEPLOY_STEPS_PICKED_TEXT_COLOR;
+        }
+
+        // idle css
+        color: $DEPLOY_STEPS_IDLE_TEXT_COLOR;
+        border-bottom:1px solid $DEPLOY_STEPS_IDLE_BORDER_COLOR;
+        border-top:1px solid $DEPLOY_STEPS_IDLE_BORDER_COLOR;
+        border-right:1px solid $DEPLOY_STEPS_IDLE_BORDER_COLOR;
+        border-left:1px solid $DEPLOY_STEPS_IDLE_BORDER_COLOR;
+    }
+
+}

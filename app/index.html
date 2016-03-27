@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="bower_components/open-sans-fontface/open-sans.css" />
+    <!-- endbower -->
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css"/>
+      <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+      <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+
+
+      <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="demoApp">
+
+    <script src="backend/config?jsonp=config"></script>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+      <div ui-view=""></div>
+      <!--<div ng-view=""></div>-->
+
+
+    <!-- GUY: seems that bootstrap has a bug.. see here //https://github.com/angular-ui/bootstrap/issues/4817  -- for now overriding -->
+    <script id="template/typeahead/typeahead-match.html" type="text/ng-template">
+        <a href tabindex="-1" ng-bind-html="match.model | typeaheadHighlight:query"></a>
+    </script>
+
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.js"></script>
+    <script src="bower_components/angular-pageslide-directive/dist/angular-pageslide-directive.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <!-- endbower -->
+    <!--<script src="bower_components/angucomplete/angucomplete.js"></script>-->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.min.js"></script>
+    <script src="bower_components/angular-pageslide-directive/dist/angular-pageslide-directive.min.js"></script>
+
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/directives/cloudLoginDetails.js"></script>
+        <script src="scripts/directives/chooseProvider.js"></script>
+        <script src="scripts/directives/deploySteps.js"></script>
+        <script src="scripts/services/DeploymentToolService.js"></script>
+        <script src="scripts/services/CloudProvidersService.js"></script>
+        <script src="scripts/controllers/DeployLayout.js"></script>
+
+        <script src="scripts/controllers/SoftlayerGeneralData.js"></script>
+        <script src="scripts/controllers/SoftlayerManagerConfig.js"></script>
+        <script src="scripts/controllers/SoftlayerNodeTemplate.js"></script>
+        <script src="scripts/controllers/SoftlayerEmailAddress.js"></script>
+
+        <script src="scripts/controllers/DeployPageLayout.js"></script>
+        <script src="scripts/services/StepsService.js"></script>
+
+        <script src="scripts/controllers/AmazonGeneralData.js"></script>
+        <script src="scripts/controllers/AmazonManagerConfig.js"></script>
+        <script src="scripts/controllers/AmazonNodeTemplate.js"></script>
+        <script src="scripts/controllers/AmazonEmailAddress.js"></script>
+
+        <script src="scripts/controllers/OpenstackGeneralData.js"></script>
+        <script src="scripts/controllers/DatacentredGeneralData.js"></script>
+        <script src="scripts/controllers/OpenstackManagerConfig.js"></script>
+        <script src="scripts/controllers/DatacentredManagerConfig.js"></script>
+        <script src="scripts/controllers/OpenstackNodeTemplate.js"></script>
+        <script src="scripts/controllers/DatacentredNodeTemplate.js"></script>
+        <script src="scripts/controllers/OpenstackEmailAddress.js"></script>
+        <script src="scripts/controllers/DatacentredEmailAddress.js"></script>
+
+        <script src="scripts/controllers/AzureGeneralData.js"></script>
+        <script src="scripts/controllers/HostpoolGeneralData.js"></script>
+        <script src="scripts/controllers/AzureManagerConfig.js"></script>
+        <script src="scripts/controllers/HostpoolManagerConfig.js"></script>
+        <script src="scripts/controllers/AzureNodeTemplate.js"></script>
+        <script src="scripts/controllers/HostpoolNodeTemplate.js"></script>
+        <script src="scripts/controllers/AzureEmailAddress.js"></script>
+        <script src="scripts/controllers/HostpoolEmailAddress.js"></script>
+
+        <script src="scripts/directives/deployConsoleOutput.js"></script>
+        <script src="scripts/services/DeploymentToolClient.js"></script>
+        <script src="scripts/services/DeployRequestModel.js"></script>
+        <script src="scripts/controllers/UndeployDialog.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

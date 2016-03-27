@@ -1,0 +1,1202 @@
+ 
+=============================================================
+The time and date is 03/06/2016 17:41:26
+Execution ID: 1457278886257_63100F
+Execution folder is /home/tamirk/dt_executions/1457278886257_63100
+Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457278886257_63100.log
+=============================================================
+set_virtualenv: execution id : 1457278886257_63100
+Activating virtualenv 'cfy_undefined_env'
+=============================================================
+install_cfy: execution id : 1457278886257_63100
+/home/tamirk/cfy_versions_root /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+----------------------------------------------------------
+Running installCfy.sh ... 
+  Required CFY VERSION      : undefined
+  CFY_MINOR_VERSION is      : undef
+  PLUGINS_MINOR_VERSION is  : 1ndef
+  CFY_GIT_TAG_BRANCH is     : ined
+  PLUGINS_GIT_TAG_BRANCH is : ined
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+cfy_tag undefined
+cfy_plugin_tag 1ndefined
+git clone https://github.com/cloudify-cosmo/cloudify-dsl-parser.git
+Cloning into 'cloudify-dsl-parser'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-dsl-parser /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/undefined' did not match any file(s) known to git.
+pip installing cloudify-dsl-parser (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-dsl-parser
+Requirement already satisfied (use --upgrade to upgrade): PyYAML==3.10 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-dsl-parser==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-dsl-parser==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-dsl-parser==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): retrying==1.3.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-dsl-parser==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): six>=1.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from retrying==1.3.3->cloudify-dsl-parser==3.4a3)
+Installing collected packages: cloudify-dsl-parser
+  Running setup.py develop for cloudify-dsl-parser
+Successfully installed cloudify-dsl-parser-3.4a3
+/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-rest-client.git
+Cloning into 'cloudify-rest-client'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/undefined' did not match any file(s) known to git.
+pip installing cloudify-rest-client (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-rest-client==3.4a3)
+Installing collected packages: cloudify-rest-client
+  Running setup.py develop for cloudify-rest-client
+Successfully installed cloudify-rest-client
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-plugins-common.git
+Cloning into 'cloudify-plugins-common'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/undefined' did not match any file(s) known to git.
+pip installing cloudify-plugins-common (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-rest-client==3.4a3->cloudify-plugins-common==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify-plugins-common==3.4a3)
+Installing collected packages: cloudify-plugins-common
+  Running setup.py develop for cloudify-plugins-common
+Successfully installed cloudify-plugins-common
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-script-plugin.git
+Cloning into 'cloudify-script-plugin'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-script-plugin /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/1ndefined' did not match any file(s) known to git.
+pip installing cloudify-script-plugin (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-script-plugin
+Requirement already satisfied (use --upgrade to upgrade): cloudify-plugins-common>=3.4a1 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common (from cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-rest-client==3.4a3->cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify-plugins-common>=3.4a1->cloudify-script-plugin==1.4)
+Installing collected packages: cloudify-script-plugin
+  Running setup.py develop for cloudify-script-plugin
+Successfully installed cloudify-script-plugin
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-fabric-plugin.git
+Cloning into 'cloudify-fabric-plugin'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-fabric-plugin /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/1ndefined' did not match any file(s) known to git.
+pip installing cloudify-fabric-plugin (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-fabric-plugin
+Requirement already satisfied (use --upgrade to upgrade): cloudify-plugins-common>=3.3.1 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common (from cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): fabric==1.8.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): six>=1.8.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): paramiko<1.13,>=1.10 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from fabric==1.8.3->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-rest-client==3.4a3->cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify-plugins-common>=3.3.1->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): ecdsa in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from paramiko<1.13,>=1.10->fabric==1.8.3->cloudify-fabric-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): pycrypto!=2.4,>=2.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from paramiko<1.13,>=1.10->fabric==1.8.3->cloudify-fabric-plugin==1.4)
+Installing collected packages: cloudify-fabric-plugin
+  Running setup.py develop for cloudify-fabric-plugin
+Successfully installed cloudify-fabric-plugin
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-cli.git
+Cloning into 'cloudify-cli'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-cli /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/undefined' did not match any file(s) known to git.
+pip installing cloudify-cli (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-cli
+Requirement already satisfied (use --upgrade to upgrade): cloudify-plugins-common==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-dsl-parser==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-dsl-parser (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-script-plugin==1.4 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-script-plugin (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): pyyaml==3.10 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Collecting argcomplete==1.1.0 (from cloudify==3.4a3)
+/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+  Downloading argcomplete-1.1.0-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): fabric==1.8.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): PrettyTable<0.8,>=0.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): colorama==0.3.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): retrying==1.3.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common==3.4a3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-rest-client==3.4a3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): paramiko<1.13,>=1.10 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from fabric==1.8.3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): six>=1.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from retrying==1.3.3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): ecdsa in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from paramiko<1.13,>=1.10->fabric==1.8.3->cloudify==3.4a3)
+Requirement already satisfied (use --upgrade to upgrade): pycrypto!=2.4,>=2.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from paramiko<1.13,>=1.10->fabric==1.8.3->cloudify==3.4a3)
+Installing collected packages: argcomplete, cloudify
+  Found existing installation: argcomplete 0.7.1
+    Uninstalling argcomplete-0.7.1:
+      Successfully uninstalled argcomplete-0.7.1
+  Running setup.py develop for cloudify
+Successfully installed argcomplete-1.1.0 cloudify
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-openstack-plugin.git
+Cloning into 'cloudify-openstack-plugin'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/1ndefined' did not match any file(s) known to git.
+pip installing cloudify-openstack-plugin (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin
+Requirement already satisfied (use --upgrade to upgrade): cloudify-plugins-common>=3.3.1 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common (from cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): python-novaclient==2.26.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): python-keystoneclient==1.6.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): python-neutronclient==2.6.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): python-cinderclient==1.2.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): IPy==0.81 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): oslo.serialization>=1.4.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): oslo.i18n>=1.5.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): pbr<2.0,>=0.11 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): argparse in /usr/lib/python2.7 (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): requests>=2.5.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): PrettyTable<0.8,>=0.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): iso8601>=0.1.9 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): Babel>=1.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): six>=1.9.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): oslo.utils>=1.4.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): simplejson>=2.2.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): stevedore>=1.3.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-keystoneclient==1.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): netaddr>=0.7.12 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-keystoneclient==1.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): oslo.config>=1.11.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-keystoneclient==1.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): cliff>=1.10.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-neutronclient==2.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify-plugins-common>=3.3.1->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): msgpack-python>=0.4.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from oslo.serialization>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): pytz>=2013.6 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from oslo.serialization>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): funcsigs>=0.4 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from oslo.utils>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): monotonic>=0.6 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from oslo.utils>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): debtcollector>=1.2.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from oslo.utils>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): netifaces>=0.10.4 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from oslo.utils>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): cmd2>=0.6.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cliff>=1.10.0->python-neutronclient==2.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): pyparsing>=2.0.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cliff>=1.10.0->python-neutronclient==2.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): PyYAML>=3.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cliff>=1.10.0->python-neutronclient==2.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): unicodecsv>=0.8.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cliff>=1.10.0->python-neutronclient==2.6.0->cloudify-openstack-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): wrapt>=1.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from debtcollector>=1.2.0->oslo.utils>=1.4.0->python-novaclient==2.26.0->cloudify-openstack-plugin==1.3.1)
+Installing collected packages: cloudify-openstack-plugin
+  Running setup.py develop for cloudify-openstack-plugin
+Successfully installed cloudify-openstack-plugin
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-aws-plugin.git
+Cloning into 'cloudify-aws-plugin'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-aws-plugin /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/1ndefined' did not match any file(s) known to git.
+pip installing cloudify-aws-plugin (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-aws-plugin
+Requirement already satisfied (use --upgrade to upgrade): cloudify-plugins-common>=3.3.1 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common (from cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): boto==2.38.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): pycrypto==2.6.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): requests==2.7.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-rest-client==3.4a3->cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify-plugins-common>=3.3.1->cloudify-aws-plugin==1.4)
+Installing collected packages: cloudify-aws-plugin
+  Running setup.py develop for cloudify-aws-plugin
+Successfully installed cloudify-aws-plugin
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-azure-plugin.git
+Cloning into 'cloudify-azure-plugin'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-azure-plugin /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+Until the GA release, we're using tag '331_ga_march_04_2016' for cloudify-azure-plugin
+Note: checking out 'tags/331_ga_march_04_2016'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at e83c280... March 4th - push : 4
+pip installing cloudify-azure-plugin (-e .)...
+Obtaining file:///home/tamirk/cfy_versions_root/undef/ined/cloudify-azure-plugin
+Requirement already satisfied (use --upgrade to upgrade): cloudify-plugins-common>=3.3.1 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common (from cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): lockfile in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): requests in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): cloudify-rest-client==3.4a3 in /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client (from cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): pika==0.9.14 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): networkx==1.8.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): proxy-tools==0.1.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): bottle==0.12.7 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): jinja2==2.7.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-servicemanagement-legacy==0.20.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt==0.20.2 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-storage==0.20.3 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-servicebus==0.20.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): markupsafe in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from jinja2==2.7.2->cloudify-plugins-common>=3.3.1->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-common in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-servicemanagement-legacy==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt-compute==0.20.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-mgmt==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt-resource==0.20.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-mgmt==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt-network==0.20.1 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-mgmt==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt-storage==0.20.0 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-mgmt==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): futures in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-storage==0.20.3->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): python-dateutil in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-storage==0.20.3->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-nspkg in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-storage==0.20.3->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt-common in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-mgmt-compute==0.20.1->azure-mgmt==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): six>=1.5 in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from python-dateutil->azure-storage==0.20.3->azure->cloudify-azure-plugin==1.3.1)
+Requirement already satisfied (use --upgrade to upgrade): azure-mgmt-nspkg in /home/tamirk/deployment_tool_envs/cfy_undefined_env/lib/python2.7/site-packages (from azure-mgmt-common->azure-mgmt-compute==0.20.1->azure-mgmt==0.20.2->azure->cloudify-azure-plugin==1.3.1)
+Installing collected packages: cloudify-azure-plugin
+  Running setup.py develop for cloudify-azure-plugin
+Successfully installed cloudify-azure-plugin
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-manager-blueprints.git
+Cloning into 'cloudify-manager-blueprints'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-manager-blueprints /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+error: pathspec 'tags/undefined' did not match any file(s) known to git.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+git clone https://github.com/cloudify-cosmo/cloudify-nodecellar-example.git
+Cloning into 'cloudify-nodecellar-example'...
+/home/tamirk/cfy_versions_root/undef/ined/cloudify-nodecellar-example /home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+cloudify-nodecellar-example doesn't need pip ...
+error: pathspec 'tags/undefined' did not match any file(s) known to git.
+/home/tamirk/cfy_versions_root/undef/ined /home/tamirk/cfy_versions_root
+argcomplete (1.1.0)
+azure (1.0.3)
+azure-common (1.0.0)
+azure-mgmt (0.20.2)
+azure-mgmt-common (0.20.0)
+azure-mgmt-compute (0.20.1)
+azure-mgmt-network (0.20.1)
+azure-mgmt-nspkg (1.0.0)
+azure-mgmt-resource (0.20.1)
+azure-mgmt-storage (0.20.0)
+azure-nspkg (1.0.0)
+azure-servicebus (0.20.1)
+azure-servicemanagement-legacy (0.20.2)
+azure-storage (0.20.3)
+Babel (2.2.0)
+boto (2.38.0)
+bottle (0.12.7)
+cliff (1.16.0)
+cloudify (3.4a3, /home/tamirk/cfy_versions_root/undef/ined/cloudify-cli)
+cloudify-aws-plugin (1.4, /home/tamirk/cfy_versions_root/undef/ined/cloudify-aws-plugin)
+cloudify-azure-plugin (1.3.1, /home/tamirk/cfy_versions_root/undef/ined/cloudify-azure-plugin)
+cloudify-dsl-parser (3.4a3, /home/tamirk/cfy_versions_root/undef/ined/cloudify-dsl-parser)
+cloudify-fabric-plugin (1.4, /home/tamirk/cfy_versions_root/undef/ined/cloudify-fabric-plugin)
+cloudify-openstack-plugin (1.3.1, /home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin)
+cloudify-plugins-common (3.4a3, /home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common)
+cloudify-rest-client (3.4a3, /home/tamirk/cfy_versions_root/undef/ined/cloudify-rest-client)
+cloudify-script-plugin (1.4, /home/tamirk/cfy_versions_root/undef/ined/cloudify-script-plugin)
+cmd2 (0.6.8)
+colorama (0.3.3)
+debtcollector (1.3.0)
+ecdsa (0.13)
+Fabric (1.8.3)
+funcsigs (0.4)
+futures (3.0.4)
+IPy (0.81)
+iso8601 (0.1.11)
+itsdangerous (0.24)
+Jinja2 (2.7.2)
+lockfile (0.12.2)
+MarkupSafe (0.23)
+monotonic (0.6)
+msgpack-python (0.4.7)
+netaddr (0.7.18)
+netifaces (0.10.4)
+networkx (1.8.1)
+oslo.config (3.6.0)
+oslo.i18n (3.3.0)
+oslo.serialization (2.3.0)
+oslo.utils (3.5.0)
+paramiko (1.12.4)
+pbr (1.8.1)
+pika (0.9.14)
+pip (7.1.2)
+prettytable (0.7.2)
+proxy-tools (0.1.0)
+pycrypto (2.6.1)
+pyparsing (2.1.0)
+python-cinderclient (1.2.2)
+python-dateutil (2.4.2)
+python-keystoneclient (1.6.0)
+python-neutronclient (2.6.0)
+python-novaclient (2.26.0)
+pytz (2015.7)
+PyYAML (3.10)
+requests (2.7.0)
+retrying (1.3.3)
+setuptools (18.2)
+simplejson (3.8.1)
+six (1.10.0)
+stevedore (1.11.0)
+unicodecsv (0.14.1)
+wheel (0.24.0)
+wrapt (1.10.6)
+You are using pip version 7.1.2, however version 8.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Cloudify CLI 3.4.0-m3
+
+/home/tamirk/cfy_versions_root
+End of installCfy.sh
+----------------------------------------------------------
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+install_cfy_cloud_provider_plugin: execution id : 1457278886257_63100
+Cloud Provider                           : datacentred
+Cloud user name                          : undefined
+Application name                         : *serwerwe
+Blueprint name                           : undefined
+Blueprint file name                      : blueprint.yaml
+CFY_DATA_CENTRED_REGION                  : undefined ...
+CFY_DATA_CENTRED_OS                      : undefined ...
+CFY_DATA_CENTRED_MANAGER_SSH_USER        : undefined ...
+CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : undefined ...
+CFY_DATA_CENTRED_AGENT_SSH_USER          : undefined ...
+CFY_DATA_CENTRED_SERVER_NAME             : undefined ...
+CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : undefined ...
+CFY_DATA_CENTRED_MANAGER_PORT_NAME       : undefined ...
+CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : undefined ...
+CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : undefined ...
+CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : undefined ...
+CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : undefined ...
+CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : undefined ...
+CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : undefined ...
+Existing Manager IP address              : undefined
+Use existing Manager                     : undefined
+Freeze the manager on failure            : undefined
+manager_blueprint_file                   : /home/tamirk/cfy_versions_root/undef/ined/cloudify-manager-blueprints/openstack-manager-blueprint.yaml
+manager_blueprint_inputs_file            : /home/tamirk/cfy_versions_root/undef/ined/cloudify-manager-blueprints/openstack-manager-blueprint-inputs.yaml
+=============================================================
+pre_bootstrap: execution id : 1457278886257_63100
+=============================================================
+run_bootstrap: execution id : 1457278886257_63100
+/home/tamirk/dt_executions/1457278886257_63100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Cloudify CLI 3.4.0-m3
+
+Initialization completed successfully
+-------------------------------------------------------------
+datacentred_init_bootstrap: execution id : 1457278886257_63100
+Running: cfy bootstrap -p /home/tamirk/cfy_versions_root/undef/ined/cloudify-manager-blueprints/openstack-manager-blueprint.yaml -i current_datacentred_inputs_file.yaml
+executing bootstrap validation
+2016-03-06 17:43:38 CFY <manager> Starting 'execute_operation' workflow execution
+2016-03-06 17:43:38 CFY <manager> [router_45005] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [nginx_7f588] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [riemann_c0f63] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [manager_port_7e11b] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [elasticsearch_84008] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [manager_host_d1820] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [management_subnet_34030] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [agent_keypair_ed141] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [rest_service_c05bf] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [manager_configuration_310ef] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [mgmt_worker_9dd4d] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [influxdb_c8699] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [management_keypair_57d7c] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [amqp_influx_1b798] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [management_network_661ac] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [java_runtime_6872d] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [rabbitmq_c676a] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [webui_ac804] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [agents_security_group_353c9] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [external_network_7e8a0] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [python_runtime_5b468] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [management_security_group_404fb] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [manager_server_ip_38581] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [logstash_8134c] Starting operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [agent_keypair_ed141.creation] Sending task 'nova_plugin.keypair.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [external_network_7e8a0.creation] Sending task 'neutron_plugin.network.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [agents_security_group_353c9.creation] Sending task 'neutron_plugin.security_group.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [management_security_group_404fb.creation] Sending task 'neutron_plugin.security_group.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [management_subnet_34030.creation] Sending task 'neutron_plugin.subnet.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [management_keypair_57d7c.creation] Sending task 'nova_plugin.keypair.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [manager_port_7e11b.creation] Sending task 'neutron_plugin.port.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [manager_server_ip_38581.creation] Sending task 'neutron_plugin.floatingip.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [management_network_661ac.creation] Sending task 'neutron_plugin.network.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [manager_host_d1820.creation] Sending task 'nova_plugin.server.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [router_45005.creation] Sending task 'neutron_plugin.router.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [agent_keypair_ed141.creation] Task started 'nova_plugin.keypair.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [agent_keypair_ed141.creation] Task succeeded 'nova_plugin.keypair.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [external_network_7e8a0.creation] Task started 'neutron_plugin.network.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [external_network_7e8a0.creation] ERROR: Exception raised on operation [neutron_plugin.network.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/network.py", line 108, in creation_validation
+    validate_resource(ctx, neutron_client, NETWORK_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 240, in validate_resource
+    ctx, name_field_name, openstack_type, sugared_client)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 182, in _get_resource_by_name_or_id_from_ctx
+    sugared_client, True, name_field_name)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 192, in get_resource_by_name_or_id
+    **search_param)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 610, in cosmo_get_if_exists
+    return self._cosmo_get(obj_type_single, True, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 613, in _cosmo_get
+    ls = list(self.cosmo_list(obj_type_single, **kw))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 561, in list_networks
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [external_network_7e8a0.creation] Task failed 'neutron_plugin.network.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [agents_security_group_353c9.creation] Task started 'neutron_plugin.security_group.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [agents_security_group_353c9.creation] ERROR: Exception raised on operation [neutron_plugin.security_group.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/security_group.py", line 94, in creation_validation
+    sg_creation_validation(neutron_client, 'remote_ip_prefix')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/security_group.py", line 88, in sg_creation_validation
+    validate_resource(ctx, client, SECURITY_GROUP_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 728, in list_security_groups
+    retrieve_all, **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [agents_security_group_353c9.creation] Task failed 'neutron_plugin.security_group.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [management_security_group_404fb.creation] Task started 'neutron_plugin.security_group.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [management_security_group_404fb.creation] ERROR: Exception raised on operation [neutron_plugin.security_group.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/security_group.py", line 94, in creation_validation
+    sg_creation_validation(neutron_client, 'remote_ip_prefix')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/security_group.py", line 88, in sg_creation_validation
+    validate_resource(ctx, client, SECURITY_GROUP_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 728, in list_security_groups
+    retrieve_all, **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [management_security_group_404fb.creation] Task failed 'neutron_plugin.security_group.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [management_subnet_34030.creation] Task started 'neutron_plugin.subnet.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [management_subnet_34030.creation] ERROR: Exception raised on operation [neutron_plugin.subnet.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/subnet.py", line 93, in creation_validation
+    validate_resource(ctx, neutron_client, SUBNET_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 587, in list_subnets
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [management_subnet_34030.creation] Task failed 'neutron_plugin.subnet.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [management_keypair_57d7c.creation] Task started 'nova_plugin.keypair.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [management_keypair_57d7c.creation] Task succeeded 'nova_plugin.keypair.creation_validation'
+2016-03-06 17:43:38 CFY <manager> [manager_port_7e11b.creation] Task started 'neutron_plugin.port.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [manager_port_7e11b.creation] ERROR: Exception raised on operation [neutron_plugin.port.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/port.py", line 173, in creation_validation
+    validate_resource(ctx, neutron_client, PORT_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 534, in list_ports
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [manager_port_7e11b.creation] Task failed 'neutron_plugin.port.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [manager_server_ip_38581.creation] Task started 'neutron_plugin.floatingip.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [manager_server_ip_38581.creation] ERROR: Exception raised on operation [neutron_plugin.floatingip.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/floatingip.py", line 75, in creation_validation
+    floatingip_creation_validation(neutron_client, 'floating_ip_address')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/floatingip.py", line 59, in floatingip_creation_validation
+    ip_field_name)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 691, in list_floatingips
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [manager_server_ip_38581.creation] Task failed 'neutron_plugin.floatingip.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [management_network_661ac.creation] Task started 'neutron_plugin.network.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [management_network_661ac.creation] ERROR: Exception raised on operation [neutron_plugin.network.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/network.py", line 108, in creation_validation
+    validate_resource(ctx, neutron_client, NETWORK_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 561, in list_networks
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [management_network_661ac.creation] Task failed 'neutron_plugin.network.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [manager_host_d1820.creation] Task started 'nova_plugin.server.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [manager_host_d1820.creation] ERROR: Exception raised on operation [nova_plugin.server.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 530, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/nova_plugin/server.py", line 708, in creation_validation
+    validate_server_property_value_exists(server_props, 'image')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/nova_plugin/server.py", line 689, in validate_server_property_value_exists
+    prop_values = list(nova_client.cosmo_list(property_name))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 630, in cosmo_list
+    for obj in getattr(self, obj_type_plural).findall(**kw):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/base.py", line 249, in findall
+    listing = self.list(**list_kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/v2/images.py", line 69, in list
+    return self._list('/images%s%s' % (detail, query), 'images')
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/base.py", line 64, in _list
+    _resp, body = self.api.client.get(url)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 451, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 407, in _cs_request
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 579, in authenticate
+    auth_url = self._v1_auth(auth_url)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 615, in _v1_auth
+    resp, body = self._time_request(url, 'GET', headers=headers)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 402, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 373, in request
+    **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/api.py", line 50, in request
+    response = session.request(method=method, url=url, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/sessions.py", line 451, in request
+    prep = self.prepare_request(req)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/sessions.py", line 382, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/models.py", line 304, in prepare
+    self.prepare_url(url, params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/models.py", line 362, in prepare_url
+    to_native_string(url, 'utf8')))
+MissingSchema: Invalid URL 'undefined': No schema supplied. Perhaps you meant http://undefined?
+2016-03-06 17:43:38 CFY <manager> [manager_host_d1820.creation] Task failed 'nova_plugin.server.creation_validation' -> Invalid URL 'undefined': No schema supplied. Perhaps you meant http://undefined? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [router_45005.creation] Task started 'neutron_plugin.router.creation_validation'
+2016-03-06 17:43:38 LOG <manager> [router_45005.creation] ERROR: Exception raised on operation [neutron_plugin.router.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/router.py", line 137, in creation_validation
+    validate_resource(ctx, neutron_client, ROUTER_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 640, in list_routers
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:43:38 CFY <manager> [router_45005.creation] Task failed 'neutron_plugin.router.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 1/6]
+2016-03-06 17:43:38 CFY <manager> [elasticsearch_84008] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [python_runtime_5b468] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [mgmt_worker_9dd4d] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [rest_service_c05bf] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [agent_keypair_ed141] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [riemann_c0f63] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [java_runtime_6872d] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [management_keypair_57d7c] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [manager_configuration_310ef] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [logstash_8134c] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [webui_ac804] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [rabbitmq_c676a] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [amqp_influx_1b798] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [influxdb_c8699] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:43:38 CFY <manager> [nginx_7f588] Finished operation cloudify.interfaces.validation.creation
+2016-03-06 17:44:08 CFY <manager> [management_network_661ac.creation] Sending task 'neutron_plugin.network.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [manager_port_7e11b.creation] Sending task 'neutron_plugin.port.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [management_security_group_404fb.creation] Sending task 'neutron_plugin.security_group.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [external_network_7e8a0.creation] Sending task 'neutron_plugin.network.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [management_subnet_34030.creation] Sending task 'neutron_plugin.subnet.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [router_45005.creation] Sending task 'neutron_plugin.router.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [agents_security_group_353c9.creation] Sending task 'neutron_plugin.security_group.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [manager_host_d1820.creation] Sending task 'nova_plugin.server.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [manager_server_ip_38581.creation] Sending task 'neutron_plugin.floatingip.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [management_network_661ac.creation] Task started 'neutron_plugin.network.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [management_network_661ac.creation] ERROR: Exception raised on operation [neutron_plugin.network.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/network.py", line 108, in creation_validation
+    validate_resource(ctx, neutron_client, NETWORK_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 561, in list_networks
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [management_network_661ac.creation] Task failed 'neutron_plugin.network.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [manager_port_7e11b.creation] Task started 'neutron_plugin.port.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [manager_port_7e11b.creation] ERROR: Exception raised on operation [neutron_plugin.port.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/port.py", line 173, in creation_validation
+    validate_resource(ctx, neutron_client, PORT_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 534, in list_ports
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [manager_port_7e11b.creation] Task failed 'neutron_plugin.port.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [management_security_group_404fb.creation] Task started 'neutron_plugin.security_group.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [management_security_group_404fb.creation] ERROR: Exception raised on operation [neutron_plugin.security_group.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/security_group.py", line 94, in creation_validation
+    sg_creation_validation(neutron_client, 'remote_ip_prefix')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/security_group.py", line 88, in sg_creation_validation
+    validate_resource(ctx, client, SECURITY_GROUP_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 728, in list_security_groups
+    retrieve_all, **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [management_security_group_404fb.creation] Task failed 'neutron_plugin.security_group.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [external_network_7e8a0.creation] Task started 'neutron_plugin.network.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [external_network_7e8a0.creation] ERROR: Exception raised on operation [neutron_plugin.network.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/network.py", line 108, in creation_validation
+    validate_resource(ctx, neutron_client, NETWORK_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 240, in validate_resource
+    ctx, name_field_name, openstack_type, sugared_client)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 182, in _get_resource_by_name_or_id_from_ctx
+    sugared_client, True, name_field_name)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 192, in get_resource_by_name_or_id
+    **search_param)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 610, in cosmo_get_if_exists
+    return self._cosmo_get(obj_type_single, True, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 613, in _cosmo_get
+    ls = list(self.cosmo_list(obj_type_single, **kw))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 561, in list_networks
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [external_network_7e8a0.creation] Task failed 'neutron_plugin.network.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [management_subnet_34030.creation] Task started 'neutron_plugin.subnet.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [management_subnet_34030.creation] ERROR: Exception raised on operation [neutron_plugin.subnet.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/subnet.py", line 93, in creation_validation
+    validate_resource(ctx, neutron_client, SUBNET_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 587, in list_subnets
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [management_subnet_34030.creation] Task failed 'neutron_plugin.subnet.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [router_45005.creation] Task started 'neutron_plugin.router.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [router_45005.creation] ERROR: Exception raised on operation [neutron_plugin.router.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/router.py", line 137, in creation_validation
+    validate_resource(ctx, neutron_client, ROUTER_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 640, in list_routers
+    **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [router_45005.creation] Task failed 'neutron_plugin.router.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [agents_security_group_353c9.creation] Task started 'neutron_plugin.security_group.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [agents_security_group_353c9.creation] ERROR: Exception raised on operation [neutron_plugin.security_group.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 515, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/neutron_plugin/security_group.py", line 94, in creation_validation
+    sg_creation_validation(neutron_client, 'remote_ip_prefix')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/security_group.py", line 88, in sg_creation_validation
+    validate_resource(ctx, client, SECURITY_GROUP_OPENSTACK_TYPE)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 263, in validate_resource
+    resource_list = list(sugared_client.cosmo_list(openstack_type))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 674, in cosmo_list
+    for obj in getattr(self, 'list_' + obj_type_plural)(**kw)[
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 102, in with_params
+    ret = self.function(instance, *args, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 728, in list_security_groups
+    retrieve_all, **_params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 307, in list
+    for r in self._pagination(collection, path, **params):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 320, in _pagination
+    res = self.get(path, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 293, in get
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 270, in retry_request
+    headers=headers, params=params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/v2_0/client.py", line 200, in do_request
+    content_type=self.content_type())
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 158, in do_request
+    self.authenticate_and_fetch_endpoint_url()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 123, in authenticate_and_fetch_endpoint_url
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 237, in authenticate
+    self._authenticate_keystone()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 216, in _authenticate_keystone
+    allow_redirects=True)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/neutronclient/client.py", line 106, in _cs_request
+    raise exceptions.ConnectionFailed(reason=e)
+ConnectionFailed: Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens?
+2016-03-06 17:44:08 CFY <manager> [agents_security_group_353c9.creation] Task failed 'neutron_plugin.security_group.creation_validation' -> Connection to neutron failed: Invalid URL 'undefined/tokens': No schema supplied. Perhaps you meant http://undefined/tokens? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [manager_host_d1820.creation] Task started 'nova_plugin.server.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [manager_host_d1820.creation] ERROR: Exception raised on operation [nova_plugin.server.creation_validation] invocation
+Traceback (most recent call last):
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-plugins-common/cloudify/dispatch.py", line 363, in handle
+    result = self.func(*self.args, **kwargs)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 530, in wrapper
+    return f(*args, **kw)
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/nova_plugin/server.py", line 708, in creation_validation
+    validate_server_property_value_exists(server_props, 'image')
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/nova_plugin/server.py", line 689, in validate_server_property_value_exists
+    prop_values = list(nova_client.cosmo_list(property_name))
+  File "/home/tamirk/cfy_versions_root/undef/ined/cloudify-openstack-plugin/openstack_plugin_common/__init__.py", line 630, in cosmo_list
+    for obj in getattr(self, obj_type_plural).findall(**kw):
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/base.py", line 249, in findall
+    listing = self.list(**list_kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/v2/images.py", line 69, in list
+    return self._list('/images%s%s' % (detail, query), 'images')
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/base.py", line 64, in _list
+    _resp, body = self.api.client.get(url)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 451, in get
+    return self._cs_request(url, 'GET', **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 407, in _cs_request
+    self.authenticate()
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 579, in authenticate
+    auth_url = self._v1_auth(auth_url)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 615, in _v1_auth
+    resp, body = self._time_request(url, 'GET', headers=headers)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 402, in _time_request
+    resp, body = self.request(url, method, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/novaclient/client.py", line 373, in request
+    **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/api.py", line 50, in request
+    response = session.request(method=method, url=url, **kwargs)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/sessions.py", line 451, in request
+    prep = self.prepare_request(req)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/sessions.py", line 382, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/models.py", line 304, in prepare
+    self.prepare_url(url, params)
+  File "/home/tamirk/deployment_tool_envs/cfy_undefined_env/local/lib/python2.7/site-packages/requests/models.py", line 362, in prepare_url
+    to_native_string(url, 'utf8')))
+MissingSchema: Invalid URL 'undefined': No schema supplied. Perhaps you meant http://undefined?
+2016-03-06 17:44:08 CFY <manager> [manager_host_d1820.creation] Task failed 'nova_plugin.server.creation_validation' -> Invalid URL 'undefined': No schema supplied. Perhaps you meant http://undefined? [attempt 2/6]
+2016-03-06 17:44:08 CFY <manager> [manager_server_ip_38581.creation] Task started 'neutron_plugin.floatingip.creation_validation' [attempt 2/6]
+2016-03-06 17:44:08 LOG <manager> [manager_server_ip_3./scripts/run_deploy.sh: line 278:  8015 Killed                  cfy bootstrap ${freezeFailure}-p ${manager_blueprint_file} -i ${current_bootstrap_inputs_file}
+=============================================================
+pre_blueprint_upload: execution id : 1457278886257_63100
+=============================================================
+blueprints_upload: execution id : 1457278886257_63100
+Not using a Git Repository
+=============================================================
+pre_deployment_creation: execution id : 1457278886257_63100
+=============================================================
+populate_node_templates: execution id : 1457278886257_63100
+NODE_TEMPLATE_1_NAME is mongo_host
+NODE_TEMPLATE_1_DATACENTRED_FLAVOR is b8e8ab6a-5480-478c-b1de-b09050683d7d
+NODE_TEMPLATE_1_DATACENTRED_OS is 3d20595e-8261-4a9f-9701-9d37cb702a16
+NODE_TEMPLATE_1_DATACENTRED_AGENT_USER is root
+NODE_TEMPLATE_2_NAME is nodejs_host
+NODE_TEMPLATE_2_DATACENTRED_FLAVOR is d87de0ca-9c0e-4759-a704-8621883c3415
+NODE_TEMPLATE_2_DATACENTRED_OS is 6c3047c6-17b1-4aaf-a657-9229bb481e50
+NODE_TEMPLATE_2_DATACENTRED_AGENT_USER is ubuntu
+NODE_TEMPLATE_3_NAME is ha_host
+NODE_TEMPLATE_3_DATACENTRED_FLAVOR is d87de0ca-9c0e-4759-a704-8621883c3415
+NODE_TEMPLATE_3_DATACENTRED_OS is 9d5d75a4-9787-4eab-ba58-844ebc8ff4a5
+NODE_TEMPLATE_3_DATACENTRED_AGENT_USER is freeuser

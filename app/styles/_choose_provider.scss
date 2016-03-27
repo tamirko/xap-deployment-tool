@@ -1,0 +1,19 @@
+
+[choose-provider] {
+
+    height:100%;
+    display:inline-block;
+    .choose-provider-container{
+        display: table;
+        height:100%;
+        .choose-provider-content{
+            display:table-cell;
+            vertical-align: middle;
+        }
+
+    }
+
+    .dt-select, .selectize-dropdown, .selectize-input, .selectize-input input {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,231 @@
+<div class="node-templates-step">
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="azure_node_template_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} Node Template</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Upload the blueprint &nbsp;
+                    <button ng-show="need2UploadBlueprint()" class="dt-checkbox-btn enabled-icon" ng-click="toggleUploadBlueprint()" ng-model="data.uploadtheblueprint">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="!need2UploadBlueprint()" class="dt-checkbox-btn disabled-icon" ng-click="toggleUploadBlueprint()" ng-model="data.uploadtheblueprint">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Deploy the application &nbsp;
+                    <button ng-show="need2DeployApplication()" class="dt-checkbox-btn enabled-icon" ng-click="toggleDeployApplication()" ng-model="data.deploytheapplication">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="!need2DeployApplication()" class="dt-checkbox-btn disabled-icon" ng-click="toggleDeployApplication()" ng-model="data.deploytheapplication">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div ng-show="need2UploadBlueprint()" class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div ng-show="need2UploadBlueprint()" title="e.g.: https://www.mySite.com/pre_blueprint_upload_script.sh&#010-Use this with caution !!!" class="dt-label">Pre blueprint upload</div> <!-- todo: use i18n -->
+                <div ng-show="need2UploadBlueprint()" title="e.g.: https://www.mySite.com/pre_blueprint_upload_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.preblueprintuploadscript"/></div>
+            </div>
+        </div>
+
+
+        <div ng-show="need2DeployApplication()" class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/pre_deployment_creation_script.sh&#010-Use this with caution !!!" class="dt-label">Pre deployment creation</div> <!-- todo: use i18n -->
+                <div title="e.g.: https://www.mySite.com/pre_deployment_creation_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.predeploymentcreationscript"/></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/pre_install_script.sh&#010-Use this with caution !!!" class="dt-label">Pre installation</div> <!-- todo: use i18n -->
+                <div title="e.g.: https://www.mySite.com/pre_install_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.preinstallscript"/></div>
+            </div>
+        </div>
+
+        <div  ng-show="need2DeployApplication()" class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-label">Post installation</div> <!-- todo: use i18n -->
+                <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.postinstallscript"/></div>
+            </div>
+        </div>
+
+
+
+	</div>
+
+    <div class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="azure_node_template_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div ng-show="need2DeployApplication()" class="dt-form-row">
+        <div class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable Node templates UI debugging <input type="checkbox" ng-model="azure_node_templates_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+	<div ng-show="need2DeployApplication()" id="nodeTemplates"></div>
+
+	<div ng-show="need2DeployApplication()" id="nodeTemplateElem1" class="dt-form" ng-repeat="nodeTemplate in nodeTemplates">
+
+        <div class="dt-uidebugbg" ng-show="azure_node_templates_ui_debug_enabled">{{nodeTemplates}}</div>
+
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <button ng-show="!apply2AllIsEnabled()" class="dt-instruction-btn" ng-click="addNodeTemplate()">+ Add node template</button>
+            </div>
+            <div class="dt-form-section">
+                <button ng-show="canRemoveNodeTemplate()" class="dt-instruction-btn" ng-click="removeNodeTemplate($index)">- Remove this node template</button>
+            </div>
+        </div>
+
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Node Template Name #{{$index+1}}</div> <!-- todo: use i18n -->
+				<div class="dt-input"><input  ng-model="nodeTemplate.name"/></div>
+			</div>
+
+            <div class="dt-form-section login-details-section">
+                <div ng-show="canApplyToAll()" class="dt-emphasized-label">Apply these settings to all node templates &nbsp;
+                    <button ng-show="apply2AllIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleApply2All()" ng-model="data.apply2AllNodeTemplates">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="!apply2AllIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleApply2All()" ng-model="data.apply2AllNodeTemplates">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+    		    </div>
+            </div>
+		</div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">VM Size</div> <!-- todo: use i18n -->
+                <div class="dt-extralonginput"><select ng-options="vmsize.id as vmsize.label for vmsize in vmsizes" ng-model="data.vmsize"></select></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">VM Name Prefix</div> <!-- todo: use i18n -->
+                <div class="dt-shortinput"><input ng-model="data.vmprefix"/></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Oprerating System</div> <!-- todo: use i18n -->
+                <div class="dt-input"><select ng-options="azureos.id as azureos.label for azureos in azureoss" ng-model="data.vmazureos"></select></div>
+            </div>
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">SSH User Name</div> <!-- todo: use i18n -->
+                <div class="dt-shortinput"><input ng-model="data.vmsshuser"/></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Resource Group Name</div> <!-- todo: use i18n -->
+                <div class="dt-label dt-input"><input ng-model="data.vmresourcegroup">&nbsp;Create a new Resource Group?&nbsp;
+                    <button ng-show="!existingNodeResourceGroupIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleNodeExistingResourceGroup()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="existingNodeResourceGroupIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleNodeExistingResourceGroup()">
+                        <i class="fa fa-toggle-off"/>No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Storage Account Name</div> <!-- todo: use i18n -->
+                <div class="dt-label dt-input"><input ng-model="data.vmstorageaccount">&nbsp;Create a new Storage Account?&nbsp;
+                    <button ng-show="!existingNodeStorageAccountIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleNodeExistingStorageAccount()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="existingNodeStorageAccountIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleNodeExistingStorageAccount()">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Virtual Network Name</div> <!-- todo: use i18n -->
+                <div class="dt-label dt-input"><input ng-model="data.vmvnet">&nbsp;Create a new Virtual Network?&nbsp;&nbsp;
+                    <button ng-show="!existingNodeVnetIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleNodeExistingVnet()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="existingNodeVnetIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleNodeExistingVnet()">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Subnet Name</div> <!-- todo: use i18n -->
+                <div class="dt-label dt-input"><input ng-model="data.vmsubnetname">&nbsp;Create a new Subnet?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button ng-show="!existingNodeSubnetIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleNodeExistingSubnet()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="existingNodeSubnetIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleNodeExistingSubnet()">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div class="dt-label">Security Group Name</div> <!-- todo: use i18n -->
+                <div class="dt-label dt-input"><input ng-model="data.vmsecuritygroup">&nbsp;Create a new Security Group?&nbsp;
+                    <button ng-show="!existingNodeSecurityGroupIsEnabled()" class="dt-checkbox-btn enabled-icon" ng-click="toggleNodeExistingSecurityGroup()">
+                        <i class="fa fa-toggle-on"/>Yes
+                    </button>
+                    <button ng-show="existingNodeSecurityGroupIsEnabled()" class="dt-checkbox-btn disabled-icon" ng-click="toggleNodeExistingSecurityGroup()">
+                        <i class="fa fa-toggle-off"/>&nbsp;No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <div title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" class="dt-label">Additional CFY properties (commma separated)</div> <!-- todo: use i18n -->
+                <div title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" class="dt-longinput"><input ng-model="data.vmmoreprops"/></div>
+            </div>
+        </div>
+        <div class="dt-form-row">
+            <div class="dt-form-section login-details-section">
+                <button ng-show="!apply2AllIsEnabled()" class="dt-instruction-btn" ng-click="addNodeTemplate()">+ Add node template</button>
+            </div>
+            <div class="dt-form-section">
+                <button ng-show="canRemoveNodeTemplate()" class="dt-instruction-btn" ng-click="removeNodeTemplate($index)">- Remove this node template</button>
+            </div>
+        </div>
+	</div>
+
+	<div class="dt-form">
+
+	</div>
+
+    <div class="dt-form-row">
+        <div ng-show="need2DeployApplication()" class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable Node templates UI debugging <input type="checkbox" ng-model="azure_node_templates_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+    <div class="dt-form-row">
+        <div ng-show="need2DeployApplication()" class="dt-form-section login-details-section">
+            <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="azure_node_template_ui_debug_enabled"/></div>
+        </div>
+    </div>
+
+
+    <div class="dt-form-row">
+        <div class="dt-uidebugbg" ng-show="azure_node_template_ui_debug_enabled">Data : {{data}}</div>
+    </div>
+</div>

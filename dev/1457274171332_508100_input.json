@@ -1,0 +1,14 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "1",
+    "applicationName": "s",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "actualNodeTemplates": [
+        {
+            "name": "tamirnode1"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true
+}

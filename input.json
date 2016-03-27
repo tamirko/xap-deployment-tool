@@ -1,0 +1,22 @@
+{
+    "username": "CFY_SLUSERNAME",
+    "api_key":  "CFY_APIKEY",
+    "endpoint_url": "",
+    "location": "CFY_DATACENTER",
+    "domain": "cfy.vm",
+    "ram": CFY_MEMORY,
+    "cpu": CFY_CPU,
+    "disk": CFY_DISK,
+    "os": CFY_VMSOS,
+    "image_template_global_id": "",
+    "image_template_id": "",
+    "private_network_only": false,
+    "port_speed": CFY_PORTSPEED,
+    "private_vlan": "",
+    "public_vlan": "",
+    "provision_scripts": [],
+    "additional_ids": [],
+    "ssh_keys": [CFY_SSHKEYITEMID],
+    "ssh_key_filename": "/root/.ssh/agent_key.pem"
+}
+

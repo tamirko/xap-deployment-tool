@@ -1,0 +1,127 @@
+<div class="deploy-layout">
+
+
+    <div class="pageslide" ps-open="showOutputPanel" ps-size="800px" ps-class="deploy-layout-ps">
+        <div class="deploy-console-output" output-id="submitOutputId" on-close="closeOutputPanel()">
+
+        </div>
+    </div>
+
+    <div class="deploy-header">
+
+        <div class="deploy-header-items-wrapper">
+            <div class="deploy-header-items">
+                <div class="deploy-header-item deploy-header-choose-provider-wrapper">
+                    <div choose-provider="currentProvider"></div>
+                </div>
+                <div class="deploy-header-item deploy-header-cloud-login-details-wrapper">
+                    <div cloud-login-details></div>
+                </div>
+                <div class="deploy-header-item deploy-header-actions">
+                    <button class="dt-instruction-btn red-icon deploy-header-action" ng-click="openUndeployDialog()">
+                        <i class="fa fa-trash-o"/>Undeploy <!-- todo: use i18n -->
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="deploy-body">
+
+        <div class="left-side-menu">
+            <div deploy-steps="deploySteps" on-step-change="goToStep(step)"></div>
+
+            <div class="actions">
+                <button class="dt-action-btn" ng-disabled="isSubmitDisabled()" ng-click="submit()">Submit</button>
+            </div>
+
+
+            <div class="deploy-header-items-wrapper">
+                <div class="deploy-header-items">
+                    <div class="deploy-header-item deploy-header-actions undeploy_btn">
+                        <button class="dt-instruction-btn red-icon deploy-header-action" ng-click="openUndeployDialog()">
+                            <i class="fa fa-trash-o"/>Undeploy <!-- todo: use i18n -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="deploy-body-content">
+            <div ui-view=""></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script id="undeployDialog" type="text/ng-template">
+    <div class="modal-header">
+        <h3 class="modal-title dt-panelname">Cloudify Undeployment</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="dt-form">
+            <div class="dt-form-row">
+                <div class="dt-form-section login-details-section">
+                    <div class="dt-label">Kill a Cloudify manager &nbsp;
+                        <button ng-show="need2KillExistingManager()" class="dt-checkbox-btn enabled-icon" ng-click="toggleKillExistingManager()">
+                            <i class="fa fa-toggle-on"></i>Yes
+                        </button>
+                        <button ng-show="!need2KillExistingManager()" class="dt-checkbox-btn disabled-icon" ng-click="toggleKillExistingManager()">
+                            <i class="fa fa-toggle-off"></i>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dt-form-section login-details-section">
+                    <div class="dt-label">Cloudify Manager IP address</>
+                    <div class="dt-input"><input ng-model="data.existingMngrIPaddress"/></div>
+                </div>
+            </div>
+            <div class="dt-form-row">
+                <div class="dt-form-section login-details-section">
+                    <div class="dt-label">Delete deployments &nbsp;
+                        <button ng-disabled="need2DeleteBlueprints()" ng-show="need2DeleteDeployments()" class="dt-checkbox-btn enabled-icon" ng-click="toggleDeleteDeployments()" ng-model="data.deploytheapplication">
+                            <i class="fa fa-toggle-on"/>Yes
+                        </button>
+                        <button ng-disabled="need2DeleteBlueprints()" ng-show="!need2DeleteDeployments()" class="dt-checkbox-btn disabled-icon" ng-click="toggleDeleteDeployments()" ng-model="data.deploytheapplication">
+                            <i class="fa fa-toggle-off"/>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+                <div class="dt-form-section login-details-section">
+                    <div class="dt-label">Delete blueprints &nbsp;
+                        <button ng-show="need2DeleteBlueprints()" class="dt-checkbox-btn enabled-icon" ng-click="toggleDeleteBlueprints()" ng-model="data.deleteblueprints">
+                            <i class="fa fa-toggle-on"/>Yes
+                        </button>
+                        <button ng-show="!need2DeleteBlueprints()" class="dt-checkbox-btn disabled-icon" ng-click="toggleDeleteBlueprints()" ng-model="data.deletedeployments">
+                            <i class="fa fa-toggle-off"/>&nbsp;No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+            <div class="dt-form-row">
+                <div class="dt-form-section login-details-section">
+                    <div class="important-note undeploy_warn">This action is irreversible! &nbsp;</div>
+                </div>
+            </div>
+
+            <div class="dt-form-row">
+                <div class="dt-form-section login-details-section">
+                    <button class="dt-instruction-btn red-icon undeploy_ok_btn" type="button" ng-click="runUndeploy()">Undeploy</button>
+                    <button class="dt-instruction-btn red-icon" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+
+    </div>
+</script>

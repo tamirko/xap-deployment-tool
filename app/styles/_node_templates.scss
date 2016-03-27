@@ -1,0 +1,9 @@
+.node-templates-step{
+    [ng-repeat]{
+        padding-top:20px;
+        padding-bottom:20px;
+        &:nth-child(n+1){
+            border-top:1px dashed black;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+<div class="node-templates-step">
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} Node Template</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+	</div>
+
+	<div id="nodeTemplates"></div>
+
+    {{nodeTemplates}}
+	<div id="nodeTemplateElem1" class="dt-form" ng-repeat="nodeTemplate in nodeTemplates">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Node Template Name #{{$index+1}}</div> <!-- todo: use i18n -->
+				<div class="dt-input"><input  ng-model="nodeTemplate.name"/></div>
+			</div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Computing instance</div> <!-- todo: use i18n -->
+				<div class="dt-input"><select ng-options="cpu.id as cpu.label for cpu in cpus" ng-model="nodeTemplate.cpu"></select></div>
+			</div>
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Memory Size</div> <!-- todo: use i18n -->
+				<div class="dt-shortinput"><select ng-options="memory.id as memory.label for memory in memories" ng-model="data.memory"></select></div>
+			</div>
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Hard Disk</div> <!-- todo: use i18n -->
+				<div class="dt-shortinput"><select ng-options="disk.id as disk.label for disk in disks" ng-model="data.disk"></select></div>
+			</div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Oprerating System</div> <!-- todo: use i18n -->
+				<div class="dt-longinput"><select ng-options="vmos.id as vmos.label for vmos in vmsoss" ng-model="data.vmsoss"></select></div>
+			</div>
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Uplink port speeds</div> <!-- todo: use i18n -->
+				<div class="dt-longinput"><select ng-options="portspeed.id as portspeed.label for portspeed in portspeeds" ng-model="data.portspeed"></select></div>
+			</div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div title="e.g.: https://www.mySite.com/installMoreStuff.sh" class="dt-label">Provisioning Script</div> <!-- todo: use i18n -->
+				<div title="e.g.: https://www.mySite.com/installMoreStuff.sh" class="dt-longinput"><input ng-model="data.provscript"/></div>
+			</div>
+		</div>
+        <div class="dt-form-row">
+            <div class="dt-form-section">
+                <button ng-show="canRemoveNodeTemplate()" class="dt-instruction-btn" ng-click="removeNodeTemplate($index)">- Remove this node template</button>
+            </div>
+        </div>
+	</div>
+
+	<div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<button ng-disabled="!canApplyToAll()" class="dt-instruction-btn" ng-click="dummyFunc()">Apply to all node templates</button>&nbsp;&nbsp;&nbsp;
+				<button class="dt-instruction-btn" ng-click="addNodeTemplate()">+ Add node template</button>
+
+			</div>
+		</div>
+	</div>
+</div>

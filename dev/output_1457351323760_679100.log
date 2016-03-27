@@ -1,0 +1,28 @@
+ 
+=============================================================
+The time and date is 03/07/2016 13:48:43
+Execution ID: 1457351323760_679100F
+Execution folder is /home/tamirk/dt_executions/1457351323760_679100
+Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457351323760_679100.log
+=============================================================
+set_virtualenv: execution id : 1457351323760_679100
+Activating virtualenv 'cfy_3_3_1ga_env'
+=============================================================
+install_cfy: execution id : 1457351323760_679100
+/home/tamirk/cfy_versions_root /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+----------------------------------------------------------
+Running installCfy.sh ... 
+  Required CFY VERSION      : 3.3.1GA
+  CFY_MINOR_VERSION is      : 3.3.1
+  PLUGINS_MINOR_VERSION is  : 1.3.1
+  CFY_GIT_TAG_BRANCH is     : ga
+  PLUGINS_GIT_TAG_BRANCH is : ga
+Cloudify 3.3.1 ga version already exists (/home/tamirk/cfy_versions_root/3.3.1/ga). -Moving on.
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+install_cfy_cloud_provider_plugin: execution id : 1457351323760_679100
+BLUEPRINT_NAME 
+Cloud Provider                           : datacentred
+Cloud user name                          : undefined
+Application name                         : Jenkins
+Blueprint suffix                         : 

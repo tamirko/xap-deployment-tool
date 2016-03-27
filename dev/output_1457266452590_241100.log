@@ -1,0 +1,10 @@
+ 
+=============================================================
+NODE_TEMPLATE_1_NAME is NT1
+NODE_TEMPLATE_2_NAME is NODE 2
+NODE_TEMPLATE_1_NAME is NT1
+NODE_TEMPLATE_2_NAME is unset
+./scripts/run_deploy.sh: line 20: [: NODE: unary operator expected
+NODE_TEMPLATE_3_NAME is unset
+NODE_TEMPLATE_4_NAME is unset
+NODE_TEMPLATE_5_NAME is unset

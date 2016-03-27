@@ -1,0 +1,178 @@
+<form ng-submit="submit()">
+ <div class="slmenu"></div>
+ <div>
+   <h1 class="myTitle">SoftLayer Application Catalog</h1>
+   <br/>
+   <span class="poweredbycfy">Powered by Cloudify</span>
+   <table class="topframe">
+     <tr>
+	   <td class="vtop">
+	    <table class="mytable">
+     <tr ng-hide="form.appsource!='This catalog'">
+        <th colspan="2"><label>Application Name</label></th>
+     </tr>
+	 <tr ng-hide="form.appsource!='This catalog'">
+        <td colspan="2">
+		  <div>
+		    <angucomplete class="bold-span ng-binding" id="ex1" placeholder="Search applications" pause="100" selectedobject="selectedappname" localdata="appnames" searchfields="label" titlefield="label" minlength="1" inputclass="form-control form-control-small" matchclass="highlight" />
+			<input type="hidden" ng-model="form.appname">
+		  </div>
+		</td>
+		<!--  http://darylrowland.github.io/angucomplete/
+		  advanced - http://ghiden.github.io/angucomplete-alt/#example2
+		 <td>
+		  <div class="" ng-show="selectedApp">
+				<span>{{selectedApp.id}}</span>
+				<span>{{selectedApp.label}}</span>
+		  </div>
+		</td>-->
+     </tr>
+
+	 <tr ng-hide="form.appsource=='This catalog'">
+        <th colspan="2"><label>Application Name</label></th>
+	 </tr>
+     <tr ng-hide="form.appsource=='This catalog'">
+		<td colspan="2" title="Relevant only if a GitHub repository or a zip file, are being used"><input ng-disabled="form.appsource=='This catalog'" ng-model="form.otherappname"/></td>
+     </tr>
+
+    <!-- <tr>
+        <th colspan="2"><label>Application Name</label></th>
+     </tr>
+	 <tr>
+        <td colspan="2"><select ng-options="appname.id as appname.label for appname in appnames" ng-model="form.appname"></select></td>
+     </tr> -->
+
+     <tr>
+        <th><label>Application Source</label></th>
+        <th title="Relevant only if a GitHub repository or a zip file, are being used"><label>GitHub/zip URL</label></th>
+     </tr>
+	 <tr>
+        <td colspan><select ng-init="form.appsource = form.appsource || appsources[0].id" ng-options="appsource.id as appsource.label for appsource in appsources" ng-model="form.appsource"></select></td>
+		<td title="Relevant only if a GitHub repository or a zip file, are being used"><input ng-disabled="form.appsource=='This catalog'" ng-model="form.appurl"/></td>
+     </tr>
+
+
+     <tr>
+        <th><label>Blueprint Name</label></th>
+		<th><label>Deployment Name</label></th>
+    </tr>
+	<tr>
+        <td><input class="mydisabled" type="text" readonly="true" ng-init="form.name='blueprint.yaml'" ng-model="form.name"/></td>
+		<td><input ng-model="form.deployment"/></td>
+    </tr>
+
+    <tr>
+        <th><label>Data Center</label></th>
+		<th><label>Computing instance</label></th>
+    </tr>
+	<tr>
+        <td><select ng-options="datacenter.id as datacenter.label for datacenter in datacenters" ng-model="form.datacenter"></select></td>
+		<td><select ng-options="cpu.id as cpu.label for cpu in cpus" ng-model="form.cpu"></select></td>
+    </tr>
+
+	<tr>
+        <th><label>Disk</label></th>
+		<th><label>RAM</label></th>
+    </tr>
+    <tr>
+        <td><select ng-options="disk.id as disk.label for disk in disks" ng-model="form.disk"></select></td>
+        <td><select ng-options="memory.id as memory.label for memory in memories" ng-model="form.memory"></select></td>
+    </tr>
+   </table>
+	   </td>
+
+	   <td class="vtop">
+	<table class="mytable">
+	 <tr>
+		<th title="If you set the value of this field,&#xD;Cloudify will use the specified item id&#13;instead of generating a new one.&#13;The correspoding key file must reside on this tool's vm"><label>Existing ssh_key's SL item id</label></th>
+		<th><label>SoftLayer username</label></th>
+     </tr>
+	 <tr>
+        <td title="If you set the value of this field,&#xD;Cloudify will use the specified item id&#13;instead of generating a new one.&#13;The correspoding key file must reside on this tool's vm"><input ng-disabled="form.cfymngrip!=undefined && form.cfymngrip!=''" ng-model="form.sshkeyitemid"/></td>
+        <td><input ng-model="form.slusername"/></td>
+     </tr>
+
+	 <tr>
+		<th title="If you set the value of this field,&#xD;Cloudify will not bootstrap a new manager"><label>Cloudify manager's IP address</label></th>
+		<th><label>API KEY</label></th>
+     </tr>
+	 <tr>
+	    <td title="If you set the value of this field,&#xD;Cloudify will not bootstrap a new manager"><input ng-init="form.mngrValueChanged=false" ng-focus="form.mngrValueChanged=false" ng-blur="managerBlur()" ng-model="form.cfymngrip"/></td>
+		<td><input type="password" ng-model="form.apikey"/></td>
+     </tr>
+
+	 <tr>
+		<th title="Kill an existing Cloudify Manager"><label>Kill Manager</label></th>
+		<th title="Delete all existing deployments of the Cloudify manager&#xD;prior to killing the manager"><label>Delete Deployments</label></th>
+     </tr>
+
+	 <tr>
+		<td title="Kill an existing Cloudify Manager">
+			Kill Manager?  <input class="mycb" type="checkbox" ng-model="form.killmanager" ng-true-value="'YES'" ng-false-value="'NO'">
+		</td>
+		<td title="Delete all existing deployments of the Cloudify manager&#xD;prior to killing the manager">
+			Delete Deployments?  <input class="mycb" type="checkbox" ng-model="form.deletedeployments" ng-true-value="'YES'" ng-false-value="'NO'">
+		</td>
+     </tr>
+
+	 <tr>
+		<th title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" colspan="2"><label>Additional CFY properties (commma separated)</label></th>
+     </tr>
+	 <tr>
+	    <td title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" colspan="2"><input ng-model="form.moreprops"/></td>
+     </tr>
+
+	 <tr>
+		<th title="e.g.: https://www.mySite.com/installMoreStuff.sh" colspan="2"><label>Provisioning Script</label></th>
+     </tr>
+	 <tr>
+	    <td title="e.g.: https://www.mySite.com/installMoreStuff.sh" colspan="2"><input ng-model="form.provscript"/></td>
+     </tr>
+
+
+
+   </label><br/>
+
+	</table>
+	   </td>
+	   <td class="vtop" ng-cloak>
+		  <div ng-init="form.showCfyMgnr=false" ng-hide="form.showCfyMgnr==false">
+			  <iframe id="cfymgnrelem" src="{{managerUrl}}" width="1150px" height="500px"></iframe>
+		  </div>
+	   </td>
+     </tr>
+   </table>
+
+  </div>
+
+  <div>
+  <br/>
+    <table class="mytable">
+	  <tr>
+	    <th><label>Cloudify Manager's Operating system</label></th>
+		<th><label>Uplink port speeds</label></th>
+	  </tr>
+	  <tr>
+	    <td><select ng-init="form.os = form.os || oss[0].id" ng-options="os.id as os.label for os in oss" ng-model="form.os"></select></td>
+		<td><select ng-options="portspeed.id as portspeed.label for portspeed in portspeeds" ng-model="form.portspeed"></select></td>
+	  </tr>
+
+	  <tr>
+	    <th><label>VMs' Operating system</label></th>
+		<th title="Notification emails will be sent to this address"><label>Email address</label></th>
+	  </tr>
+	  <tr>
+	    <td><select ng-options="vmsos.id as vmsos.label for vmsos in vmsoss" ng-model="form.vmsos"></select></td>
+		<td title="Notification emails will be sent to this address"><input ng-model="form.email"/></td>
+	  </tr>
+    </table>
+  </div>
+
+  <div>
+        <br/>
+        <input class="myButton" type="submit"/>
+		<hr/>
+  </div>
+</form>
+<pre>{{output}}</pre>
+

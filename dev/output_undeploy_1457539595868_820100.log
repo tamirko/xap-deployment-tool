@@ -1,0 +1,49 @@
+/home/tamirk/tmp/xxx /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+usage: cfy [-h] [--version]
+           {status,blueprints,bootstrap,teardown,workflows,recover,node-instances,snapshots,deployments,init,agents,dev,use,plugins,nodes,executions,local,events,ssh}
+           ...
+cfy: error: invalid choice: '--' (choose from 'status', 'blueprints', 'bootstrap', 'teardown', 'workflows', 'recover', 'node-instances', 'snapshots', 'deployments', 'init', 'agents', 'dev', 'use', 'plugins', 'nodes', 'executions', 'local', 'events', 'ssh')
+Using management server 185.43.218.157 with port 80
+Executing workflow 'uninstall' on deployment 'deploy0903_v6' at management server 185.43.218.157 [timeout=900 seconds]
+2016-03-09T16:07:27 CFY <deploy0903_v6> Starting 'uninstall' workflow execution
+2016-03-09T16:07:27 CFY <deploy0903_v6> [JBoss-Server_f6921] Stopping node
+2016-03-09T16:07:27 CFY <deploy0903_v6> [JBoss-Server_f6921.stop] Task failed 'script_runner.tasks.run' -> Missing cloudify_agent runtime information. This most likely means that the Compute node never started successfully [attempt 1]
+2016-03-09T16:07:27 CFY <deploy0903_v6> [JBoss-Server_f6921] Deleting node
+2016-03-09T16:07:28 CFY <deploy0903_v6> [JBoss-VM_e3ba5] Stopping node
+2016-03-09T16:07:28 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Task failed 'diamond_agent.tasks.stop' -> Missing cloudify_agent runtime information. This most likely means that the Compute node never started successfully [attempt 1]
+2016-03-09T16:07:28 CFY <deploy0903_v6> [JBoss-VM_e3ba5] Stopping agent
+2016-03-09T16:07:29 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Task failed 'cloudify_agent.installer.operations.stop' -> NonRecoverableError('AgentInstallerConfigurationError: Failed configuring agent installer: ip must be set in one of the following:\n1. JBoss-VM.interfaces.[cloudify_agent.installer.operations.stop].inputs.agent_config \n2. JBoss-VM_e3ba5.runtime_properties.cloudify_agent \n3. JBoss-VM.properties.agent_config \n4. bootstrap_context.cloudify_agent',) [attempt 1]
+2016-03-09T16:07:29 CFY <deploy0903_v6> [JBoss-VM_e3ba5] Deleting agent
+2016-03-09T16:07:29 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Task failed 'cloudify_agent.installer.operations.stop' -> NonRecoverableError('AgentInstallerConfigurationError: Failed configuring agent installer: ip must be set in one of the following:\n1. JBoss-VM.interfaces.[cloudify_agent.installer.operations.stop].inputs.agent_config \n2. JBoss-VM_e3ba5.runtime_properties.cloudify_agent \n3. JBoss-VM.properties.agent_config \n4. bootstrap_context.cloudify_agent',) [attempt 1]
+2016-03-09T16:07:29 CFY <deploy0903_v6> [JBoss-VM_e3ba5] Deleting agent
+2016-03-09T16:07:29 CFY <deploy0903_v6> [JBoss-VM_e3ba5.delete] Task started 'cloudify_agent.installer.operations.delete'
+2016-03-09T16:07:30 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Sending task 'nova_plugin.server.stop'
+2016-03-09T16:07:30 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Task failed 'nova_plugin.server.stop' -> RecoverableError("KeyError: 'external_id'",) [attempt 1]
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_security_group_a5188|unlink] Task started 'nova_plugin.server.disconnect_security_group'
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5.delete] Sending task 'nova_plugin.server.delete'
+2016-03-09T16:07:30 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Task started 'nova_plugin.server.stop'
+2016-03-09T16:07:30 CFY <deploy0903_v6> [JBoss-VM_e3ba5.stop] Task failed 'nova_plugin.server.stop' -> RecoverableError("KeyError: 'external_id'",) [attempt 1]
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_ip_669f2|unlink] Sending task 'nova_plugin.server.disconnect_floatingip'
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_security_group_a5188|unlink] Sending task 'nova_plugin.server.disconnect_security_group'
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_ip_669f2|unlink] Task started 'nova_plugin.server.disconnect_floatingip'
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_security_group_a5188|unlink] Task started 'nova_plugin.server.disconnect_security_group'
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_ip_669f2|unlink] Task failed 'nova_plugin.server.disconnect_floatingip' -> RecoverableError("KeyError: 'external_id'",) [attempt 1]
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5->JBoss_security_group_a5188|unlink] Task failed 'nova_plugin.server.disconnect_security_group' -> RecoverableError("KeyError: 'external_id'",) [attempt 1]
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5] Deleting node
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5.delete] Sending task 'nova_plugin.server.delete'
+2016-03-09T16:07:31 CFY <deploy0903_v6> [JBoss-VM_e3ba5.delete] Task started 'nova_plugin.server.delete'
+2016-03-09T16:07:32 CFY <deploy0903_v6> [JBoss-VM_e3ba5.delete] Task failed 'nova_plugin.server.delete' -> RecoverableError("KeyError: 'external_id'",) [attempt 1]
+2016-03-09T16:07:32 CFY <deploy0903_v6> [JBoss_ip_669f2] Stopping node
+2016-03-09T16:07:32 CFY <deploy0903_v6> [JBoss_security_group_a5188] Stopping node
+2016-03-09T16:07:32 CFY <deploy0903_v6> [JBoss_security_group_a5188] Deleting node
+2016-03-09T16:07:32 CFY <deploy0903_v6> [JBoss_ip_669f2] Deleting node
+2016-03-09T16:07:33 CFY <deploy0903_v6> [JBoss_security_group_a5188.delete] Sending task 'neutron_plugin.security_group.delete'
+2016-03-09T16:07:33 CFY <deploy0903_v6> [JBoss_ip_669f2.delete] Sending task 'neutron_plugin.floatingip.delete'
+2016-03-09T16:07:33 CFY <deploy0903_v6> [JBoss_ip_669f2.delete] Task started 'neutron_plugin.floatingip.delete'
+2016-03-09T16:07:33 CFY <deploy0903_v6> [JBoss_ip_669f2.delete] Task failed 'neutron_plugin.floatingip.delete' -> RecoverableError("KeyError: 'external_type'",) [attempt 1]
+2016-03-09T16:07:33 CFY <deploy0903_v6> 'uninstall' workflow execution succeeded
+Finished executing workflow 'uninstall' on deployment 'deploy0903_v6'
+* Run 'cfy events list --include-logs --execution-id 66a9a5a0-d734-4dd9-90ae-0459d96ec66e' to retrieve the execution's events/logs
+Deleting deployment deploy0903_v6 from management server 185.43.218.157
+Deleted deployment successfully
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool

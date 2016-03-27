@@ -1,0 +1,80 @@
+/home/tamirk/tmp/xxx /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+usage: cfy [-h] [--version]
+           {status,blueprints,bootstrap,teardown,workflows,recover,node-instances,snapshots,deployments,init,agents,dev,use,plugins,nodes,executions,local,events,ssh}
+           ...
+cfy: error: invalid choice: '--' (choose from 'status', 'blueprints', 'bootstrap', 'teardown', 'workflows', 'recover', 'node-instances', 'snapshots', 'deployments', 'init', 'agents', 'dev', 'use', 'plugins', 'nodes', 'executions', 'local', 'events', 'ssh')
+Using management server 185.43.218.157 with port 80
+Executing workflow 'uninstall' on deployment 'mydep14' at management server 185.43.218.157 [timeout=900 seconds]
+2016-03-14T06:38:22 CFY <mydep14> Starting 'uninstall' workflow execution
+2016-03-14T06:38:23 CFY <mydep14> [xap_container_c6fb7] Stopping node
+2016-03-14T06:38:23 CFY <mydep14> [demo_shell_df25a] Stopping node
+2016-03-14T06:38:23 CFY <mydep14> [webui_9910f] Stopping node
+2016-03-14T06:38:23 CFY <mydep14> [xap_container_c6fb7.stop] Sending task 'script_runner.tasks.run'
+2016-03-14T06:38:23 CFY <mydep14> [xap_container_c6fb7.stop] Task started 'script_runner.tasks.run'
+2016-03-14T06:38:23 CFY <mydep14> [webui_9910f.stop] Sending task 'script_runner.tasks.run'
+2016-03-14T06:38:23 CFY <mydep14> [webui_9910f.stop] Task started 'script_runner.tasks.run'
+2016-03-14T06:38:24 CFY <mydep14> [demo_shell_df25a] Deleting node
+2016-03-14T06:38:24 CFY <mydep14> [webui_9910f.stop] Task succeeded 'script_runner.tasks.run'
+2016-03-14T06:38:24 CFY <mydep14> [webui_9910f] Deleting node
+2016-03-14T06:38:35 CFY <mydep14> [xap_container_c6fb7.stop] Task succeeded 'script_runner.tasks.run'
+2016-03-14T06:38:35 CFY <mydep14> [xap_container_c6fb7] Deleting node
+2016-03-14T06:38:36 CFY <mydep14> [xap_container_vm_27c9e] Stopping node
+2016-03-14T06:38:36 CFY <mydep14> [xap_management_2bced] Stopping node
+2016-03-14T06:38:36 CFY <mydep14> [xap_management_2bced.stop] Sending task 'script_runner.tasks.run'
+2016-03-14T06:38:36 CFY <mydep14> [xap_management_2bced.stop] Task started 'script_runner.tasks.run'
+2016-03-14T06:38:36 CFY <mydep14> [xap_container_vm_27c9e] Stopping agent
+2016-03-14T06:38:36 CFY <mydep14> [xap_container_vm_27c9e.stop] Sending task 'cloudify_agent.installer.operations.stop'
+2016-03-14T06:38:36 CFY <mydep14> [xap_container_vm_27c9e.stop] Task started 'cloudify_agent.installer.operations.stop'
+2016-03-14T06:38:43 CFY <mydep14> [xap_container_vm_27c9e.stop] Task succeeded 'cloudify_agent.installer.operations.stop'
+2016-03-14T06:38:43 CFY <mydep14> [xap_container_vm_27c9e] Deleting agent
+2016-03-14T06:38:43 CFY <mydep14> [xap_container_vm_27c9e.delete] Sending task 'cloudify_agent.installer.operations.delete'
+2016-03-14T06:38:43 CFY <mydep14> [xap_container_vm_27c9e.delete] Task started 'cloudify_agent.installer.operations.delete'
+2016-03-14T06:38:46 CFY <mydep14> [xap_container_vm_27c9e.delete] Task succeeded 'cloudify_agent.installer.operations.delete'
+2016-03-14T06:38:46 CFY <mydep14> [xap_container_vm_27c9e.stop] Sending task 'nova_plugin.server.stop'
+2016-03-14T06:38:46 CFY <mydep14> [xap_container_vm_27c9e.stop] Task started 'nova_plugin.server.stop'
+2016-03-14T06:38:47 CFY <mydep14> [xap_container_vm_27c9e.stop] Task succeeded 'nova_plugin.server.stop'
+2016-03-14T06:38:48 CFY <mydep14> [xap_container_vm_27c9e] Deleting node
+2016-03-14T06:38:48 CFY <mydep14> [xap_container_vm_27c9e.delete] Sending task 'nova_plugin.server.delete'
+2016-03-14T06:38:48 CFY <mydep14> [xap_container_vm_27c9e.delete] Task started 'nova_plugin.server.delete'
+2016-03-14T06:38:48 CFY <mydep14> [xap_management_2bced.stop] Task succeeded 'script_runner.tasks.run'
+2016-03-14T06:38:49 CFY <mydep14> [xap_management_2bced] Deleting node
+2016-03-14T06:38:49 CFY <mydep14> [xap_management_vm_1f36f] Stopping node
+2016-03-14T06:38:50 CFY <mydep14> [xap_management_vm_1f36f] Stopping agent
+2016-03-14T06:38:50 CFY <mydep14> [xap_management_vm_1f36f.stop] Sending task 'cloudify_agent.installer.operations.stop'
+2016-03-14T06:38:50 CFY <mydep14> [xap_management_vm_1f36f.stop] Task started 'cloudify_agent.installer.operations.stop'
+2016-03-14T06:38:56 CFY <mydep14> [xap_management_vm_1f36f.stop] Task succeeded 'cloudify_agent.installer.operations.stop'
+2016-03-14T06:38:56 CFY <mydep14> [xap_management_vm_1f36f] Deleting agent
+2016-03-14T06:38:56 CFY <mydep14> [xap_management_vm_1f36f.delete] Sending task 'cloudify_agent.installer.operations.delete'
+2016-03-14T06:38:56 CFY <mydep14> [xap_management_vm_1f36f.delete] Task started 'cloudify_agent.installer.operations.delete'
+2016-03-14T06:38:59 CFY <mydep14> [xap_management_vm_1f36f.delete] Task succeeded 'cloudify_agent.installer.operations.delete'
+2016-03-14T06:38:59 CFY <mydep14> [xap_container_vm_27c9e.delete] Task succeeded 'nova_plugin.server.delete'
+2016-03-14T06:39:00 CFY <mydep14> [xap_management_vm_1f36f.stop] Sending task 'nova_plugin.server.stop'
+2016-03-14T06:39:00 CFY <mydep14> [xap_management_vm_1f36f.stop] Task started 'nova_plugin.server.stop'
+2016-03-14T06:39:00 CFY <mydep14> [xap_container_security_group_d9046] Stopping node
+2016-03-14T06:39:00 CFY <mydep14> [xap_container_security_group_d9046] Deleting node
+2016-03-14T06:39:00 CFY <mydep14> [xap_container_security_group_d9046.delete] Sending task 'neutron_plugin.security_group.delete'
+2016-03-14T06:39:00 CFY <mydep14> [xap_container_security_group_d9046.delete] Task started 'neutron_plugin.security_group.delete'
+2016-03-14T06:39:01 CFY <mydep14> [xap_management_vm_1f36f.stop] Task succeeded 'nova_plugin.server.stop'
+2016-03-14T06:39:01 CFY <mydep14> [xap_management_vm_1f36f->floatingip_3340d|unlink] Sending task 'nova_plugin.server.disconnect_floatingip'
+2016-03-14T06:39:01 CFY <mydep14> [xap_management_vm_1f36f->floatingip_3340d|unlink] Task started 'nova_plugin.server.disconnect_floatingip'
+2016-03-14T06:39:01 CFY <mydep14> [xap_container_security_group_d9046.delete] Task succeeded 'neutron_plugin.security_group.delete'
+2016-03-14T06:39:02 CFY <mydep14> [xap_management_vm_1f36f->floatingip_3340d|unlink] Task succeeded 'nova_plugin.server.disconnect_floatingip'
+2016-03-14T06:39:02 CFY <mydep14> [xap_management_vm_1f36f] Deleting node
+2016-03-14T06:39:02 CFY <mydep14> [xap_management_vm_1f36f.delete] Sending task 'nova_plugin.server.delete'
+2016-03-14T06:39:02 CFY <mydep14> [xap_management_vm_1f36f.delete] Task started 'nova_plugin.server.delete'
+2016-03-14T06:39:14 CFY <mydep14> [xap_management_security_group_9fed9] Stopping node
+2016-03-14T06:39:14 CFY <mydep14> [xap_management_security_group_9fed9] Deleting node
+2016-03-14T06:39:14 CFY <mydep14> [xap_management_security_group_9fed9.delete] Sending task 'neutron_plugin.security_group.delete'
+2016-03-14T06:39:14 CFY <mydep14> [floatingip_3340d.delete] Sending task 'neutron_plugin.floatingip.delete'
+2016-03-14T06:39:14 CFY <mydep14> [xap_management_security_group_9fed9.delete] Task started 'neutron_plugin.security_group.delete'
+2016-03-14T06:39:14 CFY <mydep14> [xap_management_security_group_9fed9.delete] Sending task 'neutron_plugin.security_group.delete'
+2016-03-14T06:39:14 CFY <mydep14> [floatingip_3340d.delete] Sending task 'neutron_plugin.floatingip.delete'
+2016-03-14T06:39:14 CFY <mydep14> [floatingip_3340d.delete] Task started 'neutron_plugin.floatingip.delete'
+2016-03-14T06:39:14 CFY <mydep14> [xap_management_security_group_9fed9.delete] Task started 'neutron_plugin.security_group.delete'
+Finished executing workflow 'uninstall' on deployment 'mydep14'
+* Run 'cfy events list --include-logs --execution-id dc41d8eb-e626-488f-aa82-4afa8757af7e' to retrieve the execution's events/logs
+Deleting deployment mydep14 from management server 185.43.218.157
+Deleted deployment successfully
+Deleting blueprint xap_march14th from management server 185.43.218.157
+Deleted blueprint successfully
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool

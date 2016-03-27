@@ -1,0 +1,88 @@
+ 
+=============================================================
+The time and date is 03/07/2016 14:06:55
+Execution ID: 1457352415327_133100F
+Execution folder is /home/tamirk/dt_executions/1457352415327_133100
+Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457352415327_133100.log
+=============================================================
+set_virtualenv: execution id : 1457352415327_133100
+Activating virtualenv 'cfy_3_3_1ga_env'
+=============================================================
+install_cfy: execution id : 1457352415327_133100
+/home/tamirk/cfy_versions_root /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+----------------------------------------------------------
+Running installCfy.sh ... 
+  Required CFY VERSION      : 3.3.1GA
+  CFY_MINOR_VERSION is      : 3.3.1
+  PLUGINS_MINOR_VERSION is  : 1.3.1
+  CFY_GIT_TAG_BRANCH is     : ga
+  PLUGINS_GIT_TAG_BRANCH is : ga
+Cloudify 3.3.1 ga version already exists (/home/tamirk/cfy_versions_root/3.3.1/ga). -Moving on.
+/home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+=============================================================
+install_cfy_cloud_provider_plugin: execution id : 1457352415327_133100
+Cloud Provider                           : datacentred
+Cloud user name                          : undefined
+Application name                         : Jenkins
+Upload Blueprints ?                      : true
+Blueprint suffix                         : _blav0703_v2
+Blueprint file name                      : blueprint.yaml
+Deploy_Application ?                     : false
+CFY_DATA_CENTRED_REGION                  : sal01 ...
+CFY_DATA_CENTRED_OS                      : 74ff4015-aee1-4e02-aaa8-1c77b2650394 ...
+CFY_DATA_CENTRED_MANAGER_SSH_USER        : undefined ...
+CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : undefined ...
+CFY_DATA_CENTRED_AGENT_SSH_USER          : undefined ...
+CFY_DATA_CENTRED_SERVER_NAME             : server-0003 ...
+CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : undefined ...
+CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : mngmnt-net-0003 ...
+CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : mngmnt-subnet-0003 ...
+CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : mngmnt-router-0003 ...
+CFY_DATA_CENTRED_MANAGER_PORT_NAME       : mngr-port-0003 ...
+CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : mngr-sec-grp-0003 ...
+CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : agent-sec-grp-0003 ...
+CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : ~/.ssh/cloudify-manager-kp-0003.pem ...
+CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : ~/.ssh/cloudify-agent-kp-0003.pem ...
+CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : cloudify-manager-public-kp-0003 ...
+CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : cloudify-agent-public-kp-0003 ...
+Existing Manager IP address              : 185.43.218.157
+Use existing Manager                     : true
+Freeze the manager on failure            : false
+manager_blueprint_file                   : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint.yaml
+manager_blueprint_inputs_file            : /home/tamirk/cfy_versions_root/3.3.1/ga/cloudify-manager-blueprints/openstack-manager-blueprint-inputs.yaml
+=============================================================
+pre_bootstrap: execution id : 1457352415327_133100
+=============================================================
+run_bootstrap: execution id : 1457352415327_133100
+/home/tamirk/dt_executions/1457352415327_133100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Cloudify CLI 3.3.1
+Initialization completed successfully
+Using an existing Cloudify manager
+No Need to bootstrap, running cfy use -t 185.43.218.157
+Using management server 185.43.218.157 with port 80
+=============================================================
+pre_blueprint_upload: execution id : 1457352415327_133100
+=============================================================
+blueprints_upload: execution id : 1457352415327_133100
+Cloning into 'cloudify-deployment-tool-apps'...
+Using the repository's master branch
+/home/tamirk/dt_executions/1457352415327_133100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457352415327_133100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+-------------------------------------------------------------
+/home/tamirk/dt_executions/1457352415327_133100/cloudify-deployment-tool-apps/Jenkins /home/tamirk/dt_executions/1457352415327_133100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457352415327_133100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+Uploading Jenkins ...
+Validating blueprint.yaml
+Blueprint validated successfully
+Uploading blueprint blueprint.yaml to management server 185.43.218.157
+Uploaded blueprint, blueprint's id is: Jenkins_blav0703_v2
+Done uploading Jenkins
+/home/tamirk/dt_executions/1457352415327_133100/cloudify-deployment-tool-apps /home/tamirk/dt_executions/1457352415327_133100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+/home/tamirk/dt_executions/1457352415327_133100 /home/tamirk/cloudify-cosmo/cloudify-deployment-tool
+-------------------------------------------------------------
+=============================================================
+pre_deployment_creation: execution id : 1457352415327_133100
+=============================================================
+populate_node_templates: execution id : 1457352415327_133100
+Error: NODE_TEMPLATE_1_NAME is unset
+Aborting ...

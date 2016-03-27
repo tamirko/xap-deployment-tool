@@ -1,0 +1,27 @@
+.dt-action-btn{
+    border-radius:15px;
+    background-clip: padding-box;
+    background-color: $ACTION_BTN_BACKGROUND;
+
+    border:none;
+    outline:none;
+
+    $ACTION_BTN_HEIGHT:29px;
+    line-height:$ACTION_BTN_HEIGHT;
+    height:$ACTION_BTN_HEIGHT;
+    padding: 0 38px;
+
+    color:$ACTION_BTN_TEXT_COLOR;
+
+    font-size:13px;
+    text-transform: uppercase;
+
+    &:hover, &:active{
+        background-color:$ACTION_BTN_ACTIVE_BACKGROUND;
+    }
+
+    &[disabled]{
+        background-color:rgb(221, 221, 221);
+    }
+
+}

@@ -1,0 +1,49 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "1",
+    "applicationName": "*serwerwe",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "actualNodeTemplates": [
+        {
+            "name": "mongo1_host",
+            "datacentredos": "d05fc0b7-77c7-4b4c-bf98-3651a8ad4b95",
+            "datacentredflavor": "c871d2fc-c6df-41ab-8a89-6ddc5d8137d0",
+            "agentshuser": "ubuntu"
+        },
+        {
+            "name": "nodejs_host",
+            "datacentredos": "6de4cfa2-a278-44bf-a7b5-6a9522690051",
+            "datacentredflavor": "9cf6e43b-e191-47ca-8665-f8592e2d6227",
+            "agentshuser": "debuser"
+        },
+        {
+            "name": "ha_host_1",
+            "datacentredos": "621f75b6-8d28-47cf-9607-ae73943503b1",
+            "agentshuser": "centos66_user",
+            "datacentredflavor": "b671216b-1c68-4765-b752-0e8e6b6d015f"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true,
+    "cfyversion": "3.3.1GA",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0-103",
+    "managementsubnetname": "mngmnt-subnet-0-103",
+    "servername": "server-0-103",
+    "managementrouter": "mngmnt-router-0-103",
+    "managerportname": "mngr-port-0-103",
+    "managersecuritygroup": "mngr-sec-grp-0-103",
+    "agentsecuritygroup": "agent-sec-grp-0-103",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0-103.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0-103.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0-103",
+    "agentpublickeyname": "cloudify-agent-public-kp-0-103",
+    "existingMngrIPaddress": "123.456.789.22"
+}

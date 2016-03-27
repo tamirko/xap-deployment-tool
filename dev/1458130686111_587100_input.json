@@ -1,0 +1,43 @@
+{
+    "provider": "datacentred",
+    "applicationSources": 2,
+    "deployApplication": true,
+    "applicationName": "xap",
+    "blueprintFileName": "blueprint.yaml",
+    "cfyversion": "3.3.1GA",
+    "githuburl": "https://github.com/tamirko/cloudify-deployment-tool-apps.git",
+    "tagBranchTypes": "3",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0203",
+    "managementsubnetname": "mngmnt-subnet-0203",
+    "servername": "server-0203",
+    "managementrouter": "mngmnt-router-0203",
+    "managerportname": "mngr-port-0203",
+    "managersecuritygroup": "mngr-sec-grp-0203",
+    "agentsecuritygroup": "agent-sec-grp-0203",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0203.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0203.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0203",
+    "agentpublickeyname": "cloudify-agent-public-kp-0203",
+    "existingMngrIPaddress": "3453",
+    "actualNodeTemplates": [
+        {
+            "isComputeNode": true,
+            "datacentredos": "6c3047c6-17b1-4aaf-a657-9229bb481e50",
+            "datacentredflavor": "9cf6e43b-e191-47ca-8665-f8592e2d6227",
+            "name": "mng",
+            "moreprops": "xms=55,yyy=6,"
+        },
+        {
+            "isComputeNode": true
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true
+}

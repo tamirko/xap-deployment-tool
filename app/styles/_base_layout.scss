@@ -1,0 +1,104 @@
+.base-layout{
+
+    .base-layout-header{
+        position:absolute;
+        right:0;
+        left:0;
+        top:0;
+        height: $BASE_LAYOUT_HEADER_HEIGHT;
+        background-color: $HEADER_BACKGROUND_COLOR;
+
+        div[class*='-logo']{
+            display:inline-block;
+            margin-left:$LAYOUT_BORDER_PADDING;
+            position:relative;
+            top:50%;
+            transform: translateY(-50%);
+
+        }
+
+        .softlayer-logo{
+            width:186px;
+            height:32px;
+            background:url('/images/softlayer_logo.png') no-repeat;
+        }
+
+        .amazon-logo{
+            width:138px;
+            height:54px;
+            background:url('/images/amazon_logo.png') no-repeat;
+        }
+
+        .openstack-logo{
+            width:79px;
+            height:68px;
+            background:url('/images/openstack_logo.png') no-repeat;
+        }
+
+        .datacentred-logo{
+            width:200px;
+            height:44px;
+            background:url('/images/datacentred_logo.png') no-repeat;
+        }
+
+        .azure-logo{
+            width:221px;
+            height:31px;
+            background:url('/images/azure_logo.png') no-repeat;
+        }
+
+        .hostpool-logo{
+            width:160px;
+            height:44px;
+            background:url('/images/hostpool_logo.png') no-repeat;
+        }
+
+        .powered-by-cloudify{
+            width:77px;
+            height:49px;
+
+            display:inline-block;
+
+            position:relative;
+            float:right;
+            top:50%;
+            transform: translateY(-50%);
+
+            right:$LAYOUT_BORDER_PADDING;
+
+            background:url('/images/Cloudify_logo.png') no-repeat;
+
+
+
+            &:before{
+                font-family:$HEADER_POWERED_BY_FONT_FAMILY;
+                color: $HEADER_POWERED_BY_TEXT_COLOR;
+                display:inline-block;
+                content:"Powered by";
+                font-size:13px;
+                position:absolute;
+                left:-80px;
+                top:26px;
+            }
+
+        }
+    }
+
+    .base-layout-footer {
+        height:$BASE_LAYOUT_FOOTER_HEIGHT;
+
+        background-color: $HEADER_BACKGROUND_COLOR;
+        padding-left: $LAYOUT_BORDER_PADDING;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        color:$FOOTER_TEXT_COLOR;
+        .copyrights{
+            line-height:$BASE_LAYOUT_FOOTER_HEIGHT;
+        }
+    }
+}
+
+
+

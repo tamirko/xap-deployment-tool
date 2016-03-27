@@ -1,0 +1,61 @@
+.dt-instruction-btn{
+
+    outline:none;
+    padding:5px;
+
+    border: 2px solid $INSTRUCTION_BTN_BORDER_COLOR;
+    border-radius:4px;
+    background-clip: padding-box;
+    background-color: $INSTRUCTION_BTN_BACKGROUND_COLOR;
+    color: $INSTRUCTION_BTN_TEXT_COLOR;
+    font-family: $INSTRUCTION_BTN_FONT_FAMILY;
+    font-size:13px;
+    text-transform: uppercase;
+    i {
+        padding-right:5px;
+    }
+
+    &:hover{
+        background-color:$INSTRUCTION_BTN_HOVER_BACKGROUND_COLOR;
+    }
+
+    &.red-icon{
+        i:before{
+            color: $INSTRUCTION_BTN_RED_ICON_COLOR;
+        }
+    }
+}
+
+
+.dt-checkbox-btn{
+
+    outline:none;
+    padding:5px;
+
+    border: 2px solid $CHECKBOX_BTN_BORDER_COLOR;
+    border-radius:4px;
+    background-clip: padding-box;
+    background-color: $CHECKBOX_BTN_BACKGROUND_COLOR;
+    font-family: $CHECKBOX_BTN_FONT_FAMILY;
+    font-size:13px;
+    i {
+        padding-right:5px;
+    }
+
+    &:hover{
+        background-color:$CHECKBOX_BTN_HOVER_BACKGROUND_COLOR;
+    }
+
+}
+
+
+button.disabled-icon {
+    color:$CHECKBOX_BTN_RED_ICON_COLOR;
+}
+
+button.enabled-icon {
+    color:$CHECKBOX_BTN_GREEN_ICON_COLOR;
+}
+
+
+

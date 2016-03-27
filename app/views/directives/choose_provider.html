@@ -1,0 +1,20 @@
+<div class="choose-provider-container" >
+    <div class="choose-provider-content" >
+        <div class="dt-label">
+            Choose Cloud Provider <!-- todo: use i18n -->
+        </div>
+
+
+        <div class="select-wrapper">
+
+            <select class="dt-select" ng-options="item as ( 'cloudProviders.' + item.id | translate ) for item in cloudProviders track by item.id" ng-model="currentProvider"></select>
+            <!-- todo: using ui-select messes up the layout...  for now we will not follow the design and use a simple select -->
+            <!--<ui-select class="dt-select" ng-model="currentProvider">-->
+                <!--<ui-select-match placeholder="{{currentProvider.label}}">{{currentProvider.label}}</ui-select-match>-->
+                <!--<ui-select-choices repeat="item in cloudProviders">-->
+                    <!--<div ng-bind-html="item.label"></div>-->
+                <!--</ui-select-choices>-->
+            <!--</ui-select>-->
+        </div>
+    </div>
+</div>

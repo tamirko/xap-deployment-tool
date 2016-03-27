@@ -1,0 +1,7 @@
+ 
+=============================================================
+NODE_TEMPLATE_1_NAME is mongo_host
+NODE_TEMPLATE_1_DATACENTRED_FLAVOR is b8e8ab6a-5480-478c-b1de-b09050683d7d
+NODE_TEMPLATE_1_DATACENTRED_OS is 3d20595e-8261-4a9f-9701-9d37cb702a16
+NODE_TEMPLATE_1_DATACENTRED_AGENT_USER is unset
+Aborting ...

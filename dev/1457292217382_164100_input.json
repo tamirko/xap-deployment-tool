@@ -1,0 +1,58 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "1",
+    "applicationName": "Jenkins",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "cfyversion": "3.3.1GA",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0-103",
+    "managementsubnetname": "mngmnt-subnet-0-103",
+    "servername": "server-0-103",
+    "managementrouter": "mngmnt-router-0-103",
+    "managerportname": "mngr-port-0-103",
+    "managersecuritygroup": "mngr-sec-grp-0-103",
+    "agentsecuritygroup": "agent-sec-grp-0-103",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0-103.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0-103.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0-103",
+    "agentpublickeyname": "cloudify-agent-public-kp-0-103",
+    "existingMngrIPaddress": "185.43.218.157",
+    "actualNodeTemplates": [
+        {
+            "name": "node1",
+            "datacentredos": "3d20595e-8261-4a9f-9701-9d37cb702a16",
+            "datacentredflavor": "b8e8ab6a-5480-478c-b1de-b09050683d7d",
+            "agentshuser": "centosnode1"
+        },
+        {
+            "datacentredos": "ad40aeec-d548-4196-af81-63b9b619f8f0",
+            "name": "node2a",
+            "datacentredflavor": "b671216b-1c68-4765-b752-0e8e6b6d015f",
+            "agentshuser": "ub40"
+        },
+        {
+            "name": "my_host3",
+            "datacentredos": "ad40aeec-d548-4196-af81-63b9b619f8f0",
+            "agentshuser": "u2",
+            "datacentredflavor": "c4b193d2-f331-4250-9b15-bbfde97c462a"
+        },
+        {
+            "name": "tamirshost",
+            "datacentredos": "41f48c21-4ca9-4477-83b9-82f37070002c",
+            "agentshuser": "fed_user",
+            "datacentredflavor": "b8e8ab6a-5480-478c-b1de-b09050683d7d"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true,
+    "githuburl": "https://github.com/tamirko/cloudify-deployment-tool-apps.git",
+    "tagBranchTypes": "3",
+    "blueprintName": "_March_06_v3"
+}

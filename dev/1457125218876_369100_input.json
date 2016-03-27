@@ -1,0 +1,5 @@
+{
+    "provider": "azure",
+    "applicationSources": "1",
+    "cfyversion": "3.4.0RC2"
+}

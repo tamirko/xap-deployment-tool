@@ -1,0 +1,32 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "1",
+    "applicationName": "dsfdsf",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "usingExistingManager": false,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0-103",
+    "managementsubnetname": "mngmnt-subnet-0-103",
+    "servername": "server-0-103",
+    "managementrouter": "mngmnt-router-0-103",
+    "managerportname": "mngr-port-0-103",
+    "managersecuritygroup": "mngr-sec-grp-0-103",
+    "agentsecuritygroup": "agent-sec-grp-0-103",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0-103.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0-103.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0-103",
+    "agentpublickeyname": "cloudify-agent-public-kp-0-103",
+    "actualNodeTemplates": [
+        {
+            "name": "bbb3"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true
+}

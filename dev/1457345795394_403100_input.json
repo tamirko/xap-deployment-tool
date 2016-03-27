@@ -1,0 +1,48 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "2",
+    "applicationName": "Jenkins",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "cfyversion": "3.3.1GA",
+    "region": "sal01",
+    "githuburl": "https://github.com/tamirko/cloudify-deployment-tool-apps.git",
+    "tagBranchTypes": "2",
+    "blueprintName": "_07_03_v2",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0003",
+    "managementsubnetname": "mngmnt-subnet-0003",
+    "servername": "server-0003",
+    "managementrouter": "mngmnt-router-0003",
+    "managerportname": "mngr-port-0003",
+    "managersecuritygroup": "mngr-sec-grp-0003",
+    "agentsecuritygroup": "agent-sec-grp-0003",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0003.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0003.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0003",
+    "agentpublickeyname": "cloudify-agent-public-kp-0003",
+    "existingMngrIPaddress": "185.43.218.157",
+    "actualNodeTemplates": [
+        {
+            "name": "jenkins_host1",
+            "datacentredos": "621f75b6-8d28-47cf-9607-ae73943503b1",
+            "agentshuser": "centos",
+            "datacentredflavor": "b8e8ab6a-5480-478c-b1de-b09050683d7d"
+        },
+        {
+            "name": "Jboss_VM",
+            "datacentredos": "6c3047c6-17b1-4aaf-a657-9229bb481e50",
+            "agentshuser": "ub14",
+            "datacentredflavor": "d87de0ca-9c0e-4759-a704-8621883c3415"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true,
+    "zipurl": "http://mysite.com/myfile.zip"
+}

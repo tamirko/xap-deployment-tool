@@ -1,0 +1,133 @@
+.deploy-layout{
+
+    $DEPLOY_LAYOUT_HEADER_HEIGHT:67px;
+    $CHOOSE_PROVIDER_WIDTH:235px;
+
+    .deploy-header{
+        position:absolute;
+        left:0;
+        right:0;
+        height:$DEPLOY_LAYOUT_HEADER_HEIGHT;
+        top:$BASE_LAYOUT_HEADER_HEIGHT;
+        box-shadow: 0 2px 1px $DEPLOY_LAYOUT_BOTTOM_SHADOW;
+        padding-left:$LAYOUT_BORDER_PADDING;
+        padding-right:$LAYOUT_BORDER_PADDING;
+
+        z-index:1; // make box shadow visible.
+
+        .deploy-header-items-wrapper{
+            display:table;
+//            height: $DEPLOY_LAYOUT_HEADER_HEIGHT; //add 1 to make border reach bottom properly
+            height: $DEPLOY_LAYOUT_HEADER_HEIGHT + 1; //add 1 to make border reach bottom properly
+            width:100%;
+            .deploy-header-items{
+                width:100%;
+                display:table-row;
+                .deploy-header-item{
+                    display:table-cell;
+                    vertical-align: middle;
+
+                }
+            }
+        }
+
+        [choose-provider]{
+            width:$CHOOSE_PROVIDER_WIDTH;
+//            border-right: 1px solid black;
+            height:100%;
+        }
+
+        .deploy-header-choose-provider-wrapper{
+            width:1px;
+            border-right:1px solid $DEPLOY_LAYOUT_SECTION_BORDER_COLOR;
+        }
+
+        .deploy-header-login-details{
+            width:100%;
+        }
+
+        .deploy-header-actions{
+            text-align:right;
+        }
+
+//        .deploy-header-item{
+//            display:inline-block;
+//            position:absolute;
+//            top:50%;
+//            transform: translateY(-50%);
+//            height: $DEPLOY_LAYOUT_HEADER_HEIGHT;
+//        }
+//
+//        .deploy-header-login-details{
+//            left: $CHOOSE_PROVIDER_WIDTH + 30px;
+//        }
+//        .deploy-header-actions{
+//            right:$LAYOUT_BORDER_PADDING;
+//        }
+
+
+
+    }
+
+    .deploy-body{
+        position:absolute;
+        overflow:auto;
+        top:$BASE_LAYOUT_HEADER_HEIGHT + $DEPLOY_LAYOUT_HEADER_HEIGHT;
+        bottom: $BASE_LAYOUT_FOOTER_HEIGHT;
+        left:0;
+        right:0;
+        background-color:$DEPLOY_LAYOUT_BODY_BACKGROUND;
+
+        $LEFT_SIDE_MENU_WIDTH: 176px;
+        .left-side-menu{
+            background:$DEPLOY_LAYOUT_LEFT_SIDE_MENU_BACKGROUND_COLOR;
+            width:$LEFT_SIDE_MENU_WIDTH;
+            position:absolute;
+            top:0;
+            min-height:100%;
+
+            .actions{
+                text-align:center;
+                padding:20px;
+            }
+        }
+
+        .deploy-body-content{
+            background:$PANEL_BACKGROUND_COLOR;
+            position:absolute;
+            top: $LAYOUT_BORDER_PADDING;
+            left: $LEFT_SIDE_MENU_WIDTH + $LAYOUT_BORDER_PADDING;
+            right: $LAYOUT_BORDER_PADDING;
+            padding: $LAYOUT_BORDER_PADDING ;
+
+            border-radius: 2px;
+            background-clip: padding-box;
+            box-shadow: 0 0 3px $PANEL_BORDER_COLOR;
+
+        }
+    }
+
+
+}
+
+.deploy-layout-ps{
+    background:white;
+}
+
+.important-note {
+    color : red;
+    text-align:left;
+}
+
+.undeploy_btn {
+    text-align:center;
+}
+
+.undeploy_ok_btn {
+    float: left;
+    text-align:left;
+}
+
+.undeploy_warn {
+    text-align:left;
+}

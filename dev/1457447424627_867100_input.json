@@ -1,0 +1,47 @@
+{
+    "provider": "datacentred",
+    "applicationSources": "2",
+    "applicationName": "bs",
+    "blueprintFileName": "blueprint.yaml",
+    "deployApplication": true,
+    "region": "sal01",
+    "githuburl": "https://github.com/tamirko/cloudify-deployment-tool-apps.git",
+    "tagBranchTypes": "3",
+    "blueprintName": "tamirko_march8th",
+    "cfyversion": "3.3.1GA",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0103",
+    "managementsubnetname": "mngmnt-subnet-0103",
+    "servername": "server-0103",
+    "managementrouter": "mngmnt-router-0103",
+    "managerportname": "mngr-port-0103",
+    "managersecuritygroup": "mngr-sec-grp-0103",
+    "agentsecuritygroup": "agent-sec-grp-0103",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0103.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0103.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0103",
+    "agentpublickeyname": "cloudify-agent-public-kp-0103",
+    "existingMngrIPaddress": "185.43.218.157",
+    "actualNodeTemplates": [
+        {
+            "name": "AFP_ActiveMQ",
+            "datacentredos": "d05fc0b7-77c7-4b4c-bf98-3651a8ad4b95",
+            "datacentredflavor": "c871d2fc-c6df-41ab-8a89-6ddc5d8137d0",
+            "agentshuser": "ub14"
+        },
+        {
+            "name": "AFP_ActiveMQ",
+            "datacentredos": "ad40aeec-d548-4196-af81-63b9b619f8f0",
+            "datacentredflavor": "b122c607-2b5b-43fd-8879-cf6cb742e102",
+            "agentshuser": "ub13"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true
+}

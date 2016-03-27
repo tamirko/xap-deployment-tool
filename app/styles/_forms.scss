@@ -1,0 +1,191 @@
+$FIELD_INPUT_HEIGHT:31px;
+$FIELD_INPUT_WIDTH:201px;
+$SHORT_FIELD_INPUT_WIDTH:101px;
+$LONG_FIELD_INPUT_WIDTH:301px;
+$EXTRA_LONG_FIELD_INPUT_WIDTH:421px;
+
+.dt-label{
+    font-size:$FIELD_LABEL_TEXT_SIZE;
+    color:$FIELD_LABEL_TEXT_COLOR;
+
+}
+
+.dt-emphasized-label{
+    font-size:$FIELD_LABEL_TEXT_SIZE;
+    color:$EMPHASIZED_LABEL_TEXT_COLOR;
+}
+
+
+
+.dt-debug-chkbox{
+    color:$UI_DEBUG_CHKBOX_COLOR;
+}
+
+.dt-panelname{
+    color:$DEPLOY_STEP_PROVIDER_MAME_COLOR;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dt-form, .dt-form-horizontal{
+    input, select{
+        outline:none;
+    }
+}
+
+.dt-form{
+    $SECTION_TOP_PADDING:23px;
+    padding-bottom: $SECTION_TOP_PADDING;
+    .dt-form-section {
+        padding-top:$SECTION_TOP_PADDING;
+        .dt-label {
+            padding-bottom: 12px;
+        }
+    }
+
+    .dt-form-row{
+        .dt-form-section{
+            display:inline-block;
+            padding-left:34px;
+        }
+    }
+}
+
+
+
+.dt-form-horizontal{
+    .dt-label, .dt-input, .dt-form-section{
+        display:inline-block;
+    }
+    .dt-label{
+        padding-right:20px;
+    }
+
+    .dt-form-section{
+        margin-left:30px;
+    }
+}
+
+select.dt-select{
+    background:none;
+    border:none;
+    color:$INPUT_TEXT_COLOR;
+    outline:none;
+}
+
+.dt-shortinput{
+
+
+    input, select{
+        border:1px solid $FIELD_INPUT_BORDER;
+        border-radius:3px;
+
+        background-clip: padding-box;
+        background-color: $FIELD_INPUT_BACKGROUND;
+
+        height:$FIELD_INPUT_HEIGHT;
+        line-height:$FIELD_INPUT_HEIGHT;
+
+        width:$SHORT_FIELD_INPUT_WIDTH;
+        padding:0 0 0 8px;
+        color:$INPUT_TEXT_COLOR;
+
+
+    }
+}
+
+.dt-input{
+
+
+    input, select{
+        border:1px solid $FIELD_INPUT_BORDER;
+        border-radius:3px;
+
+        background-clip: padding-box;
+        background-color: $FIELD_INPUT_BACKGROUND;
+
+        height:$FIELD_INPUT_HEIGHT;
+        line-height:$FIELD_INPUT_HEIGHT;
+
+        width:$FIELD_INPUT_WIDTH;
+        padding:0 0 0 8px;
+        color:$INPUT_TEXT_COLOR;
+
+
+    }
+}
+
+.dt-longinput{
+
+
+    input, select{
+        border:1px solid $FIELD_INPUT_BORDER;
+        border-radius:3px;
+
+        background-clip: padding-box;
+        background-color: $FIELD_INPUT_BACKGROUND;
+
+        height:$FIELD_INPUT_HEIGHT;
+        line-height:$FIELD_INPUT_HEIGHT;
+
+        width:$LONG_FIELD_INPUT_WIDTH;
+        padding:0 0 0 8px;
+        color:$INPUT_TEXT_COLOR;
+
+
+    }
+}
+
+.dt-extralongselect{
+    width:$EXTRA_LONG_FIELD_INPUT_WIDTH;
+}
+
+.dt-extralonginput{
+
+
+    input, select{
+        border:1px solid $FIELD_INPUT_BORDER;
+        border-radius:3px;
+
+        background-clip: padding-box;
+        background-color: $FIELD_INPUT_BACKGROUND;
+
+        height:$FIELD_INPUT_HEIGHT;
+        line-height:$FIELD_INPUT_HEIGHT;
+
+        width:$EXTRA_LONG_FIELD_INPUT_WIDTH;
+        padding:0 0 0 8px;
+        color:$INPUT_TEXT_COLOR;
+
+
+    }
+}
+
+
+
+
+html body .selectize-control{
+//    &.dt-select{
+//        width:150px;
+//    }
+    .ui-select-match{
+        color:$INPUT_TEXT_COLOR;
+    }
+    &.single {
+        &, .selectize-input {
+            background: none;
+            border: none;
+            box-shadow:none;
+            -webkit-box-shadow: none;
+
+            &:after{
+                border-color:$SELECT_ARROW_COLOR transparent  transparent transparent;
+            }
+
+            .ui-select-choices{
+                margin-top:-10px;
+                border:none;
+            }
+        }
+    }
+}

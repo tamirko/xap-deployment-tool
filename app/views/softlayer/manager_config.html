@@ -1,0 +1,69 @@
+<div>
+
+    Data : {{data}}
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label dt-panelname">{{ currentProvider.label }} Manager Configuration</div> <!-- todo: use i18n -->
+			</div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div ng-show="!need2bootstrap()" class="dt-label">I want to use an existing Cloudify manager &nbsp;<button ng-show="!need2bootstrap()" class="dt-action-btn" ng-click="bootstrapNewManager()">Off</button></div>
+				<div ng-show="need2bootstrap()" class="dt-label">I want to bootstrap a new Cloudify manager &nbsp;<button ng-show="need2bootstrap()" class="dt-action-btn" ng-click="useExistingManager()">Off</button></div>
+			</div>
+		</div>
+		<div ng-show="need2bootstrap()" class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+				<div class="dt-label">Freeze Cloudify manager on failure &nbsp;<input type="checkbox" ng-model="data.freezemanagr"/></div>
+			</div>
+		</div>
+	</div>
+
+    <div class="dt-form">
+		<div class="dt-form-row">
+			<div ng-show="!need2bootstrap()" class="dt-form-section login-details-section">
+				<div class="dt-label">Insert manager's IP address</div> <!-- todo: use i18n -->
+				<div class="dt-input"><input ng-model="data.existingMngrIPaddress"/></div>
+			</div>
+		</div>
+	</div>
+
+    <div ng-show="need2bootstrap()" class="dt-form">
+        <div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+                <div class="dt-label">Computing instance</div> <!-- todo: use i18n -->
+                <div class="dt-input"><select ng-options="cpu.id as cpu.label for cpu in cpus" ng-model="data.cpu"></select></div>
+            </div>
+			<div class="dt-form-section login-details-section">
+                <div class="dt-label">Memory Size</div> <!-- todo: use i18n -->
+				<div class="dt-shortinput"><select ng-options="memory.id as memory.label for memory in memories" ng-model="data.memory"></select></div>
+            </div>
+			<div class="dt-form-section login-details-section">
+                <div class="dt-label">Hard Disk</div> <!-- todo: use i18n -->
+				<div class="dt-shortinput"><select ng-options="disk.id as disk.label for disk in disks" ng-model="data.disk"></select></div>
+            </div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+                <div class="dt-label">Oprerating System</div> <!-- todo: use i18n -->
+				<div class="dt-longinput"><select ng-options="os.id as os.label for os in oss" ng-model="data.os"></select></div>
+            </div>
+			<div class="dt-form-section login-details-section">
+                <div class="dt-label">Uplink port speeds</div> <!-- todo: use i18n -->
+				<div class="dt-longinput"><select ng-options="portspeed.id as portspeed.label for portspeed in portspeeds" ng-model="data.portspeed"></select></div>
+            </div>
+		</div>
+		<div class="dt-form-row">
+			<div class="dt-form-section login-details-section">
+                <div title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" class="dt-label">Additional CFY properties (commma separated)</div> <!-- todo: use i18n -->
+				<div title="e.g.: CFY_VMS_QTY=4,CFY_DB=mydbname,CFY_MYID=458&#xD;Such properties must begin with CFY_.(Case sensitive)&#xD;Cloudify will replace these place holders&#xD;(in the input.json file)&#xD;with their values from this field" class="dt-longinput"><input ng-model="data.moreprops"/></div>
+            </div>
+			<div class="dt-form-section login-details-section">
+                <div title="e.g.: https://www.mySite.com/installMoreStuff.sh" class="dt-label">Provisioning Script</div> <!-- todo: use i18n -->
+				<div title="e.g.: https://www.mySite.com/installMoreStuff.sh" class="dt-longinput"><input ng-model="data.provscript"/></div>
+            </div>
+		</div>
+	</div>
+</div>

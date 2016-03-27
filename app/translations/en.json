@@ -1,0 +1,10 @@
+{
+    "cloudProviders" : {
+        "amazon": "AWS",
+        "openstack": "OpenStack",
+        "softlayer": "SoftLayer",
+        "azure": "Azure",
+        "datacentred": "DataCentred",
+        "hostpool": "HostPool"
+    }
+}

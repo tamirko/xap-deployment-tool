@@ -1,0 +1,47 @@
+{
+    "provider": "datacentred",
+    "applicationSources": 2,
+    "deployApplication": true,
+    "applicationName": "nodecellar",
+    "blueprintFileName": "openstack-blueprint.yaml",
+    "cfyversion": "3.3.1GA",
+    "region": "sal01",
+    "githuburl": "https://github.com/tamirko/cloudify-deployment-tool-apps.git",
+    "tagBranchTypes": "3",
+    "usingExistingManager": true,
+    "freezeManagerOnFailure": false,
+    "useExistingNetwork": false,
+    "useExistingSubnet": false,
+    "useExistingExternalNetwork": false,
+    "useExistingSecurityGroup": true,
+    "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+    "managementnetworkname": "mngmnt-net-0-103",
+    "managementsubnetname": "mngmnt-subnet-0-103",
+    "servername": "server-0-103",
+    "managementrouter": "mngmnt-router-0-103",
+    "managerportname": "mngr-port-0-103",
+    "managersecuritygroup": "mngr-sec-grp-0-103",
+    "agentsecuritygroup": "agent-sec-grp-0-103",
+    "sshkeyfilename": "~/.ssh/cloudify-manager-kp-0-103.pem",
+    "agentprivatekeypath": "~/.ssh/cloudify-agent-kp-0-103.pem",
+    "managerpublickeyname": "cloudify-manager-public-kp-0-103",
+    "agentpublickeyname": "cloudify-agent-public-kp-0-103",
+    "existingMngrIPaddress": "185.43.218.157",
+    "actualNodeTemplates": [
+        {
+            "name": "nodejs_host",
+            "datacentredos": "74ff4015-aee1-4e02-aaa8-1c77b2650394",
+            "datacentredflavor": "8e6069a3-d8c6-4741-8e0d-6373b2ca38cc",
+            "agentshuser": "centos"
+        },
+        {
+            "datacentredos": "6c3047c6-17b1-4aaf-a657-9229bb481e50",
+            "datacentredflavor": "bf6dbcab-f0a5-49d7-b427-0ee09cc5f583",
+            "agentshuser": "ubuntu",
+            "name": "mongod_host"
+        }
+    ],
+    "forNodeUseExistingSecurityGroup": false,
+    "uploadBlueprint": true,
+    "deploymentName": "nc_v13_03_d2"
+}

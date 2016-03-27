@@ -1,0 +1,10 @@
+<!-- todo: use i18n -->
+
+<div>
+<div>
+    <ul>
+        <li ng-repeat="step in steps" ng-class="{ 'picked' : isCurrentStep(step) }" ng-click="goToStep({step:step})"><span>{{$index+1}}</span>{{ step.label }}</li>
+    </ul>
+
+</div>
+</div>
