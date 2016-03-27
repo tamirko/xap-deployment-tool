@@ -11,7 +11,7 @@
 			</div>
 		</div>
 
-        <div class="dt-form-row">
+        <div ng-show="false" class="dt-form-row">
             <div ng-disabled="uploadBlueprintsOnly()" class="dt-form-section login-details-section">
                 <div class="dt-label">Upload the blueprint &nbsp;
                     <button ng-disabled="uploadBlueprintsOnly()" ng-show="need2UploadBlueprint()" class="dt-checkbox-btn enabled-icon" ng-click="toggleUploadBlueprint()" ng-model="data.uploadtheblueprint">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div ng-show="need2UploadBlueprint()" class="dt-form-row">
+        <div ng-show="false && need2UploadBlueprint()" class="dt-form-row">
             <div class="dt-form-section login-details-section">
                 <div ng-show="need2UploadBlueprint()" title="e.g.: https://www.mySite.com/pre_blueprint_upload_script.sh&#010-Use this with caution !!!" class="dt-label">Pre blueprint upload</div> <!-- todo: use i18n -->
                 <div ng-show="need2UploadBlueprint()" title="e.g.: https://www.mySite.com/pre_blueprint_upload_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.preblueprintuploadscript"/></div>
@@ -41,7 +41,7 @@
         </div>
 
 
-        <div ng-show="!uploadBlueprintsOnly() && (need2DeployApplication() || isApplicationEmpty())" class="dt-form-row">
+        <div ng-show="false && !uploadBlueprintsOnly() && (need2DeployApplication() || isApplicationEmpty())" class="dt-form-row">
             <div class="dt-form-section login-details-section">
                 <div title="e.g.: https://www.mySite.com/pre_deployment_creation_script.sh&#010-Use this with caution !!!" class="dt-label">Pre deployment creation</div> <!-- todo: use i18n -->
                 <div title="e.g.: https://www.mySite.com/pre_deployment_creation_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.predeploymentcreationscript"/></div>
@@ -57,7 +57,7 @@
                 <div class="dt-label">Deployment Name</div> <!-- todo: use i18n -->
                 <div class="dt-input"><input ng-model="data.deploymentName"/></div>
             </div>
-            <div class="dt-form-section login-details-section">
+            <div ng-show="false" class="dt-form-section login-details-section">
                 <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-label">Post installation</div> <!-- todo: use i18n -->
                 <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-longinput"><input ng-model="data.postinstallscript"/></div>
             </div>

@@ -30,6 +30,18 @@ angular.module('demoApp')
         });
 
 
+        $scope.data.applicationName = "xap";
+        $scope.data.cfyversion = "3.3.1GA";
+
+
+        $scope.data.uploadBlueprint=true;
+        $scope.data.deployApplication=false;
+        $scope.data.applicationSources=2;
+        $scope.data.blueprintFileName="blueprint.yaml";
+        $scope.data.githuburl="https://github.com/tamirko/cloudify-deployment-tool-apps.git";
+        $scope.data.tagBranchTypes=3;
+
+
         $scope.isComputeNode = function(nodeTemplateIndex){
             if ( !$scope.nodeTemplates[nodeTemplateIndex] ) {
                 $scope.nodeTemplates[nodeTemplateIndex] = {};
