@@ -1,8 +1,0 @@
- 
-=============================================================
-The time and date is 03/09/2016 14:34:41
-Execution ID: 1457526881169_706100F
-Execution folder is /home/tamirk/dt_executions/1457526881169_706100
-Log file is in /home/tamirk/cloudify-cosmo/cloudify-deployment-tool/dev/output_1457526881169_706100.log
-./scripts/run_deploy.sh: line 770: unexpected EOF while looking for matching `''
-./scripts/run_deploy.sh: line 813: syntax error: unexpected end of file
