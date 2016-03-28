@@ -95,14 +95,14 @@
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Management VM's Oprerating System</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate1.datacentredos"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate1.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate1.datacentredos"></select></div>
                 </div>
             </div>
 
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Management VM's Flavor</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate1.datacentredflavor"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate1.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate1.datacentredflavor"></select></div>
                 </div>
             </div>
 
@@ -127,14 +127,14 @@
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Container VM's Oprerating System</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate2.datacentredos"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate2.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate2.datacentredos"></select></div>
                 </div>
             </div>
 
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Container VM's Flavor</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate2.datacentredflavor"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate2.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate2.datacentredflavor"></select></div>
                 </div>
             </div>
 
