@@ -66,8 +66,8 @@ angular
                 controller: 'DeployLayoutCtrl',
                 params: {
                     deploySteps : [
-                        { 'id' : 'generalData'  , 'slug' : 'general-data'         , 'label': 'General Data'},
-                        { 'id' : 'managerConfig', 'slug' : 'manager-config'       , 'label': 'Manager Config'},
+                     //   { 'id' : 'generalData'  , 'slug' : 'general-data'         , 'label': 'General Data'},
+                     //   { 'id' : 'managerConfig', 'slug' : 'manager-config'       , 'label': 'Manager Config'},
                         { 'id' : 'nodeTemplate' , 'slug' : 'node-template'        , 'label': 'Node Template'}
                      //   { 'id' : 'emailAddress' , 'slug' : 'email-address'        , 'label': 'Email Address'}
                     ]

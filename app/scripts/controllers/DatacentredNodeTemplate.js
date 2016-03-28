@@ -29,20 +29,34 @@ angular.module('demoApp')
             $scope.data.actualNodeTemplates = $scope.nodeTemplates;
         });
 
+        $scope.$watch('nodeTemplate1', function( newValue ){
+            $scope.data.actualNodeTemplates[0] = newValue;
+        });
+
+        $scope.$watch('nodeTemplate2', function( newValue ){
+            $scope.data.actualNodeTemplates[1] = newValue;
+        });
+
 
         $scope.data.applicationName = "xap";
         $scope.data.cfyversion = "3.3.1GA";
-
-
         $scope.data.uploadBlueprint=true;
         $scope.data.deployApplication=false;
         $scope.data.applicationSources=2;
         $scope.data.blueprintFileName="blueprint.yaml";
+        $scope.data.blueprintName="xap_";
         $scope.data.githuburl="https://github.com/tamirko/cloudify-deployment-tool-apps.git";
         $scope.data.tagBranchTypes=3;
+        $scope.data.usingExistingManager=true;
+        $scope.data.existingMngrIPaddress="185.43.218.157";
+
 
 
         $scope.isComputeNode = function(nodeTemplateIndex){
+            // Remove this later
+            if ( true ) {
+                return true;
+            }
             if ( !$scope.nodeTemplates[nodeTemplateIndex] ) {
                 $scope.nodeTemplates[nodeTemplateIndex] = {};
                 $scope.nodeTemplates[nodeTemplateIndex].isComputeNode = true;
