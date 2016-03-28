@@ -1,13 +1,14 @@
 <div class="node-templates-step">
 
-    <div class="dt-form-row">
+    <div ng-show="false" class="dt-form-row">
         <div class="dt-uidebugbg" ng-show="datacentred_node_template_ui_debug_enabled">Data : {{data}}</div>
     </div>
 
     <div class="dt-form">
 		<div class="dt-form-row">
 			<div class="dt-form-section login-details-section">
-				<div class="dt-label dt-panelname">{{ currentProvider.label }} Node Template</div> <!-- todo: use i18n -->
+				<!-- <div class="dt-label dt-panelname">{{ currentProvider.label }} Node Template</div> --> <!-- todo: use i18n -->
+				<div class="dt-label dt-panelname">XAP Configuration</div> <!-- todo: use i18n -->
 			</div>
 		</div>
 
@@ -54,8 +55,8 @@
 
         <div ng-show="!uploadBlueprintsOnly() && (need2DeployApplication() || isApplicationEmpty())" class="dt-form-row">
             <div class="dt-form-section login-details-section">
-                <div class="dt-label">Deployment Name</div> <!-- todo: use i18n -->
-                <div class="dt-input"><input ng-model="data.deploymentName"/></div>
+                <div class="dt-label">XAP Version</div> <!-- todo: use i18n -->
+                <div class="dt-input"><input ng-disabled="true" ng-init="data.deploymentName = 'xap10_1_0'" ng-model="data.deploymentName"/></div>
             </div>
             <div ng-show="false" class="dt-form-section login-details-section">
                 <div title="e.g.: https://www.mySite.com/post_install_script.sh&#010-Use this with caution !!!" class="dt-label">Post installation</div> <!-- todo: use i18n -->
@@ -65,29 +66,98 @@
 
 	</div>
 
-    <div ng-show="!uploadBlueprintsOnly() && need2DeployApplication()" class="dt-form-row">
+    <div ng-show="false && !uploadBlueprintsOnly() && need2DeployApplication()" class="dt-form-row">
         <div class="dt-form-section login-details-section">
             <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="datacentred_node_template_ui_debug_enabled"/></div>
         </div>
     </div>
 
-    <div ng-show="!uploadBlueprintsOnly() && (need2DeployApplication() || isApplicationEmpty())" class="dt-form-row">
+    <div ng-show="false && !uploadBlueprintsOnly() && (need2DeployApplication() || isApplicationEmpty())" class="dt-form-row">
         <div class="dt-form-section login-details-section">
             <div class="dt-label dt-debug-chkbox">* Enable Node templates UI debugging <input type="checkbox" ng-model="datacentred_node_templates_ui_debug_enabled"/></div>
         </div>
     </div>
 
     <div ng-show="!uploadBlueprintsOnly() && need2DeployApplication()" id="nodeTemplates">
+        <table>
+            <tr>
+                <td>
+                    <div id="nodeTemplateElem1" class="dt-form">
+                        <div class="dt-form-row">
+                            <div class="dt-form-section login-details-section">
+                                <div class="dt-label">XAP Management VM Name</div> <!-- todo: use i18n -->
+                                <div class="dt-input"><input ng-disabled="true" ng-init="nodeTemplate1.name = 'xap_management_vm'" ng-model="nodeTemplate1.name"/></div>
+                            </div>
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">SSH User Name</div> <!-- todo: use i18n -->
+                                <div class="dt-input"><input ng-init="nodeTemplate1.agentshuser = 'ubuntu'" ng-model="nodeTemplate1.agentshuser"/></div>
+                            </div>
 
-        <div id="nodeTemplateElem1" class="dt-form">
+                        </div>
+
+                        <div class="dt-form-row">
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">XAP Management VM's Oprerating System</div> <!-- todo: use i18n -->
+                                <div class="dt-extralonginput"><select ng-init="nodeTemplate1.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate1.datacentredos"></select></div>
+                            </div>
+                        </div>
+
+                        <div class="dt-form-row">
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">XAP Management VM's Flavor</div> <!-- todo: use i18n -->
+                                <div class="dt-extralonginput"><select ng-init="nodeTemplate1.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate1.datacentredflavor"></select></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </td>
+
+                <td>
+                    <div id="nodeTemplateElem2" class="dt-form">
+                        <div class="dt-form-row">
+                            <div class="dt-form-section login-details-section">
+                                <div class="dt-label">XAP Container VM Name</div> <!-- todo: use i18n -->
+                                <div class="dt-input"><input ng-disabled="true" ng-init="nodeTemplate2.name = 'xap_container_vm'" ng-model="nodeTemplate2.name"/></div>
+                            </div>
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">SSH User Name</div> <!-- todo: use i18n -->
+                                <div class="dt-input"><input ng-init="nodeTemplate2.agentshuser = 'ubuntu'" ng-model="nodeTemplate2.agentshuser"/></div>
+                            </div>
+
+                        </div>
+
+                        <div class="dt-form-row">
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">XAP Container VM's Oprerating System</div> <!-- todo: use i18n -->
+                                <div class="dt-extralonginput"><select ng-init="nodeTemplate2.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate2.datacentredos"></select></div>
+                            </div>
+                        </div>
+
+                        <div class="dt-form-row">
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">XAP Container VM's Flavor</div> <!-- todo: use i18n -->
+                                <div class="dt-extralonginput"><select ng-init="nodeTemplate2.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate2.datacentredflavor"></select></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="false && !uploadBlueprintsOnly() && need2DeployApplication()" id="origlist__nodeTemplates">
+
+        <div id="nodeTemplateElem11" class="dt-form">
             <div class="dt-form-row">
                 <div class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Management VM Name</div> <!-- todo: use i18n -->
-                    <div class="dt-input"><input ng-init="nodeTemplate1.name = 'xap_management_vm'" ng-model="nodeTemplate1.name"/></div>
+                    <div class="dt-input"><input ng-disabled="true" ng-init="nodeTemplate11.name = 'xap_management_vm'" ng-model="nodeTemplate11.name"/></div>
                 </div>
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">SSH User Name</div> <!-- todo: use i18n -->
-                    <div class="dt-input"><input ng-init="nodeTemplate1.agentshuser = 'ubuntu'" ng-model="nodeTemplate1.agentshuser"/></div>
+                    <div class="dt-input"><input ng-init="nodeTemplate11.agentshuser = 'ubuntu'" ng-model="nodeTemplate11.agentshuser"/></div>
                 </div>
 
             </div>
@@ -95,14 +165,14 @@
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Management VM's Oprerating System</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-init="nodeTemplate1.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate1.datacentredos"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate11.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate11.datacentredos"></select></div>
                 </div>
             </div>
 
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Management VM's Flavor</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-init="nodeTemplate1.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate1.datacentredflavor"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate11.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate11.datacentredflavor"></select></div>
                 </div>
             </div>
 
@@ -111,15 +181,15 @@
 
         <hr/>
 
-        <div id="nodeTemplateElem2" class="dt-form">
+        <div id="nodeTemplateElem22" class="dt-form">
             <div class="dt-form-row">
                 <div class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Container VM Name</div> <!-- todo: use i18n -->
-                    <div class="dt-input"><input ng-init="nodeTemplate2.name = 'xap_container_vm'" ng-model="nodeTemplate2.name"/></div>
+                    <div class="dt-input"><input ng-disabled="true" ng-init="nodeTemplate22.name = 'xap_container_vm'" ng-model="nodeTemplate22.name"/></div>
                 </div>
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">SSH User Name</div> <!-- todo: use i18n -->
-                    <div class="dt-input"><input ng-init="nodeTemplate2.agentshuser = 'ubuntu'" ng-model="nodeTemplate2.agentshuser"/></div>
+                    <div class="dt-input"><input ng-init="nodeTemplate22.agentshuser = 'ubuntu'" ng-model="nodeTemplate22.agentshuser"/></div>
                 </div>
 
             </div>
@@ -127,14 +197,14 @@
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Container VM's Oprerating System</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-init="nodeTemplate2.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate2.datacentredos"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate22.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate22.datacentredos"></select></div>
                 </div>
             </div>
 
             <div class="dt-form-row">
                 <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                     <div class="dt-label">XAP Container VM's Flavor</div> <!-- todo: use i18n -->
-                    <div class="dt-extralonginput"><select ng-init="nodeTemplate2.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate2.datacentredflavor"></select></div>
+                    <div class="dt-extralonginput"><select ng-init="nodeTemplate22.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate22.datacentredflavor"></select></div>
                 </div>
             </div>
 
@@ -214,19 +284,19 @@
 	</div>
 
 
-    <div ng-show="!uploadBlueprintsOnly() && need2DeployApplication()" class="dt-form-row">
+    <div ng-show="false && !uploadBlueprintsOnly() && need2DeployApplication()" class="dt-form-row">
         <div class="dt-form-section login-details-section">
             <div class="dt-label dt-debug-chkbox">* Enable Node templates UI debugging <input type="checkbox" ng-model="datacentred_node_templates_ui_debug_enabled"/></div>
         </div>
     </div>
 
-    <div class="dt-form-row">
+    <div ng-show="true" class="dt-form-row">
         <div class="dt-form-section login-details-section">
             <div class="dt-label dt-debug-chkbox">* Enable UI debugging <input type="checkbox" ng-model="datacentred_node_template_ui_debug_enabled"/></div>
         </div>
     </div>
 
-    <div class="dt-form-row">
+    <div ng-show="true" class="dt-form-row">
         <div class="dt-uidebugbg" ng-show="datacentred_node_template_ui_debug_enabled">Data : {{data}}</div>
     </div>
 </div>
