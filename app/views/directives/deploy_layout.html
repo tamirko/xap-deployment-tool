@@ -18,8 +18,11 @@
                     <div cloud-login-details></div>
                 </div>
                 <div class="deploy-header-item deploy-header-actions">
+                    <button class="dt-action-btn deploy-header-action" ng-disabled="isSubmitDisabled()" ng-click="submit()">Deploy XAP</button>
+                </div>
+                <div class="deploy-header-item deploy-header-actions">
                     <button class="dt-instruction-btn red-icon deploy-header-action" ng-click="openUndeployDialog()">
-                        <i class="fa fa-trash-o"/>Undeploy <!-- todo: use i18n -->
+                        <i class="fa fa-trash-o"/>Undeploy XAP <!-- todo: use i18n -->
                     </button>
                 </div>
             </div>
@@ -35,7 +38,7 @@
             <div deploy-steps="deploySteps" on-step-change="goToStep(step)"></div>
 
             <div class="actions">
-                <button class="dt-action-btn" ng-disabled="isSubmitDisabled()" ng-click="submit()">Submit</button>
+                <button class="dt-action-btn" ng-disabled="isSubmitDisabled()" ng-click="submit()">Deploy</button>
             </div>
 
 
