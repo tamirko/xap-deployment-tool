@@ -38,13 +38,19 @@ angular.module('demoApp')
         });
 
 
+        $scope.currentDate = new Date();
+        $scope.currentMonth = (($scope.currentDate.getMonth()+1<10)?"0":"") +($scope.currentDate.getMonth()+1);
+        $scope.currDay = (($scope.currentDate.getDate()<10)?"0":"")+$scope.currentDate.getDate();
+        $scope.formattedDate = $scope.currDay + $scope.currentMonth;
+        $scope.currentVersion = "_"+$scope.formattedDate + "_v3";
+
         $scope.data.applicationName = "xap";
         $scope.data.cfyversion = "3.3.1GA";
         $scope.data.uploadBlueprint=true;
         $scope.data.deployApplication=false;
         $scope.data.applicationSources=2;
         $scope.data.blueprintFileName="blueprint.yaml";
-        $scope.data.blueprintName="xap_";
+        $scope.data.blueprintName=$scope.currentVersion;
         $scope.data.githuburl="https://github.com/tamirko/cloudify-deployment-tool-apps.git";
         $scope.data.tagBranchTypes=3;
         $scope.data.usingExistingManager=true;
