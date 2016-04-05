@@ -42,7 +42,7 @@ angular.module('demoApp')
         $scope.currentMonth = (($scope.currentDate.getMonth()+1<10)?"0":"") +($scope.currentDate.getMonth()+1);
         $scope.currDay = (($scope.currentDate.getDate()<10)?"0":"")+$scope.currentDate.getDate();
         $scope.formattedDate = $scope.currDay + $scope.currentMonth;
-        $scope.currentVersion = "_"+$scope.formattedDate + "_v3";
+        $scope.currentVersion = "_"+$scope.formattedDate + "_" + $scope.currentDate.getTime() + '_' +(Math.floor(Math.random() * 900) + 100);
 
         $scope.data.applicationName = "xap";
         $scope.data.cfyversion = "3.3.1GA";
@@ -224,24 +224,24 @@ angular.module('demoApp')
         ];
 
         $scope.datacentredflavors =  [
-            { 'id': '05a9e6d1-d29f-4e98-9eab-51c9a6beed44', 'label': 'name: dc1.1x2.20 ,RAM: 2048 MB, 20 GB, 1 VCPUs'},
-            { 'id': '196235bc-7ca5-4085-ac81-7e0242bda3f9', 'label': 'name: dc1.2x4.40 ,RAM: 4096 MB, 40 GB, 2 VCPUs'},
-            { 'id': '5e68b95a-61fe-464f-913d-df044c7e433d', 'label': 'name: dc1.4x16 ,RAM: 16384 MB, 80 GB, 4 VCPUs'},
-            { 'id': '718f2a6d-52c5-4f23-a774-49df51c6eedc', 'label': 'name: dc1.1x1.80 ,RAM: 1024 MB, 80 GB, 1 VCPUs'},
-            { 'id': '78d43ae0-7c98-48d2-9adc-90e8f8f6fe99', 'label': 'name: dc1.1x0 ,RAM: 512 MB, 10 GB, 1 VCPUs'},
-            { 'id': '8e6069a3-d8c6-4741-8e0d-6373b2ca38cc', 'label': 'name: dc1.1x1.20 ,RAM: 1024 MB, 20 GB, 1 VCPUs'},
-            { 'id': '8f4b7ae1-b8c2-431f-bb0c-362a5ece0381', 'label': 'name: dc1.2x4 ,RAM: 4096 MB, 80 GB, 2 VCPUs'},
-            { 'id': '9cf6e43b-e191-47ca-8665-f8592e2d6227', 'label': 'name: dc1.4x8 ,RAM: 8192 MB, 80 GB, 4 VCPUs'},
-            { 'id': 'af2a80fe-ccad-43df-8cae-6418da948467', 'label': 'name: dc1.8x16 ,RAM: 16384 MB, 80 GB, 8 VCPUs'},
-            { 'id': 'b122c607-2b5b-43fd-8879-cf6cb742e102', 'label': 'name: dc1.1x2.80 ,RAM: 2048 MB, 80 GB, 1 VCPUs'},
-            { 'id': 'b671216b-1c68-4765-b752-0e8e6b6d015f', 'label': 'name: dc1.1x2 ,RAM: 2048 MB, 40 GB, 1 VCPUs'},
-            { 'id': 'b8e8ab6a-5480-478c-b1de-b09050683d7d', 'label': 'name: dc1.8x32 ,RAM: 32000 MB, 80 GB, 8 VCPUs'},
-            { 'id': 'bf6dbcab-f0a5-49d7-b427-0ee09cc5f583', 'label': 'name: dc1.2x2 ,RAM: 2048 MB, 80 GB, 2 VCPUs'},
-            { 'id': 'c4b193d2-f331-4250-9b15-bbfde97c462a', 'label': 'name: dc1.2x2.40 ,RAM: 2048 MB, 40 GB, 2 VCPUs'},
-            { 'id': 'c871d2fc-c6df-41ab-8a89-6ddc5d8137d0', 'label': 'name: dc1.16x32 ,RAM: 32000 MB, 80 GB, 16 VCPUs'},
-            { 'id': 'd87de0ca-9c0e-4759-a704-8621883c3415', 'label': 'name: dc1.2x8.40 ,RAM: 8192 MB, 40 GB, 2 VCPUs'},
-            { 'id': 'dcd2be06-0940-4410-9d1f-cbdc22a847e7', 'label': 'name: dc1.2x8 ,RAM: 8192 MB, 80 GB, 2 VCPUs'},
-            { 'id': 'f0577618-9125-4948-b450-474e225bbc4c', 'label': 'name: dc1.1x1 ,RAM: 1024 MB, 40 GB, 1 VCPUs'}
+            { 'id': '05a9e6d1-d29f-4e98-9eab-51c9a6beed44', 'label': 'RAM: 2048 MB, 20 GB, 1 VCPUs'},
+            { 'id': '196235bc-7ca5-4085-ac81-7e0242bda3f9', 'label': 'RAM: 4096 MB, 40 GB, 2 VCPUs'},
+            { 'id': '5e68b95a-61fe-464f-913d-df044c7e433d', 'label': 'RAM: 16384 MB, 80 GB, 4 VCPUs'},
+            { 'id': '718f2a6d-52c5-4f23-a774-49df51c6eedc', 'label': 'RAM: 1024 MB, 80 GB, 1 VCPUs'},
+            { 'id': '78d43ae0-7c98-48d2-9adc-90e8f8f6fe99', 'label': 'RAM: 512 MB, 10 GB, 1 VCPUs'},
+            { 'id': '8e6069a3-d8c6-4741-8e0d-6373b2ca38cc', 'label': 'RAM: 1024 MB, 20 GB, 1 VCPUs'},
+            { 'id': '8f4b7ae1-b8c2-431f-bb0c-362a5ece0381', 'label': 'RAM: 4096 MB, 80 GB, 2 VCPUs'},
+            { 'id': '9cf6e43b-e191-47ca-8665-f8592e2d6227', 'label': 'RAM: 8192 MB, 80 GB, 4 VCPUs'},
+            { 'id': 'af2a80fe-ccad-43df-8cae-6418da948467', 'label': 'RAM: 16384 MB, 80 GB, 8 VCPUs'},
+            { 'id': 'b122c607-2b5b-43fd-8879-cf6cb742e102', 'label': 'RAM: 2048 MB, 80 GB, 1 VCPUs'},
+            { 'id': 'b671216b-1c68-4765-b752-0e8e6b6d015f', 'label': 'RAM: 2048 MB, 40 GB, 1 VCPUs'},
+            { 'id': 'b8e8ab6a-5480-478c-b1de-b09050683d7d', 'label': 'RAM: 32000 MB, 80 GB, 8 VCPUs'},
+            { 'id': 'bf6dbcab-f0a5-49d7-b427-0ee09cc5f583', 'label': 'RAM: 2048 MB, 80 GB, 2 VCPUs'},
+            { 'id': 'c4b193d2-f331-4250-9b15-bbfde97c462a', 'label': 'RAM: 2048 MB, 40 GB, 2 VCPUs'},
+            { 'id': 'c871d2fc-c6df-41ab-8a89-6ddc5d8137d0', 'label': 'RAM: 32000 MB, 80 GB, 16 VCPUs'},
+            { 'id': 'd87de0ca-9c0e-4759-a704-8621883c3415', 'label': 'RAM: 8192 MB, 40 GB, 2 VCPUs'},
+            { 'id': 'dcd2be06-0940-4410-9d1f-cbdc22a847e7', 'label': 'RAM: 8192 MB, 80 GB, 2 VCPUs'},
+            { 'id': 'f0577618-9125-4948-b450-474e225bbc4c', 'label': 'RAM: 1024 MB, 40 GB, 1 VCPUs'}
         ];
 
     });

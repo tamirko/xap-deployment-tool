@@ -29,7 +29,7 @@ exit
 In CFY 3.3.1
 ssh to the manager and
 sudo vi /opt/cloudify-ui/views/cosmoLayoutTemplate.html
-replace the 1st line with the following :
+replace the 1st line with the followi3ng :
 
 
 

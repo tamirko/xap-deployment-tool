@@ -156,6 +156,7 @@ button.enabled-icon {
   border-radius: 15px;
   background-clip: padding-box;
   background-color: #29a9ed;
+  float: left;
   border: none;
   outline: none;
   line-height: 29px;
