@@ -572,6 +572,10 @@ function populate_node_templates {
                 echo "Warning: $z is unset. - Ignoring it ..."
            fi
 
+           echo "xap_management_vm_sec_grp: 'mng_grp_$1'">>$inputsFile
+           echo "xap_container_vm_sec_grp: 'cont_grp_$1'">>$inputsFile
+
+
            z="NODE_TEMPLATE_${i}_DATACENTRED_AGENT_USER"
            if [ "${!z}" ]; then
                 agentUser=${!z}
