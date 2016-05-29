@@ -653,6 +653,8 @@ function installation {
         echo "- Aborting"
         exit
     fi
+    xap_mngr=`cfy deployments outputs -d $dep | grep management_url | awk -F"," '{ print $2}' | sed -e "s+\(.*\)\(.*\)\(http,*:.*\)'+\3+g"`
+    echo "XAP URL is in ${xap_mngr}"
 }
 
 function post_installation {
