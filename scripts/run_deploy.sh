@@ -449,8 +449,8 @@ function pre_deployment_creation {
 }
 
 function create_current_node_template_file {
-    echo "-------------------------------------------------------------"
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "-------------------------------------------------------------"
+    #echo "${FUNCNAME[0]}: execution id : $1"
 
     origFilepath=${BLUEPRINT_FILENAME}
     sectionName=$1
@@ -654,7 +654,9 @@ function installation {
         exit
     fi
     xap_mngr=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
-    echo "XAP URL is in ${xap_mngr}"
+    echo "*************************************************************"
+    echo "*  XAP URL is in ${xap_mngr}"                               *"
+    echo "*************************************************************"
 }
 
 function post_installation {
