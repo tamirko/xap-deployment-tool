@@ -98,12 +98,12 @@ function install_cfy {
 }
 
 function install_cfy_cloud_provider_plugin {
-    echo "============================================================="
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "============================================================="
+    #echo "${FUNCNAME[0]}: execution id : $1"
 
     if [ "${CFY_LOGIN_USER}" == "default" ]; then
         if [ -f "${mystuffFile}" ]; then
-            echo "Sourcing from ${mystuffFile} ..."
+            #echo "Sourcing from ${mystuffFile} ..."
             source ${mystuffFile}
         fi
     fi
@@ -124,14 +124,14 @@ function install_cfy_cloud_provider_plugin {
         fi
     fi
 
-    echo "Cloud Provider                           : ${CFY_PROVIDER}"
-    echo "Cloud user name                          : ${CFY_LOGIN_USER}"
-    echo "Application name                         : ${APPLICATION_NAME}"
-    echo "Upload Blueprints ?                      : ${UPLOAD_BLUEPRINT}"
-    echo "Blueprint suffix                         : ${BLUEPRINT_NAME}"
-    echo "Blueprint file name                      : ${BLUEPRINT_FILENAME}"
-    echo "Deploy_Application ?                     : ${DEPLOY_APPLICATION}"
-    echo "Deployment name                          : ${DEPLOYMENT_NAME}"
+    #echo "Cloud Provider                           : ${CFY_PROVIDER}"
+    #echo "Cloud user name                          : ${CFY_LOGIN_USER}"
+    #echo "Application name                         : ${APPLICATION_NAME}"
+    #echo "Upload Blueprints ?                      : ${UPLOAD_BLUEPRINT}"
+    #echo "Blueprint suffix                         : ${BLUEPRINT_NAME}"
+    #echo "Blueprint file name                      : ${BLUEPRINT_FILENAME}"
+    #echo "Deploy_Application ?                     : ${DEPLOY_APPLICATION}"
+    #echo "Deployment name                          : ${DEPLOYMENT_NAME}"
     case ${CFY_PROVIDER} in
     "azure")
         #echo "Client ID                                : ${CFY_AZURE_CLIENTID}"
@@ -173,41 +173,41 @@ function install_cfy_cloud_provider_plugin {
         #echo "DATA_CENTRED_KEYSTONE_TENANT_NAME        : ${DATA_CENTRED_KEYSTONE_TENANT_NAME} ..."
         #echo "DATA_CENTRED_KEYSTONE_URL                : ${DATA_CENTRED_KEYSTONE_URL} ..."
 
-        echo "CFY_DATA_CENTRED_REGION                  : ${CFY_DATA_CENTRED_REGION} ..."
+        #echo "CFY_DATA_CENTRED_REGION                  : ${CFY_DATA_CENTRED_REGION} ..."
 
-        echo "CFY_DATA_CENTRED_OS                      : ${CFY_DATA_CENTRED_OS} ..."
-        echo "CFY_DATA_CENTRED_MANAGER_SSH_USER        : ${CFY_DATA_CENTRED_MANAGER_SSH_USER} ..."
+        #echo "CFY_DATA_CENTRED_OS                      : ${CFY_DATA_CENTRED_OS} ..."
+        #echo "CFY_DATA_CENTRED_MANAGER_SSH_USER        : ${CFY_DATA_CENTRED_MANAGER_SSH_USER} ..."
 
-        echo "CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : ${CFY_DATA_CENTRED_DATACENTRED_FLAVOR} ..."
-        echo "CFY_DATA_CENTRED_AGENT_SSH_USER          : ${CFY_DATA_CENTRED_AGENT_SSH_USER} ..."
-        echo "CFY_DATA_CENTRED_SERVER_NAME             : ${CFY_DATA_CENTRED_SERVER_NAME} ..."
+        #echo "CFY_DATA_CENTRED_DATACENTRED_FLAVOR      : ${CFY_DATA_CENTRED_DATACENTRED_FLAVOR} ..."
+        #echo "CFY_DATA_CENTRED_AGENT_SSH_USER          : ${CFY_DATA_CENTRED_AGENT_SSH_USER} ..."
+        #echo "CFY_DATA_CENTRED_SERVER_NAME             : ${CFY_DATA_CENTRED_SERVER_NAME} ..."
 
 
-        echo "CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : ${CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME} ..."
-        echo "CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : ${CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME} ..."
-        echo "CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : ${CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME} ..."
+        #echo "CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME   : ${CFY_DATA_CENTRED_EXTERNAL_NETWORK_NAME} ..."
+        #echo "CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME : ${CFY_DATA_CENTRED_MANAGEMENT_NETWORK_NAME} ..."
+        #echo "CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME  : ${CFY_DATA_CENTRED_MANAGEMENT_SUBNET_NAME} ..."
 
-        echo "CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : ${CFY_DATA_CENTRED_MANAGEMENT_ROUTER} ..."
-        echo "CFY_DATA_CENTRED_MANAGER_PORT_NAME       : ${CFY_DATA_CENTRED_MANAGER_PORT_NAME} ..."
-        echo "CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : ${CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP} ..."
+        #echo "CFY_DATA_CENTRED_MANAGEMENT_ROUTER       : ${CFY_DATA_CENTRED_MANAGEMENT_ROUTER} ..."
+        #echo "CFY_DATA_CENTRED_MANAGER_PORT_NAME       : ${CFY_DATA_CENTRED_MANAGER_PORT_NAME} ..."
+        #echo "CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP  : ${CFY_DATA_CENTRED_MANAGER_SECURITY_GROUP} ..."
 
-        echo "CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : ${CFY_DATA_CENTRED_AGENT_SECURITY_GROUP} ..."
-        echo "CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : ${CFY_DATA_CENTRED_SSH_KEY_FILE_NAME} ..."
-        echo "CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : ${CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH} ..."
+        #echo "CFY_DATA_CENTRED_AGENT_SECURITY_GROUP    : ${CFY_DATA_CENTRED_AGENT_SECURITY_GROUP} ..."
+        #echo "CFY_DATA_CENTRED_SSH_KEY_FILE_NAME       : ${CFY_DATA_CENTRED_SSH_KEY_FILE_NAME} ..."
+        #echo "CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH  : ${CFY_DATA_CENTRED_AGENT_PRIVATE_KEY_PATH} ..."
 
-        echo "CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : ${CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME} ..."
-        echo "CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : ${CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME} ..."
+        #echo "CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME : ${CFY_DATA_CENTRED_MANAGER_PUBLIC_KEY_NAME} ..."
+        #echo "CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME   : ${CFY_DATA_CENTRED_AGENT_PUBLIC_KEY_NAME} ..."
 
-        echo "Existing Manager IP address              : ${CFY_DATA_CENTRED_EXISTING_MANAGER_IP_ADDRESS}"
+        #echo "Existing Manager IP address              : ${CFY_DATA_CENTRED_EXISTING_MANAGER_IP_ADDRESS}"
         CFY_EXISTING_MANAGER_IP_ADDRESS=${CFY_DATA_CENTRED_EXISTING_MANAGER_IP_ADDRESS}
-        echo "Use existing Manager                     : ${CFY_DATA_CENTRED_USE_EXISTING_MANAGER}"
+        #echo "Use existing Manager                     : ${CFY_DATA_CENTRED_USE_EXISTING_MANAGER}"
         CFY_USE_EXISTING_MANAGER=${CFY_DATA_CENTRED_USE_EXISTING_MANAGER}
-        echo "Freeze the manager on failure            : ${CFY_DATA_CENTRED_FREEZE_MANAGER_ON_FAILURE}"
+        #echo "Freeze the manager on failure            : ${CFY_DATA_CENTRED_FREEZE_MANAGER_ON_FAILURE}"
         CFY_FREEZE_MANAGER_ON_FAILURE=${CFY_DATA_CENTRED_FREEZE_MANAGER_ON_FAILURE}
         export manager_blueprint_file=${CFY_VERSIONS_ROOT}/${CFY_MINOR_VERSION}/${CFY_GIT_TAG_BRANCH}/cloudify-manager-blueprints/openstack-manager-blueprint.yaml
-        echo "manager_blueprint_file                   : ${manager_blueprint_file}"
+        #echo "manager_blueprint_file                   : ${manager_blueprint_file}"
         export manager_blueprint_inputs_file=${CFY_VERSIONS_ROOT}/${CFY_MINOR_VERSION}/${CFY_GIT_TAG_BRANCH}/cloudify-manager-blueprints/openstack-manager-blueprint-inputs.yaml
-        echo "manager_blueprint_inputs_file            : ${manager_blueprint_inputs_file}"
+        #echo "manager_blueprint_inputs_file            : ${manager_blueprint_inputs_file}"
 
         ;;
     *)
@@ -221,7 +221,7 @@ function install_cfy_cloud_provider_plugin {
 
 function pre_bootstrap {
     echo "============================================================="
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "${FUNCNAME[0]}: execution id : $1"
 }
 
 function azure_init_bootstrap {

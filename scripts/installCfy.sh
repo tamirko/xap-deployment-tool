@@ -1,19 +1,19 @@
 #!/bin/bash
 
-echo "----------------------------------------------------------"
+#echo "----------------------------------------------------------"
 export fname=$(basename $0)
-echo "Running ${fname} ... "
+#echo "Running ${fname} ... "
 
-echo "  Required CFY VERSION      : $CFY_VERSION"
-echo "  CFY_MINOR_VERSION is      : ${CFY_MINOR_VERSION}"
-echo "  PLUGINS_MINOR_VERSION is  : ${PLUGINS_MINOR_VERSION}"
-echo "  CFY_GIT_TAG_BRANCH is     : ${CFY_GIT_TAG_BRANCH}"
-echo "  PLUGINS_GIT_TAG_BRANCH is : ${PLUGINS_GIT_TAG_BRANCH}"
+#echo "  Required CFY VERSION      : $CFY_VERSION"
+#echo "  CFY_MINOR_VERSION is      : ${CFY_MINOR_VERSION}"
+#echo "  PLUGINS_MINOR_VERSION is  : ${PLUGINS_MINOR_VERSION}"
+#echo "  CFY_GIT_TAG_BRANCH is     : ${CFY_GIT_TAG_BRANCH}"
+#echo "  PLUGINS_GIT_TAG_BRANCH is : ${PLUGINS_GIT_TAG_BRANCH}"
 export CFY_VERSION_FOLDER=$CFY_MINOR_VERSION/$CFY_GIT_TAG_BRANCH
 
 if [ -d $CFY_VERSION_FOLDER ]; then
     #cfy --version
-    echo "Cloudify $CFY_MINOR_VERSION $CFY_GIT_TAG_BRANCH version already exists (`pwd`/${CFY_VERSION_FOLDER}). -Moving on."
+    #echo "Cloudify $CFY_MINOR_VERSION $CFY_GIT_TAG_BRANCH version already exists (`pwd`/${CFY_VERSION_FOLDER}). -Moving on."
     exit
 fi
 mkdir -p $CFY_VERSION_FOLDER
@@ -25,15 +25,15 @@ if [ "${CFY_GIT_TAG_BRANCH}" == "ga" ]; then
     export cfy_plugin_tag=$PLUGINS_MINOR_VERSION
 else
     export cfy_tag=${CFY_MINOR_VERSION}${CFY_GIT_TAG_BRANCH}
-    echo cfy_tag $cfy_tag
+    #echo cfy_tag $cfy_tag
     export cfy_plugin_tag=${PLUGINS_MINOR_VERSION}${PLUGINS_GIT_TAG_BRANCH}
-    echo cfy_plugin_tag $cfy_plugin_tag
+    #echo cfy_plugin_tag $cfy_plugin_tag
 fi
 
 gitRepos=(cloudify-dsl-parser cloudify-rest-client cloudify-plugins-common cloudify-script-plugin cloudify-fabric-plugin cloudify-cli cloudify-openstack-plugin cloudify-aws-plugin cloudify-azure-plugin cloudify-manager-blueprints cloudify-nodecellar-example)
 for currGit in "${gitRepos[@]}"
 do
-    echo git clone https://github.com/cloudify-cosmo/$currGit.git
+    #echo git clone https://github.com/cloudify-cosmo/$currGit.git
     git clone https://github.com/cloudify-cosmo/$currGit.git
     pushd $currGit/
     if [ "${currGit}" == "cloudify-script-plugin" ] || [ "${currGit}" == "cloudify-fabric-plugin" ] ; then
@@ -55,7 +55,7 @@ do
     fi
 
     if [ "${currGit}" != "cloudify-manager-blueprints" ] && [ "${currGit}" != "cloudify-nodecellar-example" ] ; then
-        echo "pip installing ${currGit} (-e .)..."
+        #echo "pip installing ${currGit} (-e .)..."
         pip install -e .
     fi
     popd
