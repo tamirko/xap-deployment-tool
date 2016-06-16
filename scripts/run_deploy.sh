@@ -654,8 +654,12 @@ function installation {
         exit
     fi
     xap_mngr=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
+    client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
+    client_ip_address=`echo $client_url | awk -F":" '{ print $2 }' | sed 's+//++g'`
     echo "*************************************************************"
-    echo "*  XAP URL is in ${xap_mngr}"                               *"
+    echo "   XAP Management URL is in ${xap_mngr}"
+    echo "   Download the client VM's Private key from ${client_url}/private_key_${DEPLOYMENT_NAME} "
+    echo "   Run: ssh -i private_key_${DEPLOYMENT_NAME} ubuntu@${client_ip_address}"
     echo "*************************************************************"
 }
 
