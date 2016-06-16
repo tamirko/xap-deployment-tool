@@ -320,12 +320,12 @@ function datacentred_init_bootstrap {
 
 function openstack_init_bootstrap {
     echo "-------------------------------------------------------------"
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "${FUNCNAME[0]}: execution id : $1"
 }
 
 function run_bootstrap {
-    echo "============================================================="
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "============================================================="
+    #echo "${FUNCNAME[0]}: execution id : $1"
     pushd ${executionFolder}
     cfy --version
     cfy init -r
@@ -336,7 +336,7 @@ function run_bootstrap {
             exit
         else
             #echo "CFY_EXISTING_MANAGER_IP_ADDRESS is ${CFY_EXISTING_MANAGER_IP_ADDRESS}"
-            echo "No Need to bootstrap, running cfy use -t ${CFY_EXISTING_MANAGER_IP_ADDRESS}"
+            #echo "No Need to bootstrap, running cfy use -t ${CFY_EXISTING_MANAGER_IP_ADDRESS}"
             cfy use -t ${CFY_EXISTING_MANAGER_IP_ADDRESS}
         fi
     else
@@ -360,7 +360,7 @@ function pre_blueprint_upload {
         echo "No need to run ${FUNCNAME[0]}."
         return 0
     fi
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "${FUNCNAME[0]}: execution id : $1"
 }
 
 function blueprints_upload {
@@ -416,7 +416,7 @@ function blueprints_upload {
             echo "-------------------------------------------------------------"
             if [ "${APPLICATION_NAME}" == "*" ] || [ "${APPLICATION_NAME}" == "${currentApp}" ]; then
                 pushd $currentApp
-                echo "Uploading ${currentApp} ..."
+                #echo "Uploading ${currentApp} ..."
                 export currBpName=$currentApp$BLUEPRINT_NAME
                 cfy blueprints upload -b $currBpName -p ${BLUEPRINT_FILENAME}
                 currStatus=$?
@@ -487,13 +487,13 @@ function create_current_node_template_file {
         #diff $tempBpFile $origFilepath
     fi
     currStatus=$?
-    echo "currStatus is ${currStatus}"
+    #echo "currStatus is ${currStatus}"
 }
 
 function populate_current_node_template {
     echo "-------------------------------------------------------------"
-    echo "${FUNCNAME[0]}: execution id : $1"
-    echo "done"
+    #echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "done"
 }
 
 function populate_node_templates {
@@ -509,14 +509,14 @@ function populate_node_templates {
         return 0
     fi
 
-    pwd
+    #pwd
     cd $gitRepoName
     #ls -l $currBpName
     pushd ${APPLICATION_NAME}
-    echo "Populating node templates of the $APPLICATION_NAME application"
-    echo "The blueprint name will be $currBpName"
-    echo "Deployment name is $DEPLOYMENT_NAME"
-    ls -l
+    #echo "Populating node templates of the $APPLICATION_NAME application"
+    #echo "The blueprint name will be $currBpName"
+    #echo "Deployment name is $DEPLOYMENT_NAME"
+    #ls -l
 
     inputsFile=$1_inputs.yaml
     touch $inputsFile
@@ -531,7 +531,7 @@ function populate_node_templates {
         do
           nt="NODE_TEMPLATE_${i}_NAME"
           if [ "${!nt}" ]; then
-            echo $nt is ${!nt}
+            #echo $nt is ${!nt}
             create_current_node_template_file ${!nt}
           else
             echo "Warning: $nt is unset. - Ignoring it ..."
@@ -541,10 +541,10 @@ function populate_node_templates {
           z="NODE_TEMPLATE_${i}_DATACENTRED_FLAVOR"
           if [ "${!z}" ]; then
             flavorID=${!z}
-            echo "$z is ${flavorID}"
+            #echo "$z is ${flavorID}"
             flavorInputCount=`grep "flavor:" ${!nt} | grep -c get_input`
             if [ $flavorInputCount -eq 1 ]; then
-                echo "Setting the flavor to ${flavorID} in ${!nt}"
+                #echo "Setting the flavor to ${flavorID} in ${!nt}"
                 flavorInput=`grep "flavor:" ${!nt} | grep get_input | awk -F":" '{ print $3 }' | sed -e "s+[ }]++g"`
                 echo "${flavorInput}: '$flavorID'">>$inputsFile
                 sed -i -e "s+\(flavor:\)\(.*\)+\1 '$flavorID'+g" ${!nt}
@@ -558,10 +558,10 @@ function populate_node_templates {
            z="NODE_TEMPLATE_${i}_DATACENTRED_OS"
            if [ "${!z}" ]; then
                 imageID=${!z}
-                echo "$z is ${imageID}"
+                #echo "$z is ${imageID}"
                 imageInputCount=`grep "image:" ${!nt} | grep -c get_input`
                 if [ $imageInputCount -eq 1 ]; then
-                    echo "Setting the image (os) to ${imageID} in ${!nt}"
+                    #echo "Setting the image (os) to ${imageID} in ${!nt}"
                     imageInput=`grep "image:" ${!nt} | grep get_input | awk -F":" '{ print $3 }' | sed -e "s+[ }]++g"`
                     echo "${imageInput}: '$imageID'">>$inputsFile
                     sed -i -e "s+\(image:\)\(.*\)+\1 '$imageID'+g" ${!nt}
@@ -579,10 +579,10 @@ function populate_node_templates {
            z="NODE_TEMPLATE_${i}_DATACENTRED_AGENT_USER"
            if [ "${!z}" ]; then
                 agentUser=${!z}
-                echo "$z is ${agentUser}"
+                #echo "$z is ${agentUser}"
                 agentUserInputCount=`grep "user:" ${!nt} | grep -c get_input`
                 if [ $agentUserInputCount -eq 1 ]; then
-                    echo "Setting the agent ssh user to ${agentUser} in ${!nt}"
+                    #echo "Setting the agent ssh user to ${agentUser} in ${!nt}"
                     userInput=`grep "user:" ${!nt} | grep get_input | awk -F":" '{ print $3 }' | sed -e "s+[ }]++g"`
                     echo "${userInput}: '$agentUser'">>$inputsFile
                     sed -i -e "s+\(user:\)\(.*\)+\1 '$agentUser'+g" ${!nt}
@@ -596,8 +596,8 @@ function populate_node_templates {
            z="NODE_TEMPLATE_${i}_DATACENTRED_MORE_PROPS"
            if [ "${!z}" ]; then
                 currentNodeInputs=${!z}
-                echo "$z is ${currentNodeInputs}"
-                echo "Adding additional inputs (${currentNodeInputs}) to ${!nt}"
+                #echo "$z is ${currentNodeInputs}"
+                #echo "Adding additional inputs (${currentNodeInputs}) to ${!nt}"
                 add_inputs $inputsFile $currentNodeInputs
            else
                 echo "Warning: $z is unset. - Ignoring it ..."
@@ -618,8 +618,8 @@ function create_deployment {
         echo "No need to run ${FUNCNAME[0]} ."
         return 0
     fi
-    pwd
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #pwd
+    #echo "${FUNCNAME[0]}: execution id : $1"
     cfy deployments create -d $DEPLOYMENT_NAME -b $currBpName -i ${APPLICATION_NAME}/$1_inputs.yaml
     currStatus=$?
     if [ $currStatus -gt 0 ]; then
@@ -636,7 +636,7 @@ function pre_installation {
         echo "No need to run ${FUNCNAME[0]} ."
         return 0
     fi
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "${FUNCNAME[0]}: execution id : $1"
 }
 
 function installation {
@@ -658,12 +658,12 @@ function installation {
 }
 
 function post_installation {
-    echo "============================================================="
+    #echo "============================================================="
     if [ "${DEPLOY_APPLICATION}" == "false" ]; then
         echo "No need to run ${FUNCNAME[0]} ."
         return 0
     fi
-    echo "${FUNCNAME[0]}: execution id : $1"
+    #echo "${FUNCNAME[0]}: execution id : $1"
 }
 
 mngrExists=`cfy --version |& grep -ic manager`
@@ -681,8 +681,8 @@ create_deployment ${executionID}
 pre_installation ${executionID}
 installation ${executionID}
 post_installation ${executionID}
-echo "============================================================="
-echo "Deactivating virtualenv '${current_venv_name}'"
+#echo "============================================================="
+#echo "Deactivating virtualenv '${current_venv_name}'"
 deactivate
 exit 0
 
@@ -699,15 +699,15 @@ function replace_placeholders {
 		return 0
 	fi
 
-	echo "Replacing place holders in $1 ..."
-	echo "CFY_MORE_PROPERTIES is ${CFY_MORE_PROPERTIES}"
+	#echo "Replacing place holders in $1 ..."
+	#echo "CFY_MORE_PROPERTIES is ${CFY_MORE_PROPERTIES}"
 	arr=$(echo $CFY_MORE_PROPERTIES | tr "," "\n")
 
 	for x in ${arr[@]}
 	do
 		currkey=`echo $x | awk -F"=" '{print $1}'`
 		currval=`echo $x | awk -F"=" '{print $2}'`
-		echo $currkey is $currval
+		#echo $currkey is $currval
 		sed -i -e "s+$currkey+$currval+g" $1
 	done
 
@@ -715,7 +715,7 @@ function replace_placeholders {
 
 
 function install_app {
-    echo "In install_app using manager ${mngrIP} ..."
+    #echo "In install_app using manager ${mngrIP} ..."
 	#xxxx removelater
 	#export CFY_APPNAME="drupalAndMemcached"
 	export bp="${CFY_APPNAME}_${CFY_FOLDER}"
@@ -734,29 +734,29 @@ function install_app {
 	sed -i -e "s+CFY_SSHKEYITEMID+$sshkeyItemID+g" $currInput
 	sed -i -e "s+CFY_PORTSPEED+$CFY_PORTSPEED+g" $currInput
 	replace_placeholders ${currInput}
-	echo "Uploading the blueprint ${repoRootFolder}/${CFY_APPNAME}/${CFY_BLUEPRINT} ..."
+	#echo "Uploading the blueprint ${repoRootFolder}/${CFY_APPNAME}/${CFY_BLUEPRINT} ..."
 	dateA=$(date +"%s")
 	cfy blueprints upload -p ${repoRootFolder}/${CFY_APPNAME}/${CFY_BLUEPRINT} -b $bp
 	currStatus=$?
 	if [ $currStatus -eq 0 ]; then
 		dateB=$(date +"%s")
 		diff=$(($dateB-$dateA))
-		echo "blueprints upload took $(($diff / 60)) minutes and $(($diff % 60)) seconds."
-		echo "Creating the deployment ${dep} ..."
+		#echo "blueprints upload took $(($diff / 60)) minutes and $(($diff % 60)) seconds."
+		#echo "Creating the deployment ${dep} ..."
 		dateC=$(date +"%s")
 		cfy deployments create -d $dep -b $bp -i $currInput
 		currStatus=$?
 		dateD=$(date +"%s")
 		if [ $currStatus -eq 0 ]; then
 			diff=$(($dateD-$dateC))
-			echo "Deployment creation took $(($diff / 60)) minutes and $(($diff % 60)) seconds."
+			#echo "Deployment creation took $(($diff / 60)) minutes and $(($diff % 60)) seconds."
 			#if need to run apre-install (post deployment) script
 			if [[ $CFY_MORE_PROPERTIES =~ .*CFY_VMS_QTY.* ]]; then
-				echo "About to update number of instances ... "
+				#echo "About to update number of instances ... "
 				currUpdatePy="update_instances.py"
 				origUpdatePy="${repoRootFolder}/${CFY_APPNAME}/${currUpdatePy}"
 				cp -f $origUpdatePy $currUpdatePy
-				echo "Replacing CFY_CURR_MANAGER and CFY_CURR_DEPLOYMENT with $mngrIP and $dep in $currUpdatePy"
+				#echo "Replacing CFY_CURR_MANAGER and CFY_CURR_DEPLOYMENT with $mngrIP and $dep in $currUpdatePy"
 				sed -i -e "s+CFY_CURR_MANAGER+$mngrIP+g" $currUpdatePy
 				sed -i -e "s+CFY_CURR_DEPLOYMENT+$dep+g" $currUpdatePy
 				replace_placeholders ${currUpdatePy}
@@ -773,15 +773,15 @@ function install_app {
 				echo "About to update number of instances by running ${currUpdatePy} ..."
 				python $currUpdatePy
 			fi
-			echo "Installing ${CFY_APPNAME} ..."
+			#echo "Installing ${CFY_APPNAME} ..."
 			dateE=$(date +"%s")
 			cfy executions start -d $dep -w install
 			currStatus=$?
 			dateF=$(date +"%s")
 			if [ $currStatus -eq 0 ]; then
 				diff=$(($dateF-$dateE))
-				echo "Installation took $(($diff / 60)) minutes and $(($diff % 60)) seconds."
-				echo "Displaying outputs of ${dep} ..."
+				#echo "Installation took $(($diff / 60)) minutes and $(($diff % 60)) seconds."
+				#echo "Displaying outputs of ${dep} ..."
 				dateG=$(date +"%s")
 				cfy deployments outputs -d $dep
 				currStatus=$?
@@ -809,9 +809,9 @@ function install_app {
 
 
 if [ $mngrExists -gt 0 ]; then
-	echo "Using the existing Cloudify manager..."
+	#echo "Using the existing Cloudify manager..."
 	mngrIP=`cfy --version |& grep -i manager | awk -F"=" '{print $2}' | sed 's/\]//g'`
-	echo "cfy use -t ${mngrIP} ....."
+	#echo "cfy use -t ${mngrIP} ....."
 else
 	if [ "${CFY_CFYMNGRIP}" == "" ] || [ "${CFY_CFYMNGRIP}" == "undefined" ]; then
 	    cfy init -r
