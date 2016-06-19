@@ -330,7 +330,7 @@ function run_bootstrap {
     cfy --version
     cfy init -r
     if [ "true" == "${CFY_USE_EXISTING_MANAGER}" ]; then
-        echo "Using an existing Cloudify manager"
+        #echo "Using an existing Cloudify manager"
         if [ "undefined" == "${CFY_EXISTING_MANAGER_IP_ADDRESS}" ] || [ "" == "${CFY_EXISTING_MANAGER_IP_ADDRESS}" ]; then
             echo "There's no IP address for the manager. -Aborting"
             exit
@@ -654,7 +654,7 @@ function installation {
         exit
     fi
     xap_mngr=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
-    xap_mngr_ip_address=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_ip | sed -e "s+\(.*\)\(management_ip': u'\)\(.*\)\(.*\)+\3+1"`
+    xap_mngr_ip_address=`echo ${xap_mngr} | awk -F":" '{ print $2 }' | sed 's+//++g'`
     client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
     client_ip_address=`echo $client_url | awk -F":" '{ print $2 }' | sed 's+//++g'`
     private_key_prefix=${client_url}/private_key_${DEPLOYMENT_NAME}"
@@ -677,7 +677,7 @@ function installation {
     echo "   Run the following commands: "
     echo "      export XAP_NIC_ADDRESS=${xap_mngr_ip_address}"
     echo "      export XAP_LOOKUP_LOCATORS=${xap_mngr_ip_address}"
-    echo "      cd /tmp/xap/gigaspaces-xap-premium-11.0.0-ga/tools/benchmark/bin"
+    echo "      cd /tmp/xap/gigaspaces-xap-premium-11.0.0-ga/tools/benchmark/bin/"
     echo "      ./run.sh -clean -url jini://${XAP_LOOKUP_LOCATORS}:4174/benchmarkSpace_container1/benchmarkSpace"
     echo "   Then browse to "
     echo "*************************************************************"
