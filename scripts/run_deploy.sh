@@ -657,23 +657,23 @@ function installation {
     xap_mngr_ip_address=`echo ${xap_mngr} | awk -F":" '{ print $2 }' | sed 's+//++g'`
     client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
     client_ip_address=`echo $client_url | awk -F":" '{ print $2 }' | sed 's+//++g'`
-    private_key_prefix=${client_url}/private_key_${DEPLOYMENT_NAME}
-    private_key_linux=${client_url}/private_key_${DEPLOYMENT_NAME}.pem
-    private_key_windows=${client_url}/private_key_${DEPLOYMENT_NAME}.ppk
+    private_key_prefix=private_key_${DEPLOYMENT_NAME}
+    private_key_linux=private_key_${DEPLOYMENT_NAME}.pem
+    private_key_windows=private_key_${DEPLOYMENT_NAME}.ppk
     echo "*************************************************************"
     echo "   XAP Management URL is in ${xap_mngr}"
     echo "   Create a new space named benchmarkSpace"
     echo "   --------------------------------------"
     echo "   If you have a Linux laptop: "
-    echo "      Download the client VM's Private key from ${private_key_linux}"
+    echo "      Download the client VM's Private key from ${client_url}/${private_key_linux}"
     echo "      Then run : chmod 400 ${private_key_linux}"
     echo "      Connect to the client VM by running : ssh -i ${private_key_linux} ubuntu@${client_ip_address}"
     echo "   --------------------------------------"
     echo "   If you have a Windows laptop: "
-    echo "      Download the client VM's Private key from ${private_key_windows}"
+    echo "      Download the client VM's Private key from ${client_url}/${private_key_windows}"
     echo "      Connect to the client VM. E.g. : By using Putty and the private key."
     echo "   --------------------------------------"
-    echo "   Then Run the benchmark example or any other test ..."
+    echo "   In ${client_ip_address} run the benchmark example or any other test ..."
     echo "   Run the following commands: "
     echo "      export XAP_NIC_ADDRESS=${xap_mngr_ip_address}"
     echo "      export XAP_LOOKUP_LOCATORS=${xap_mngr_ip_address}"
