@@ -646,7 +646,7 @@ function installation {
         return 0
     fi
     echo "${FUNCNAME[0]}: execution id : $1"
-    cfy executions start -d $DEPLOYMENT_NAME -w install
+    cfy executions start -d $DEPLOYMENT_NAME -w install --timeout 1800
     currStatus=$?
     if [ $currStatus -gt 0 ]; then
         echo "Failure in ${FUNCNAME[0]}"
@@ -654,12 +654,32 @@ function installation {
         exit
     fi
     xap_mngr=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
+    xap_mngr_ip_address=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_ip | sed -e "s+\(.*\)\(management_ip': u'\)\(.*\)\(.*\)+\3+1"`
     client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
     client_ip_address=`echo $client_url | awk -F":" '{ print $2 }' | sed 's+//++g'`
+    private_key_prefix=${client_url}/private_key_${DEPLOYMENT_NAME}"
+    private_key_linux=${client_url}/private_key_${DEPLOYMENT_NAME}.pem"
+    private_key_windows=${client_url}/private_key_${DEPLOYMENT_NAME}.ppk"
     echo "*************************************************************"
     echo "   XAP Management URL is in ${xap_mngr}"
-    echo "   Download the client VM's Private key from ${client_url}/private_key_${DEPLOYMENT_NAME} "
-    echo "   Run: ssh -i private_key_${DEPLOYMENT_NAME} ubuntu@${client_ip_address}"
+    echo "   Create a new space named benchmarkSpace"
+    echo "   --------------------------------------"
+    echo "   If you have a Linux laptop: "
+    echo "      Download the client VM's Private key from ${private_key_linux}"
+    echo "      Then run : chmod 400 ${private_key_linux}"
+    echo "      Connect to the client VM by running : ssh -i ${private_key_linux} ubuntu@${client_ip_address}"
+    echo "   --------------------------------------"
+    echo "   If you have a Windows laptop: "
+    echo "      Download the client VM's Private key from ${private_key_windows}"
+    echo "      Connect to the client VM by running (e.g.: by using the Putty and the private key"
+    echo "   --------------------------------------"
+    echo "   Then Run the benchmark example or any other test ..."
+    echo "   Run the following commands: "
+    echo "      export XAP_NIC_ADDRESS=${xap_mngr_ip_address}"
+    echo "      export XAP_LOOKUP_LOCATORS=${xap_mngr_ip_address}"
+    echo "      cd /tmp/xap/gigaspaces-xap-premium-11.0.0-ga/tools/benchmark/bin"
+    echo "      ./run.sh -clean -url jini://${XAP_LOOKUP_LOCATORS}:4174/benchmarkSpace_container1/benchmarkSpace"
+    echo "   Then browse to "
     echo "*************************************************************"
 }
 
@@ -781,7 +801,7 @@ function install_app {
 			fi
 			#echo "Installing ${CFY_APPNAME} ..."
 			dateE=$(date +"%s")
-			cfy executions start -d $dep -w install
+			cfy executions start -d $dep -w install --timeout 1800
 			currStatus=$?
 			dateF=$(date +"%s")
 			if [ $currStatus -eq 0 ]; then
