@@ -674,12 +674,14 @@ function installation {
     echo "      Connect to the client VM. E.g. : By using Putty and the private key."
     echo "   --------------------------------------"
     echo "   In ${client_ip_address} run the benchmark example or any other test ..."
-    echo "   Run the following commands: "
+    echo "   You can run the following command: "
+    echo "      curl -s https://gist.githubusercontent.com/tamirko/692aa7728ecc72ac5dadad2c7ff34e82/raw/e549642ea804c1de566c78114c57062eb0411be8/runTheXapBenchmark.sh | bash /dev/stdin ${xap_mngr_ip_address}"
+    echo "   Or run the following commands one by one: "
     echo "      export XAP_NIC_ADDRESS=${xap_mngr_ip_address}"
     echo "      export XAP_LOOKUP_LOCATORS=${xap_mngr_ip_address}"
     echo "      cd /tmp/xap/gigaspaces-xap-premium-11.0.0-ga/tools/benchmark/bin/"
-    echo "      ./run.sh -clean -url jini://${XAP_LOOKUP_LOCATORS}:4174/benchmarkSpace_container1/benchmarkSpace"
-    echo "   Then browse to "
+    echo "      ./run.sh -clean -url jini://${xap_mngr_ip_address}:4174/benchmarkSpace_container1/benchmarkSpace"
+    echo "   Then browse to ${xap_mngr}"
     echo "*************************************************************"
 }
 
