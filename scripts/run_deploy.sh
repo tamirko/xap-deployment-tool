@@ -657,9 +657,9 @@ function installation {
     xap_mngr_ip_address=`echo ${xap_mngr} | awk -F":" '{ print $2 }' | sed 's+//++g'`
     client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
     client_ip_address=`echo $client_url | awk -F":" '{ print $2 }' | sed 's+//++g'`
-    private_key_prefix=${client_url}/private_key_${DEPLOYMENT_NAME}"
-    private_key_linux=${client_url}/private_key_${DEPLOYMENT_NAME}.pem"
-    private_key_windows=${client_url}/private_key_${DEPLOYMENT_NAME}.ppk"
+    private_key_prefix=${client_url}/private_key_${DEPLOYMENT_NAME}
+    private_key_linux=${client_url}/private_key_${DEPLOYMENT_NAME}.pem
+    private_key_windows=${client_url}/private_key_${DEPLOYMENT_NAME}.ppk
     echo "*************************************************************"
     echo "   XAP Management URL is in ${xap_mngr}"
     echo "   Create a new space named benchmarkSpace"
@@ -671,7 +671,7 @@ function installation {
     echo "   --------------------------------------"
     echo "   If you have a Windows laptop: "
     echo "      Download the client VM's Private key from ${private_key_windows}"
-    echo "      Connect to the client VM by running (e.g.: by using the Putty and the private key"
+    echo "      Connect to the client VM. E.g. : By using Putty and the private key."
     echo "   --------------------------------------"
     echo "   Then Run the benchmark example or any other test ..."
     echo "   Run the following commands: "
