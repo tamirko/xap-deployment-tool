@@ -653,6 +653,9 @@ function installation {
         echo "- Aborting"
         exit
     fi
+
+    cfy deployments outputs -d $DEPLOYMENT_NAME
+
     xap_mngr=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
     xap_mngr_ip_address=`echo ${xap_mngr} | awk -F":" '{ print $2 }' | sed 's+//++g'`
     client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
@@ -663,6 +666,12 @@ function installation {
     echo "*************************************************************"
     echo "   XAP Management URL is in ${xap_mngr}"
     echo "   Create a new space named benchmarkSpace"
+    echo "   --------------------------------------"
+    raw_str=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep "AAA" | awk -F"AAA" '{ print $2 }'`
+    for i in ${raw_str//,/ }
+    do
+        echo "    $i" | sed 's/BBB//g' | sed 's/=/ is in /g'
+    done
     echo "   --------------------------------------"
     echo "   If you have a Linux laptop: "
     echo "      Download the client VM's Private key from ${client_url}/${private_key_linux}"
