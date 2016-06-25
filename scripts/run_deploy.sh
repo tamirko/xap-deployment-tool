@@ -655,10 +655,11 @@ function installation {
     fi
 
     cfy deployments outputs -d $DEPLOYMENT_NAME
+    cfy deployments outputs -d $DEPLOYMENT_NAME>deployment_output
 
-    xap_mngr=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
+    xap_mngr=`cat deployment_output | grep management_url | sed -e "s+\(.*\)\(management_url': u'\)\(http://.*:9099\)\(.*\)+\3+1"`
     xap_mngr_ip_address=`echo ${xap_mngr} | awk -F":" '{ print $2 }' | sed 's+//++g'`
-    client_url=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
+    client_url=`cat deployment_output | grep client_url | sed -e "s+\(.*\)\(client_url': u'\)\(http://.*:8000\)\(.*\)+\3+1"`
     client_ip_address=`echo $client_url | awk -F":" '{ print $2 }' | sed 's+//++g'`
     private_key_prefix=private_key_${DEPLOYMENT_NAME}
     private_key_linux=private_key_${DEPLOYMENT_NAME}.pem
@@ -667,7 +668,7 @@ function installation {
     echo "   XAP Management URL is in ${xap_mngr}"
     echo "   Create a new space named benchmarkSpace"
     echo "   --------------------------------------"
-    raw_str=`cfy deployments outputs -d $DEPLOYMENT_NAME | grep "AAA" | awk -F"AAA" '{ print $2 }'`
+    raw_str=`grep "AAA" deployment_output | awk -F"AAA" '{ print $2 }'`
     for i in ${raw_str//,/ }
     do
         echo "    $i" | sed 's/BBB//g' | sed 's/=/ is in /g'
@@ -677,6 +678,13 @@ function installation {
     echo "      Download the client VM's Private key from ${client_url}/${private_key_linux}"
     echo "      Then run : chmod 400 ${private_key_linux}"
     echo "      Connect to the client VM by running : ssh -i ${private_key_linux} ubuntu@${client_ip_address}"
+    echo "      You can connect to the container VMs in the same way: "
+    raw_str=`grep "AAA" deployment_output | awk -F"AAA" '{ print $2 }'`
+    for i in ${raw_str//,/ }
+    do
+        container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
+        echo "   ssh -i ${private_key_linux} ubuntu@${container_ip}"
+    done
     echo "   --------------------------------------"
     echo "   If you have a Windows laptop: "
     echo "      Download the client VM's Private key from ${client_url}/${private_key_windows}"
