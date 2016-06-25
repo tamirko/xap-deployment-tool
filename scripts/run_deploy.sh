@@ -683,7 +683,7 @@ function installation {
     for i in ${raw_str//,/ }
     do
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
-        echo "   ssh -i ${private_key_linux} ubuntu@${container_ip}"
+        echo "      ssh -i ${private_key_linux} ubuntu@${container_ip}"
     done
     echo "   --------------------------------------"
     echo "   If you have a Windows laptop: "
