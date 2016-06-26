@@ -109,6 +109,19 @@
                             </div>
                         </div>
 
+                        <div class="dt-form-row">
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">Deploy the Geo application &nbsp;
+                                    <button ng-show="need2DeployApplication() && !isApplicationEmpty()" class="dt-checkbox-btn enabled-icon" ng-click="toggleDeployApplication()">
+                                        <i class="fa fa-toggle-on"/>Yes
+                                    </button>
+                                    <button ng-show="!need2DeployApplication() && !isApplicationEmpty()" class="dt-checkbox-btn disabled-icon" ng-click="toggleDeployApplication()">
+                                        <i class="fa fa-toggle-off"/>&nbsp;No
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </td>
 
@@ -286,14 +299,6 @@
                         <i class="fa fa-toggle-off"/>&nbsp;No
                     </button>
                 </div>
-            </div>
-        </div>
-        <div class="dt-form-row">
-            <div class="dt-form-section login-details-section">
-                <button ng-show="!apply2AllIsEnabled()" class="dt-instruction-btn" ng-click="addNodeTemplate()">+ Add node template</button>
-            </div>
-            <div class="dt-form-section">
-                <button ng-show="canRemoveNodeTemplate()" class="dt-instruction-btn" ng-click="removeNodeTemplate($index)">- Remove this node template</button>
             </div>
         </div>
 	</div>
