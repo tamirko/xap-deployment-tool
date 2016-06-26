@@ -685,6 +685,8 @@ function installation {
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
         echo "      ssh -i ${private_key_linux} ubuntu@${container_ip}"
     done
+    echo "      You can connect to the XAP management VM in the same way: "
+    echo "      ssh -i ${private_key_linux} ubuntu@${xap_mngr_ip_address}"
     echo "   --------------------------------------"
     echo "   If you have a Windows laptop: "
     echo "      Download the client VM's Private key from ${client_url}/${private_key_windows}"
