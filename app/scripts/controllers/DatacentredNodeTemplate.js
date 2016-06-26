@@ -244,4 +244,13 @@ angular.module('demoApp')
             { 'id': 'f0577618-9125-4948-b450-474e225bbc4c', 'label': 'RAM: 1024 MB, 40 GB, 1 VCPUs'}
         ];
 
+        $scope.numberOfContainers =  [
+            { 'id': '2', 'label': '2'}
+        ];
+
+        $scope.xapGscOptions =  [
+            { 'id': '-Xms2g -Xmx2g -Xmn512m', 'label': '-Xms2g -Xmx2g -Xmn512m'}
+        ];
+
+
     });
