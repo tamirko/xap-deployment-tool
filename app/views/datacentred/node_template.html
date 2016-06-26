@@ -107,12 +107,8 @@
                                 <div class="dt-label">XAP Management VM's Flavor</div> <!-- todo: use i18n -->
                                 <div class="dt-longinput"><select ng-init="nodeTemplate1.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate1.datacentredflavor"></select></div>
                             </div>
-                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
-                                <div class="dt-label"># Containers</div> <!-- todo: use i18n -->
-                                <div class="dt-input"><select ng-init="nodeTemplate1.containersamount = numberOfContainers[0].id" ng-options="containersamount.id as containersamount.label for containersamount in numberOfContainers" ng-model="nodeTemplate1.containersamount"></select></div>
-                            </div>
                         </div>
-                        
+
                     </div>
                 </td>
 
@@ -135,6 +131,11 @@
                                 <div class="dt-label">XAP Container VM's Oprerating System</div> <!-- todo: use i18n -->
                                 <div class="dt-longinput"><select ng-init="nodeTemplate2.datacentredos = datacentredoss[11].id" ng-options="datacentredos.id as datacentredos.label for datacentredos in datacentredoss" ng-model="nodeTemplate2.datacentredos"></select></div>
                             </div>
+
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label"># Containers</div> <!-- todo: use i18n -->
+                                <div class="dt-shortinput"><select ng-init="nodeTemplate1.containersamount = numberOfContainers[0].id" ng-options="containersamount.id as containersamount.label for containersamount in numberOfContainers" ng-model="nodeTemplate1.containersamount"></select></div>
+                            </div>
                         </div>
 
                         <div class="dt-form-row">
@@ -142,6 +143,7 @@
                                 <div class="dt-label">XAP Container VM's Flavor</div> <!-- todo: use i18n -->
                                 <div class="dt-longinput"><select ng-init="nodeTemplate2.datacentredflavor = datacentredflavors[7].id" ng-options="datacentredflavor.id as datacentredflavor.label for datacentredflavor in datacentredflavors" ng-model="nodeTemplate2.datacentredflavor"></select></div>
                             </div>
+
 
                             <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                                 <div class="dt-label">XAP GSC Options</div> <!-- todo: use i18n -->
