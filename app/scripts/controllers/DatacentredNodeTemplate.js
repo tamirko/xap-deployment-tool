@@ -194,6 +194,23 @@ angular.module('demoApp')
             return $scope.forNodeUseExistingSecurityGroup;
         };
 
+
+        if ( $scope.data.defaultDeployXapApps == undefined ) {
+            $scope.defaultDeployXapApps = true;
+        }
+        else {
+            $scope.defaultDeployXapApps = $scope.data.defaultDeployXapApps;
+        }
+
+        $scope.toggleDefaultDeployXapApps = function(){
+            $scope.defaultDeployXapApps = !$scope.defaultDeployXapApps;
+        };
+
+        $scope.need2DeployXapApps = function(){
+            return $scope.defaultDeployXapApps;
+        };
+
+
         $scope.datacentredoss =  [
             { 'id': '621f75b6-8d28-47cf-9607-ae73943503b1', 'label': 'CentOS 6.6 dccloud' },
             { 'id': '74ff4015-aee1-4e02-aaa8-1c77b2650394', 'label': 'CentOS 7.0' },
