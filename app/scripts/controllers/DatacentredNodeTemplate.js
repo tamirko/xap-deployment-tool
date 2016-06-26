@@ -54,7 +54,7 @@ angular.module('demoApp')
         $scope.data.githuburl="https://github.com/tamirko/cloudify-deployment-tool-apps.git";
         $scope.data.tagBranchTypes=3;
         $scope.data.usingExistingManager=true;
-        $scope.data.existingMngrIPaddress="185.43.218.157";
+        $scope.data.existingMngrIPaddress="192.168.0.5";
 
 
 
@@ -246,6 +246,10 @@ angular.module('demoApp')
 
         $scope.numberOfContainers =  [
             { 'id': '2', 'label': '2'}
+        ];
+
+        $scope.gscsPerVM =  [
+            { 'id': '1', 'label': '1'}
         ];
 
         $scope.xapGscOptions =  [
