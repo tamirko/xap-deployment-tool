@@ -758,10 +758,6 @@ pre_blueprint_upload ${executionID}
 blueprints_upload ${executionID}
 pre_deployment_creation ${executionID}
 populate_node_templates ${executionID}
-cat $inputsFile
-cat $currBpName
-exit
-
 create_deployment ${executionID}
 pre_installation ${executionID}
 installation ${executionID}
