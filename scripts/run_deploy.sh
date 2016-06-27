@@ -702,13 +702,15 @@ function installation {
     if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
         wget ${client_url}/${private_key_linux}
         chmod 400 ${private_key_linux}
+        echo "scp -i ${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
         scp -i ${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
+        echo "scp -i ${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
         scp -i ${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_grid -p '{"grid_name": "datagrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
-        feederUrl=${client_url}:~/geofeeder.jar
+        feederUrl=${client_url}/geofeeder.jar
         echo "feederUrl is ${feederUrl}"
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${feederUrl}\", \"override_pu_name\": \"feeder\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
-        geoWebUrl=${client_url}:~/geoweb.jar
+        geoWebUrl=${client_url}/geoweb.jar
         echo "geoWebUrl is ${geoWebUrl}"
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${geoWebUrl}\", \"override_pu_name\": \"geoweb\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
     fi
