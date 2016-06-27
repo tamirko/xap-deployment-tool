@@ -49,7 +49,8 @@ exports.runDeploy = function( theCurrentProvider,executionId, input ){
         BLUEPRINT_FILENAME:input.blueprintFileName,
         NUMBER_OF_NODE_TEMPLATES: input.actualNodeTemplates.length,
         DEPLOY_APPLICATION: input.deployApplication,
-        DEPLOYMENT_NAME: input.deploymentName //,
+        DEPLOYMENT_NAME: input.deploymentName,
+        DEPLOY_DEFAULT_XAP_APPS: input.deployDefaultXapApps //,
         //NUMBER_OF_CONTAINERS: input.xxxxxx,
         //GSC_PER_CONTAINER: input.xxxx
         //XAP_GSC_OPTIONS: input.xxxx

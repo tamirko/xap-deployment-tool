@@ -364,6 +364,11 @@ function pre_blueprint_upload {
 }
 
 function blueprints_upload {
+
+
+    echo "DEPLOY_DEFAULT_XAP_APPS is ${DEPLOY_DEFAULT_XAP_APPS}"
+    exit
+
     echo "============================================================="
     if [ "${UPLOAD_BLUEPRINT}" == "false" ]; then
         echo "No need to run ${FUNCNAME[0]} ."
@@ -698,6 +703,15 @@ function installation {
     private_key_prefix=private_key_${DEPLOYMENT_NAME}
     private_key_linux=private_key_${DEPLOYMENT_NAME}.pem
     private_key_windows=private_key_${DEPLOYMENT_NAME}.ppk
+
+    wget ${client_url}/${private_key_linux}
+    chmod 400 ${private_key_linux}
+    scp -i ${private_key_linux} ~/geofeeder.jar ${client_url}:~/
+    scp -i ${private_key_linux} ~/geoweb.jar ${client_url}:~/
+    cfy executions start -d $dep  -w deploy_grid -p '{"grid_name": 'datagrid', "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+    cfy executions start -d $dep  -w deploy_pu -p '{"pu_url": ""${client_url}:/geofeeder.jar", "override_pu_name": "feeder","schema": "partitioned","partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+    cfy executions start -d $dep  -w deploy_pu -p '{"pu_url": "${client_url}:/geoweb.jar", "override_pu_name": "geoweb","schema": "partitioned","partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+
     echo "*************************************************************"
     echo "   XAP Management URL is in ${xap_mngr}"
     echo "   Create a new space named benchmarkSpace"
@@ -713,7 +727,6 @@ function installation {
     echo "      Then run : chmod 400 ${private_key_linux}"
     echo "      Connect to the client VM by running : ssh -i ${private_key_linux} ubuntu@${client_ip_address}"
     echo "      You can connect to the container VMs in the same way: "
-    raw_str=`grep "AAA" deployment_output | awk -F"AAA" '{ print $2 }'`
     for i in ${raw_str//,/ }
     do
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
@@ -725,6 +738,16 @@ function installation {
     echo "   If you have a Windows laptop: "
     echo "      Download the client VM's Private key from ${client_url}/${private_key_windows}"
     echo "      Connect to the client VM. E.g. : By using Putty and the private key."
+    echo "   --------------------------------------"
+    for i in ${raw_str//,/ }
+    do
+        container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
+        geoweb_url=${container_ip}:8080/geoweb
+        wget --spider ${geoweb_url}
+        if [ $? -eq 0 ];
+            echo "      You can access the geoweb application at ${geoweb_url}"
+        fi
+    done
     echo "   --------------------------------------"
     echo "   In ${client_ip_address} run the benchmark example or any other test ..."
     echo "   You can run the following command: "
