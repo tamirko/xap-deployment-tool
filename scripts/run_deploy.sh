@@ -596,15 +596,15 @@ function populate_node_templates {
            z="NODE_TEMPLATE_${i}_DATACENTRED_GSCS_PER_VM"
            if [ "${!z}" ]; then
                 gscsPerVm=${!z}
-                echo "$z is ${gscsPerVm}"
+                #echo "$z is ${gscsPerVm}"
                 gscsPerVmInputCount=`grep "gsc_cnt:" ${!nt} | grep -c get_input`
                 if [ $gscsPerVmInputCount -eq 1 ]; then
-                    echo "Setting the gsc_cnt to ${gscsPerVm} in ${!nt}"
+                    #echo "Setting the gsc_cnt to ${gscsPerVm} in ${!nt}"
                     userInput=`grep "gsc_cnt:" ${!nt} | grep get_input | awk -F":" '{ print $3 }' | sed -e "s+[ }]++g"`
-                    echo "${userInput}: '$gscsPerVm'">>$inputsFile
-                    sed -i -e "s+\(gsc_cnt:\)\(.*\)+\1 '$gscsPerVm'+g" ${!nt}
+                    echo "${userInput}: $gscsPerVm">>$inputsFile
+                    sed -i -e "s+\(gsc_cnt:\)\(.*\)+\1 $gscsPerVm+g" ${!nt}
                 else
-                    echo "gsc_cnt: '$gscsPerVm'">>$inputsFile
+                    echo "gsc_cnt: $gscsPerVm">>$inputsFile
                 fi
            else
                 echo "Warning: $z is unset. - Ignoring it ..."
@@ -613,15 +613,15 @@ function populate_node_templates {
            z="NODE_TEMPLATE_${i}_DATACENTRED_XAP_GSC_OPTIONS"
            if [ "${!z}" ]; then
                 xapGscOptions=${!z}
-                echo "$z is ${xapGscOptions}"
+                #echo "$z is ${xapGscOptions}"
                 xapGscOptionsInputCount=`grep "GSC_JAVA_OPTIONS:" ${!nt} | grep -c get_input`
                 if [ $xapGscOptionsInputCount -eq 1 ]; then
-                    echo "Setting the GSC_JAVA_OPTIONS to ${xapGscOptions} in ${!nt}"
+                    #echo "Setting the GSC_JAVA_OPTIONS to ${xapGscOptions} in ${!nt}"
                     userInput=`grep "GSC_JAVA_OPTIONS:" ${!nt} | grep get_input | awk -F":" '{ print $3 }' | sed -e "s+[ }]++g"`
-                    echo "${userInput}: '$xapGscOptions'">>$inputsFile
-                    sed -i -e "s+\(GSC_JAVA_OPTIONS:\)\(.*\)+\1 '$xapGscOptions'+g" ${!nt}
+                    echo "${userInput}: $xapGscOptions">>$inputsFile
+                    sed -i -e "s+\(GSC_JAVA_OPTIONS:\)\(.*\)+\1 $xapGscOptions+g" ${!nt}
                 else
-                    echo "gsc_java_options: '$xapGscOptions'">>$inputsFile
+                    echo "gsc_java_options: $xapGscOptions">>$inputsFile
                 fi
            else
                 echo "Warning: $z is unset. - Ignoring it ..."
