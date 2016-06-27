@@ -147,12 +147,12 @@
 
                             <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                                 <div class="dt-label">Container VMs</div> <!-- todo: use i18n -->
-                                <div class="dt-shortinput"><select ng-init="nodeTemplate1.containersamount = numberOfContainers[0].id" ng-options="containersamount.id as containersamount.label for containersamount in numberOfContainers" ng-model="nodeTemplate1.containersamount"></select></div>
+                                <div class="dt-shortinput"><select ng-init="nodeTemplate2.containersamount = numberOfContainers[0].id" ng-options="containersamount.id as containersamount.label for containersamount in numberOfContainers" ng-model="nodeTemplate2.containersamount"></select></div>
                             </div>
 
                             <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
                                 <div class="dt-label">GSCs per VM</div> <!-- todo: use i18n -->
-                                <div class="dt-shortinput"><select ng-init="nodeTemplate1.gscs = gscsPerVM[0].id" ng-options="gscs.id as gscs.label for gscs in gscsPerVM" ng-model="nodeTemplate1.gscs"></select></div>
+                                <div class="dt-shortinput"><select ng-init="nodeTemplate2.gscs = gscsPerVM[0].id" ng-options="gscs.id as gscs.label for gscs in gscsPerVM" ng-model="nodeTemplate2.gscs"></select></div>
                             </div>
                         </div>
 

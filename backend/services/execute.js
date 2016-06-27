@@ -49,7 +49,10 @@ exports.runDeploy = function( theCurrentProvider,executionId, input ){
         BLUEPRINT_FILENAME:input.blueprintFileName,
         NUMBER_OF_NODE_TEMPLATES: input.actualNodeTemplates.length,
         DEPLOY_APPLICATION: input.deployApplication,
-        DEPLOYMENT_NAME: input.deploymentName
+        DEPLOYMENT_NAME: input.deploymentName //,
+        //NUMBER_OF_CONTAINERS: input.xxxxxx,
+        //GSC_PER_CONTAINER: input.xxxx
+        //XAP_GSC_OPTIONS: input.xxxx
     };
 
     if ( opts.APPLICATION_SOURCE == 2 ) {
@@ -146,6 +149,18 @@ exports.populate_node_templates = function(opts, executionId, input){
         if ( input.actualNodeTemplates[i].agentshuser != undefined ) {
             templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_AGENT_USER";
             eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].agentshuser+"\"");
+        }
+        if ( input.actualNodeTemplates[i].containersamount != undefined ) {
+            templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_CONTAINERS_AMOUNT";
+            eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].containersamount+"\"");
+        }
+        if ( input.actualNodeTemplates[i].gscs != undefined ) {
+            templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_GSCS_PER_VM";
+            eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].gscs+"\"");
+        }
+        if ( input.actualNodeTemplates[i].xapGscOption != undefined ) {
+            templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_XAP_GSC_OPTIONS";
+            eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].xapGscOption+"\"");
         }
         if ( input.actualNodeTemplates[i].moreprops != undefined ) {
             templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_MORE_PROPS";

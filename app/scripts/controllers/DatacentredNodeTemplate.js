@@ -194,20 +194,23 @@ angular.module('demoApp')
             return $scope.forNodeUseExistingSecurityGroup;
         };
 
+        $scope.$watch('deployDefaultXapApps', function( newValue ){
+            $scope.data.deployDefaultXapApps = newValue;
+        });
 
-        if ( $scope.data.defaultDeployXapApps == undefined ) {
-            $scope.defaultDeployXapApps = true;
+        if ( $scope.data.deployDefaultXapApps == undefined ) {
+            $scope.deployDefaultXapApps = true;
         }
         else {
-            $scope.defaultDeployXapApps = $scope.data.defaultDeployXapApps;
+            $scope.deployDefaultXapApps = $scope.data.deployDefaultXapApps;
         }
 
         $scope.toggleDefaultDeployXapApps = function(){
-            $scope.defaultDeployXapApps = !$scope.defaultDeployXapApps;
+            $scope.deployDefaultXapApps = !$scope.deployDefaultXapApps;
         };
 
         $scope.need2DeployXapApps = function(){
-            return $scope.defaultDeployXapApps;
+            return $scope.deployDefaultXapApps;
         };
 
 
@@ -262,15 +265,28 @@ angular.module('demoApp')
         ];
 
         $scope.numberOfContainers =  [
-            { 'id': '2', 'label': '2'}
+            { 'id': '1', 'label': '1'},
+            { 'id': '2', 'label': '2'},
+            { 'id': '3', 'label': '3'},
+            { 'id': '4', 'label': '4'},
+            { 'id': '5', 'label': '5'}
         ];
 
         $scope.gscsPerVM =  [
-            { 'id': '1', 'label': '1'}
+            { 'id': '1', 'label': '1'},
+            { 'id': '2', 'label': '2'},
+            { 'id': '3', 'label': '3'},
+            { 'id': '4', 'label': '4'},
+            { 'id': '5', 'label': '5'}
         ];
 
         $scope.xapGscOptions =  [
-            { 'id': '-Xms2g -Xmx2g -Xmn512m', 'label': '-Xms2g -Xmx2g -Xmn512m'}
+            { 'id': '-Xms512m -Xmx512m -Xmn512m', 'label': '-Xms512m -Xmx512m -Xmn512m'},
+            { 'id': '-Xms1g -Xmx1g -Xmn512m', 'label': '-Xms1g -Xmx1g -Xmn512m'},
+            { 'id': '-Xms2g -Xmx2g -Xmn512m', 'label': '-Xms2g -Xmx2g -Xmn512m'},
+            { 'id': '-Xms3g -Xmx3g -Xmn512m', 'label': '-Xms3g -Xmx3g -Xmn512m'},
+            { 'id': '-Xms4g -Xmx4g -Xmn512m', 'label': '-Xms4g -Xmx4g -Xmn512m'},
+            { 'id': '-Xms8g -Xmx8g -Xmn512m', 'label': '-Xms8g -Xmx8g -Xmn512m'}
         ];
 
 
