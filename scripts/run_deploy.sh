@@ -707,7 +707,7 @@ function installation {
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_grid -p '{"grid_name": "datagrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
         feederUrl=${client_url}:~/geofeeder.jar
         echo "feederUrl is ${feederUrl}"
-        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": "${feederUrl}", "override_pu_name": "feeder","schema": "partitioned","partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${feederUrl}\", \"override_pu_name\": \"feeder\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
         geoWebUrl=${client_url}:~/geoweb.jar
         echo "geoWebUrl is ${geoWebUrl}"
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${geoWebUrl}\", \"override_pu_name\": \"geoweb\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
