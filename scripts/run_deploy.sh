@@ -367,6 +367,9 @@ function blueprints_upload {
 
 
     echo "DEPLOY_DEFAULT_XAP_APPS is ${DEPLOY_DEFAULT_XAP_APPS}"
+    if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
+        echo "It is true xxxxxxxxxxxxxxxxxxx"
+    fi
     exit
 
     echo "============================================================="
@@ -742,9 +745,9 @@ function installation {
     for i in ${raw_str//,/ }
     do
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
-        geoweb_url=${container_ip}:8080/geoweb
+        geoweb_url="${container_ip}:8080/geoweb"
         wget --spider ${geoweb_url}
-        if [ $? -eq 0 ];
+        if [ $? -eq 0 ]; then
             echo "      You can access the geoweb application at ${geoweb_url}"
         fi
     done
