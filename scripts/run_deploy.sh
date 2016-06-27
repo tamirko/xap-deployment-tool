@@ -700,12 +700,17 @@ function installation {
     private_key_windows=private_key_${DEPLOYMENT_NAME}.ppk
 
     if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
+        pushd ~/.ssh/
+        echo "wget ${client_url}/${private_key_linux}"
         wget ${client_url}/${private_key_linux}
+        echo $?
         chmod 400 ${private_key_linux}
-        echo "scp -i ${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
-        scp -i ${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
-        echo "scp -i ${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
-        scp -i ${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
+        popd
+        echo "scp -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
+        scp -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
+        echo "scp -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
+        scp -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
+
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_grid -p '{"grid_name": "datagrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
         feederUrl=${client_url}/geofeeder.jar
         echo "feederUrl is ${feederUrl}"
