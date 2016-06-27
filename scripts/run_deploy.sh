@@ -604,7 +604,7 @@ function populate_node_templates {
                     echo "${userInput}: '$gscsPerVm'">>$inputsFile
                     sed -i -e "s+\(gsc_cnt:\)\(.*\)+\1 '$gscsPerVm'+g" ${!nt}
                 else
-                    echo "agent_user: '$gscsPerVm'">>$inputsFile
+                    echo "gsc_cnt: '$gscsPerVm'">>$inputsFile
                 fi
            else
                 echo "Warning: $z is unset. - Ignoring it ..."
@@ -621,7 +621,7 @@ function populate_node_templates {
                     echo "${userInput}: '$xapGscOptions'">>$inputsFile
                     sed -i -e "s+\(GSC_JAVA_OPTIONS:\)\(.*\)+\1 '$xapGscOptions'+g" ${!nt}
                 else
-                    echo "agent_user: '$xapGscOptions'">>$inputsFile
+                    echo "gsc_java_options: '$xapGscOptions'">>$inputsFile
                 fi
            else
                 echo "Warning: $z is unset. - Ignoring it ..."
