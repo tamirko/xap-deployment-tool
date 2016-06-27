@@ -627,10 +627,6 @@ function populate_node_templates {
                 echo "Warning: $z is unset. - Ignoring it ..."
            fi
 
-           cat $inputsFile
-           cat $currBpName
-           exit
-
            z="NODE_TEMPLATE_${i}_DATACENTRED_MORE_PROPS"
            if [ "${!z}" ]; then
                 currentNodeInputs=${!z}
@@ -762,6 +758,10 @@ pre_blueprint_upload ${executionID}
 blueprints_upload ${executionID}
 pre_deployment_creation ${executionID}
 populate_node_templates ${executionID}
+cat $inputsFile
+cat $currBpName
+exit
+
 create_deployment ${executionID}
 pre_installation ${executionID}
 installation ${executionID}
