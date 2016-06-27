@@ -706,10 +706,10 @@ function installation {
         echo $?
         chmod 400 ${private_key_linux}
         popd
-        echo "scp -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
-        scp -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
-        echo "scp -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
-        scp -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
+        echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
+        scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
+        echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
+        scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
 
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_grid -p '{"grid_name": "datagrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
         feederUrl=${client_url}/geofeeder.jar
