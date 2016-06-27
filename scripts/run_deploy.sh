@@ -708,8 +708,8 @@ function installation {
     chmod 400 ${private_key_linux}
     scp -i ${private_key_linux} ~/geofeeder.jar ${client_url}:~/
     scp -i ${private_key_linux} ~/geoweb.jar ${client_url}:~/
-    cfy executions start -d $dep  -w deploy_grid -p '{"grid_name": 'datagrid', "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
-    cfy executions start -d $dep  -w deploy_pu -p '{"pu_url": ""${client_url}:/geofeeder.jar", "override_pu_name": "feeder","schema": "partitioned","partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+    cfy executions start -d $dep  -w deploy_grid -p '{"grid_name": "datagrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+    cfy executions start -d $dep  -w deploy_pu -p '{"pu_url": "${client_url}:/geofeeder.jar", "override_pu_name": "feeder","schema": "partitioned","partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
     cfy executions start -d $dep  -w deploy_pu -p '{"pu_url": "${client_url}:/geoweb.jar", "override_pu_name": "geoweb","schema": "partitioned","partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
 
     echo "*************************************************************"
