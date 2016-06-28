@@ -787,6 +787,16 @@ function installation {
         if [ $? -eq 0 ]; then
             echo "      You can access the geoweb application at ${geoweb_url}"
         fi
+
+        if [ "${DEPLOY_GENERIC_XAP_DEMO}" == "true" ]; then
+            intro_web_url="${container_ip}:8080/intro-web"
+            wget --spider ${intro_web_url} >/dev/null 2>&1
+            curl -I ${intro_web_url} >/dev/null 2>&1
+            if [ $? -eq 0 ]; then
+                echo "      You can access the generic demo at ${intro_web_url}"
+            fi
+        fi
+
     done
     echo "   --------------------------------------"
     echo "   In ${client_ip_address} run the benchmark example or any other test ..."
