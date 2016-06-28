@@ -717,20 +717,29 @@ function installation {
     private_key_linux=private_key_${DEPLOYMENT_NAME}.pem
     private_key_windows=private_key_${DEPLOYMENT_NAME}.ppk
 
+    pushd ~/.ssh/
+    wget ${client_url}/${private_key_linux}
+    chmod 400 ${private_key_linux}
+    popd
+
     if [ "${DEPLOY_GENERIC_XAP_DEMO}" == "true" ]; then
-        echo "DEPLOY_GENERIC_XAP_DEMO is ${DEPLOY_GENERIC_XAP_DEMO}"
+        scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/intro-feeder.jar ubuntu@${client_ip_address}:~/
+        scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/intro-web.war ubuntu@${client_ip_address}:~/
+
+        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_grid -p '{"grid_name": "membergrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
+        feederUrl=${client_url}/intro-feeder.jar
+        echo "feederUrl is ${feederUrl}"
+        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${feederUrl}\", \"override_pu_name\": \"feeder\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
+        introWebUrl=${client_url}/intro-web.war
+        echo "introWebUrl is ${introWebUrl}"
+        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${introWebUrl}\", \"override_pu_name\": \"geoweb\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
     fi
 
     if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
-        pushd ~/.ssh/
-        echo "wget ${client_url}/${private_key_linux}..."
-        wget ${client_url}/${private_key_linux}
-        echo $?
-        chmod 400 ${private_key_linux}
-        popd
+
         #echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
         scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
-        echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
+        #echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
         scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
 
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_grid -p '{"grid_name": "datagrid", "schema": "partitioned", "partitions": 1, "backups": 0, "max_per_vm": 0, "max_per_machine": 0}'
