@@ -430,7 +430,7 @@ function blueprints_upload {
                         containersAmountInputCount=`grep -cE ".*deploy:.*Replace" ${BLUEPRINT_FILENAME}`
                         if [ $containersAmountInputCount -gt 0 ]; then
                             echo "Setting the containers number to ${containersAmount} in ${BLUEPRINT_FILENAME}"
-                            sed -i -e "s+.*deploy:.*Replace.*+deploy: ${containersAmount}+g" ${BLUEPRINT_FILENAME}
+                            sed -i -e "s+\(.*\)\(deploy:.*Replace.\)*+\1deploy: ${containersAmount}+g" ${BLUEPRINT_FILENAME}
                         else
                             echo "Leaving number of instances as is for ${z}"
                         fi
