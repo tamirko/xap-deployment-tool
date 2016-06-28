@@ -439,8 +439,6 @@ function blueprints_upload {
                     fi
                 done
                 set +e
-                grep ${containersAmount} ${BLUEPRINT_FILENAME} | grep deploy
-                exit
 
                 cfy blueprints upload -b $currBpName -p ${BLUEPRINT_FILENAME}
                 currStatus=$?
