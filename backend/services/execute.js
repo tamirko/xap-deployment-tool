@@ -163,6 +163,10 @@ exports.populate_node_templates = function(opts, executionId, input){
             templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_XAP_GSC_OPTIONS";
             eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].xapGscOption+"\"");
         }
+        if ( input.actualNodeTemplates[i].containersamount != undefined ) {
+            templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_CONTAINERS_AMOUNT";
+            eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].containersamount+"\"");
+        }
         if ( input.actualNodeTemplates[i].moreprops != undefined ) {
             templateNameVarName = "opts.NODE_TEMPLATE_"+(i+1)+"_DATACENTRED_MORE_PROPS";
             eval(templateNameVarName+"=\""+input.actualNodeTemplates[i].moreprops+"\"");
