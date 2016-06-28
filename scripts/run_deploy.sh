@@ -782,7 +782,7 @@ function installation {
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
         geoweb_url="${container_ip}:8080/geoweb"
         #echo "wget --spider ${geoweb_url} ... "
-        wget --spider ${geoweb_url} >/dev/null 2>&1
+        #wget --spider ${geoweb_url} >/dev/null 2>&1
         curl -I ${geoweb_url} >/dev/null 2>&1
         if [ $? -eq 0 ]; then
             echo "      You can access the geoweb application at ${geoweb_url}"
@@ -790,7 +790,7 @@ function installation {
 
         if [ "${DEPLOY_GENERIC_XAP_DEMO}" == "true" ]; then
             intro_web_url="${container_ip}:8080/intro-web"
-            wget --spider ${intro_web_url} >/dev/null 2>&1
+            #wget --spider ${intro_web_url} >/dev/null 2>&1
             curl -I ${intro_web_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
                 echo "      You can access the generic demo at ${intro_web_url}"
