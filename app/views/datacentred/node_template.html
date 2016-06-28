@@ -122,6 +122,19 @@
                             </div>
                         </div>
 
+                        <div class="dt-form-row">
+                            <div ng-show="!need2UseExistingManager() && isComputeNode(1)" class="dt-form-section login-details-section">
+                                <div class="dt-label">Deploy the generic XAP demo &nbsp;
+                                    <button ng-show="need2DeployGenericXapDemo()" title="Click to disable" class="dt-checkbox-btn enabled-icon" ng-click="toggleDeployGenericXapDemo()">
+                                        <i class="fa fa-toggle-on"/>Yes
+                                    </button>
+                                    <button ng-show="!need2DeployGenericXapDemo()" title="Click to enable" class="dt-checkbox-btn disabled-icon" ng-click="toggleDeployGenericXapDemo()">
+                                        <i class="fa fa-toggle-off"/>&nbsp;No
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </td>
 
