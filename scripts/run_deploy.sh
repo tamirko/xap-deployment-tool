@@ -717,6 +717,10 @@ function installation {
     private_key_linux=private_key_${DEPLOYMENT_NAME}.pem
     private_key_windows=private_key_${DEPLOYMENT_NAME}.ppk
 
+    if [ "${DEPLOY_GENERIC_XAP_DEMO}" == "true" ]; then
+        echo "DEPLOY_GENERIC_XAP_DEMO is ${DEPLOY_GENERIC_XAP_DEMO}"
+    fi
+
     if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
         pushd ~/.ssh/
         echo "wget ${client_url}/${private_key_linux}"
