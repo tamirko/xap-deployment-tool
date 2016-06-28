@@ -199,7 +199,7 @@ angular.module('demoApp')
         });
 
         if ( $scope.data.deployDefaultXapApps == undefined ) {
-            $scope.deployDefaultXapApps = true;
+            $scope.deployDefaultXapApps = false;
         }
         else {
             $scope.deployDefaultXapApps = $scope.data.deployDefaultXapApps;
