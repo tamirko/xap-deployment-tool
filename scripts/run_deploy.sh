@@ -706,7 +706,7 @@ function installation {
         echo $?
         chmod 400 ${private_key_linux}
         popd
-        echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
+        #echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/"
         scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geofeeder.jar ubuntu@${client_ip_address}:~/
         echo "scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/"
         scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/${private_key_linux} ~/geoweb.jar ubuntu@${client_ip_address}:~/
@@ -750,8 +750,9 @@ function installation {
     do
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
         geoweb_url="${container_ip}:8080/geoweb"
-        echo "wget --spider ${geoweb_url} ... "
+        #echo "wget --spider ${geoweb_url} ... "
         wget --spider ${geoweb_url} >/dev/null 2>&1
+        curl -I ${geoweb_url} >/dev/null 2>&1
         if [ $? -eq 0 ]; then
             echo "      You can access the geoweb application at ${geoweb_url}"
         fi
