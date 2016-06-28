@@ -750,7 +750,8 @@ function installation {
     do
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
         geoweb_url="${container_ip}:8080/geoweb"
-        wget --spider ${geoweb_url}
+        echo "wget --spider ${geoweb_url} ... "
+        wget --spider ${geoweb_url} >/dev/null 2>&1
         if [ $? -eq 0 ]; then
             echo "      You can access the geoweb application at ${geoweb_url}"
         fi
