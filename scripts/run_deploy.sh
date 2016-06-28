@@ -723,7 +723,7 @@ function installation {
 
     if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
         pushd ~/.ssh/
-        echo "wget ${client_url}/${private_key_linux}"
+        echo "wget ${client_url}/${private_key_linux}..."
         wget ${client_url}/${private_key_linux}
         echo $?
         chmod 400 ${private_key_linux}
