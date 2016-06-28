@@ -199,7 +199,7 @@ angular.module('demoApp')
         });
 
         if ( $scope.data.deployDefaultXapApps == undefined ) {
-            $scope.deployDefaultXapApps = false;
+            $scope.deployDefaultXapApps = true;
         }
         else {
             $scope.deployDefaultXapApps = $scope.data.deployDefaultXapApps;
@@ -218,7 +218,7 @@ angular.module('demoApp')
         });
 
         if ( $scope.data.deployGenericXapDemo == undefined ) {
-            $scope.deployGenericXapDemo = true;
+            $scope.deployGenericXapDemo = false;
         }
         else {
             $scope.deployGenericXapDemo = $scope.data.deployGenericXapDemo;
