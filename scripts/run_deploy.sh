@@ -420,23 +420,18 @@ function blueprints_upload {
                 export currBpName=$currentApp$BLUEPRINT_NAME
 
                 y=$NUMBER_OF_NODE_TEMPLATES
-                echo "y is $y"
+
                 for i in $(seq 1 $y);
                 do
                     z="NODE_TEMPLATE_${i}_DATACENTRED_CONTAINERS_AMOUNT"
                     if [ "${!z}" ]; then
                         containersAmount=${!z}
-                        echo "$z is ${containersAmount}"
+                        #echo "$z is ${containersAmount}"
                         containersAmountInputCount=`grep -cE ".*deploy:.*Replace" ${BLUEPRINT_FILENAME}`
                         if [ $containersAmountInputCount -gt 0 ]; then
-                            echo "Setting the containers number to ${containersAmount} in ${BLUEPRINT_FILENAME}"
+                            #echo "Setting the containers number to ${containersAmount} in ${BLUEPRINT_FILENAME}"
                             sed -i -e "s+\(.*\)\(deploy.*Replace.*\)+\1deploy: ${containersAmount}+g" ${BLUEPRINT_FILENAME}
-
-                        else
-                            echo "Leaving number of instances as is for ${z}"
                         fi
-                    else
-                        echo "Warning: $z is unset. - Ignoring it ..."
                     fi
                 done
                 set +e
