@@ -732,7 +732,7 @@ function installation {
         cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${feederUrl}\", \"override_pu_name\": \"feeder\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
         introWebUrl=${client_url}/intro-web.war
         echo "introWebUrl is ${introWebUrl}"
-        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${introWebUrl}\", \"override_pu_name\": \"geoweb\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
+        cfy executions start -d $DEPLOYMENT_NAME  -w deploy_pu -p "{\"pu_url\": \"${introWebUrl}\", \"override_pu_name\": \"intro-web\",\"schema\": \"partitioned\",\"partitions\": 1, \"backups\": 0, \"max_per_vm\": 0, \"max_per_machine\": 0}"
     fi
 
     if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
