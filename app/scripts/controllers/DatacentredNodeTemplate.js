@@ -218,7 +218,7 @@ angular.module('demoApp')
         });
 
         if ( $scope.data.deployGenericXapDemo == undefined ) {
-            $scope.deployGenericXapDemo = false;
+            $scope.deployGenericXapDemo = true;
         }
         else {
             $scope.deployGenericXapDemo = $scope.data.deployGenericXapDemo;
