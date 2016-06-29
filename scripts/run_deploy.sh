@@ -782,32 +782,45 @@ function installation {
 
         container_ip=`echo "$i" | sed 's/BBB//g' | awk -F"=" '{print $2}'`
         if [ "${DEPLOY_DEFAULT_XAP_APPS}" == "true" ]; then
-            geoweb_url="${container_ip}:8080/geoweb"
+            geoweb_url="http://${container_ip}:8080/geoweb"
             #echo "wget --spider ${geoweb_url} ... "
             #wget --spider ${geoweb_url} >/dev/null 2>&1
             curl -I ${geoweb_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                echo "      You can access the geoweb application at ${geoweb_url}"
+                count404=`curl -I ${geoweb_url} | grep -c 404`
+                if [ $count404 -eq 0 ]; then
+                    echo "      You can access the geoweb application at ${geoweb_url}"
+                fi
             fi
 
-            geoweb_url="${container_ip}:8081/geoweb"
+            geoweb_url="http://${container_ip}:8081/geoweb"
             curl -I ${geoweb_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                echo "      You can access the geoweb application at ${geoweb_url}"
+                count404=`curl -I ${geoweb_url} | grep -c 404`
+                if [ $count404 -eq 0 ]; then
+                    echo "      You can access the geoweb application at ${geoweb_url}"
+                fi
             fi
         fi
 
         if [ "${DEPLOY_GENERIC_XAP_DEMO}" == "true" ]; then
-            intro_web_url="${container_ip}:8080/intro-web"
+            intro_web_url="http://${container_ip}:8080/intro-web"
             #wget --spider ${intro_web_url} >/dev/null 2>&1
             curl -I ${intro_web_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                echo "      You can access the generic demo at ${intro_web_url}"
+                count404=`curl -I ${intro_web_url} | grep -c 404`
+                if [ $count404 -eq 0 ]; then
+                    echo "      You can access the generic demo at ${intro_web_url}"
+                fi
             fi
-            intro_web_url="${container_ip}:8081/intro-web"
+            intro_web_url="http://${container_ip}:8081/intro-web"
             curl -I ${intro_web_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                echo "      You can access the generic demo at ${intro_web_url}"
+                count404=`curl -I ${intro_web_url} | grep -c 404`
+                if [ $count404 -eq 0 ]; then
+                    echo "      You can access the generic demo at ${intro_web_url}"
+                fi
+
             fi
         fi
 
