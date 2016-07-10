@@ -785,18 +785,18 @@ function installation {
             geoweb_url="http://${container_ip}:8080/geoweb"
             #echo "wget --spider ${geoweb_url} ... "
             #wget --spider ${geoweb_url} >/dev/null 2>&1
-            curl -I ${geoweb_url} >/dev/null 2>&1
+            curl -I --silent ${geoweb_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                count404=`curl -I ${geoweb_url} | grep -c 404`
+                count404=`curl -I --silent ${geoweb_url} | grep -c 404`
                 if [ $count404 -eq 0 ]; then
                     echo "      You can access the geoweb application at ${geoweb_url}"
                 fi
             fi
 
             geoweb_url="http://${container_ip}:8081/geoweb"
-            curl -I ${geoweb_url} >/dev/null 2>&1
+            curl -I --silent ${geoweb_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                count404=`curl -I ${geoweb_url} | grep -c 404`
+                count404=`curl -I --silent ${geoweb_url} | grep -c 404`
                 if [ $count404 -eq 0 ]; then
                     echo "      You can access the geoweb application at ${geoweb_url}"
                 fi
@@ -806,17 +806,17 @@ function installation {
         if [ "${DEPLOY_GENERIC_XAP_DEMO}" == "true" ]; then
             intro_web_url="http://${container_ip}:8080/intro-web"
             #wget --spider ${intro_web_url} >/dev/null 2>&1
-            curl -I ${intro_web_url} >/dev/null 2>&1
+            curl -I --silent ${intro_web_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                count404=`curl -I ${intro_web_url} | grep -c 404`
+                count404=`curl -I --silent ${intro_web_url} | grep -c 404`
                 if [ $count404 -eq 0 ]; then
                     echo "      You can access the generic demo at ${intro_web_url}"
                 fi
             fi
             intro_web_url="http://${container_ip}:8081/intro-web"
-            curl -I ${intro_web_url} >/dev/null 2>&1
+            curl -I --silent ${intro_web_url} >/dev/null 2>&1
             if [ $? -eq 0 ]; then
-                count404=`curl -I ${intro_web_url} | grep -c 404`
+                count404=`curl -I --silent ${intro_web_url} | grep -c 404`
                 if [ $count404 -eq 0 ]; then
                     echo "      You can access the generic demo at ${intro_web_url}"
                 fi
